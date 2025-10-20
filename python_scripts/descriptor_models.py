@@ -123,37 +123,6 @@ def SMILES_to_BitMorgan(config):
     print("SMILES to BitMorgan ran correctly")
     return bit_array_fingerprint
 
-# def SMILES_to_BitMorgan(config):
-#     reading_txt_smiles = pd.read_fwf(config.SMILES_file)
-#     reading_txt_smiles.to_csv(config.SMILES_file)
-#     smiles_list = pd.read_csv(config.SMILES_file, header=None, names=["SMILES"])
-#     smiles_list = smiles_list[['SMILES']]
-
-#     # Fingerprint parameter
-
-#     fpgen = AChem.GetMorganGenerator(radius=3, fpSize=4096) # Larger fpSize means less chance of colliding bits
-
-#     # Generates the fingerprints and array
-
-#     mol = [Chem.MolFromSmiles(smiles) for smiles in smiles_list['SMILES']]	
-#     fpx = [fpgen.GetFingerprint(mols) for mols in mol]
-#     arr = np.array(fpx)
-
-#     # Prints fingerprints and the array
-
-#     for i, fingerprint in enumerate(fpx):
-#         print(f"Molecule {i+1} Fingerprint`: {fingerprint}")
-
-#     print(arr)
-#     print(arr.shape)
-
-#     # Exports the array to a csv
-
-#     df = pd.DataFrame(arr)
-#     bit_array_fingerprint = df.to_csv("bit_array_fingerprint.csv", header=False, index=False)
-#     print("smiles to bit morgan ran correctly")
-#     return bit_array_fingerprint
-
 #############################################################
 ## MODELS
 ## train Ml model (here it's Random forest ) and test
@@ -176,16 +145,19 @@ def Random_forest_Random_search(config, final_property_file, running_descriptor)
         StandardScaler(),
         RandomForestRegressor(random_state=1))
 
+    
     param_distributions = {
-        'randomforestregressor__n_estimators': [200, 300, 400],
-        'randomforestregressor__max_depth': [None, 10, 20],
-        'randomforestregressor__min_samples_split': [2, 3, 4, 5],
-        'randomforestregressor__min_samples_leaf': [1, 2, 3, 4, 5]}
+    'randomforestregressor__n_estimators': [200, 500, 1000],
+    'randomforestregressor__max_depth': [None, 10, 20, 40, 60],
+    'randomforestregressor__min_samples_split': [2, 5, 10],
+    'randomforestregressor__min_samples_leaf': [1, 2, 4],
+    'randomforestregressor__max_features': ['sqrt', 'log2', None]
+}
 
     random_search = RandomizedSearchCV(
         estimator = pipeline,
         param_distributions = param_distributions,
-        n_iter = 10,
+        n_iter = 50,
         cv = 5)
 
     random_search.fit(x_train, y_train)
