@@ -17,8 +17,8 @@ model= 'Random Forest Random Search'
 
 
 root_dir = Path(__file__).resolve().parent.parent
-SMILES_file = root_dir / "Descriptors" / "BP_InChI_SMILES_fixed.txt"
-raw_properties_file = root_dir / "Descriptors" / "values_boiling_point"
+SMILES_file = root_dir / "BP_InChI_SMILES_fixed.txt"
+raw_properties_file = root_dir / "values_boiling_point"
 
 
 ## need to configure: 
