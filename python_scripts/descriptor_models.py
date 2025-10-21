@@ -126,12 +126,10 @@ def SMILES_to_BitMorgan(config):
 #############################################################
 ## MODELS
 ## train Ml model (here it's Random forest ) and test
-def Random_forest_Random_search(config, final_property_file, running_descriptor):
+def Random_forest(config, final_property_file, running_descriptor):
     
     print("Loading features from:", running_descriptor)
     features = pd.read_csv(running_descriptor, header=None)
-
-    
     dataset_RF = pd.read_csv(final_property_file, header=None)
     
 
@@ -144,8 +142,10 @@ def Random_forest_Random_search(config, final_property_file, running_descriptor)
     pipeline = make_pipeline(
         StandardScaler(),
         RandomForestRegressor(random_state=1))
+    print("Random forest ran correctly!!")
+    return pipeline, model, x_test, x_train, y_test, y_train  ## maybe this??
 
-    
+def Random_Search(config, runnning_model): 
     param_distributions = {
     'randomforestregressor__n_estimators': [200, 500, 1000],
     'randomforestregressor__max_depth': [None, 10, 20, 40, 60],
@@ -155,13 +155,13 @@ def Random_forest_Random_search(config, final_property_file, running_descriptor)
 }
 
     random_search = RandomizedSearchCV(
-        estimator = pipeline,
+        estimator = running_model.pipeline,
         param_distributions = param_distributions,
         n_iter = 50,
         cv = 5)
 
-    random_search.fit(x_train, y_train)
-    y_predict = random_search.predict(x_test)
+    random_search.fit(running_model.x_train, running_model.y_train)
+    y_predict = random_search.predict(running_model.x_test)
 
     print(f'Best score was using the following parameter set:')
     for key, val in random_search.best_params_.items():
@@ -170,16 +170,16 @@ def Random_forest_Random_search(config, final_property_file, running_descriptor)
     #production_pipeline = random_search.best_estimator_
     #production_pipeline.fit(x_train, y_train)
 
-    y_best_predict = random_search.best_estimator_.predict(x_test)
+    y_best_predict = random_search.best_estimator_.predict(running_model.x_test)
 
     ##############################################################
     ## predict and output r2 and RMSE
-    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
-    r2 = r2_score(y_test, y_best_predict)
+    rmse = np.sqrt(root_mean_squared_error(running_model.y_test, y_best_predict))
+    r2 = r2_score(running_model.y_test, y_best_predict)
     print(f'Root Mean Squared Error: {rmse}')
     print(f'R-squared: {r2}')
 
-    print(y_test[:20])
+    print(running_model.y_test[:20])
     print(y_best_predict[:20])
     print("yay, we ran!!")
     return rmse, r2
@@ -351,6 +351,11 @@ def SVR_sucessive_halving(config,final_property_file):
     print("Predicted Y values (first 20):", y_predict_test[:20])
     return r2, rmse
 
+####################################################################################
+## OPTIMIZATION ALGORITHMS 
+
+
+
 
 ##pyhton dictionary -- which functions correspond to what's in the config file
 descriptor_file = {
@@ -358,12 +363,17 @@ descriptor_file = {
 }
 
 ML_models = {
-      "Random Forest Random Search": Random_forest_Random_search,
+      "Random Forest": Random_forest,
       "SVR Grid Search": SVR_grid_search,
       "SVR Random Search": SVR_random_search,
       "SVR Sucessive Halving": SVR_sucessive_halving
 
 }
+
+Optimization_algorithms = {
+     "Random Search": Random_Search
+}
+
 ## running pre-processing functions 
 pre_processing_function_1 = convert_to_csv(config)
 pre_processing_function_2 = extract_properties_from_csv(config, pre_processing_function_1)
@@ -371,13 +381,14 @@ pre_processing_function_2 = extract_properties_from_csv(config, pre_processing_f
 ##these become the new functions
 descriptor_function = descriptor_file[config.descriptor]
 model_function = ML_models[config.model]
+optimization_function = Optimization_algorithms[config.optimization_algorithm]
 
 
 ##call the functions to execute
 running_descriptor =descriptor_function(config)
 print("descriptor_function returned:", running_descriptor)
-
-rmse, r2 = model_function(config, pre_processing_function_2, running_descriptor)
+running_model = model_function(config, pre_processing_function_2, running_descriptor)
+rmse, r2 = optimization_function(config, running_model)
 
 
 # ## compare models

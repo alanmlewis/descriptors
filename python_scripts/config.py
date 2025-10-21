@@ -6,7 +6,8 @@ from pathlib import Path
 #property, descriptor and model
 property ='Boiling_point'
 descriptor = 'Bit Morgan'
-model= 'Random Forest Random Search'
+model= 'Random Forest'
+optimization_algorithm = 'Random Search'
 
 ## CAPITALISE EACH LETTER FOR EACH WORD WHEN SELECTING MODEL
 
