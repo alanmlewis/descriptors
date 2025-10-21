@@ -145,45 +145,6 @@ def Random_forest(config, final_property_file, running_descriptor):
     print("Random forest ran correctly!!")
     return pipeline, model, x_test, x_train, y_test, y_train 
 
-def Random_Search(config, pipeline, model, x_train, x_test, y_train, y_test): 
-    param_distributions = {
-    'randomforestregressor__n_estimators': [200, 500, 1000],
-    'randomforestregressor__max_depth': [None, 10, 20, 40, 60],
-    'randomforestregressor__min_samples_split': [2, 5, 10],
-    'randomforestregressor__min_samples_leaf': [1, 2, 4],
-    'randomforestregressor__max_features': ['sqrt', 'log2', None]
-}
-
-    random_search = RandomizedSearchCV(
-        estimator = pipeline,
-        param_distributions = param_distributions,
-        n_iter = 50,
-        cv = 5)
-
-    random_search.fit(x_train, y_train)
-    y_predict = random_search.predict(x_test)
-
-    print(f'Best score was using the following parameter set:')
-    for key, val in random_search.best_params_.items():
-        print(f'>> {key} = {val}')
-
-    #production_pipeline = random_search.best_estimator_
-    #production_pipeline.fit(x_train, y_train)
-
-    y_best_predict = random_search.best_estimator_.predict(x_test)
-
-    ##############################################################
-    ## predict and output r2 and RMSE
-    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
-    r2 = r2_score(y_test, y_best_predict)
-    print(f'Root Mean Squared Error: {rmse}')
-    print(f'R-squared: {r2}')
-
-    print(y_test[:20])
-    print(y_best_predict[:20])
-    print("yay, we ran!!")
-    return rmse, r2
-
 def SVR_grid_search(config, final_property_file):
     pick_features = descriptor_file[config.descriptor]
 
@@ -354,8 +315,110 @@ def SVR_sucessive_halving(config,final_property_file):
 ####################################################################################
 ## OPTIMIZATION ALGORITHMS 
 
+def Random_Search(config, pipeline, model, x_train, x_test, y_train, y_test): 
+    param_distributions = {
+    'randomforestregressor__n_estimators': [500, 1000, 1500],
+    'randomforestregressor__max_depth': [20, 40, 60, 80, None],
+    'randomforestregressor__min_samples_split': [2, 5, 10],
+    'randomforestregressor__min_samples_leaf': [1, 2, 4],
+    'randomforestregressor__max_features': ['sqrt', 'log2'] 
+}
 
+    random_search = RandomizedSearchCV(
+        estimator = pipeline,
+        param_distributions = param_distributions,
+        n_iter = 50,
+        cv = 5)
 
+    random_search.fit(x_train, y_train)
+    y_predict = random_search.predict(x_test)
+
+    print(f'Best score was using the following parameter set:')
+    for key, val in random_search.best_params_.items():
+        print(f'>> {key} = {val}')
+
+    #production_pipeline = random_search.best_estimator_
+    #production_pipeline.fit(x_train, y_train)
+
+    y_best_predict = random_search.best_estimator_.predict(x_test)
+
+    ##############################################################
+    ## predict and output r2 and RMSE
+    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
+    r2 = r2_score(y_test, y_best_predict)
+    print(f'Root Mean Squared Error: {rmse}')
+    print(f'R-squared: {r2}')
+
+    print(y_test[:20])
+    print(y_best_predict[:20])
+    print("yay, we ran!!")
+    return rmse, r2
+
+def Grid_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
+    param_grid = {
+        'randomforestregressor__n_estimators': [200, 250, 300, 350],
+        'randomforestregressor__max_depth': [None, 5, 10],
+        'randomforestregressor__min_samples_split': [2, 3, 4, 5],
+        'randomforestregressor__min_samples_leaf': [1, 2, 3, 4]}
+
+    grid_search = GridSearchCV(
+        estimator = pipeline,
+        param_grid = param_grid,
+        n_jobs = -1,
+        cv = 5)
+
+    grid_search.fit(x_train, y_train)
+    y_predict = grid_search.predict(x_test)
+
+    print(f'Best score was using the following parameter set:')
+    for key, val in grid_search.best_params_.items():
+         print(f'>> {key} = {val}')
+
+    production_pipeline = grid_search.best_estimator_
+    production_pipeline.fit(x_train, y_train)
+    y_best_predict = production_pipeline.predict(x_test)
+
+    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
+    r2 = r2_score(y_test, y_best_predict)
+    print(f'Root Mean Squared Error: {rmse}')
+    print(f'R-squared: {r2}')
+
+    print(y_test[:20])
+    print(y_best_predict[:20])
+    return r2, rmse
+
+def Sucessive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test):
+    param_grid = {
+        'randomforestregressor__n_estimators': [200, 300, 400],
+        'randomforestregressor__max_depth': [None, 10, 20],
+        'randomforestregressor__min_samples_split': [2, 3, 4, 5],
+        'randomforestregressor__min_samples_leaf': [1, 2, 3, 4, 5]}
+
+    halving_search = HalvingGridSearchCV(
+        estimator = pipeline,
+        param_grid = param_grid,
+        factor = 3,
+        cv = 5)
+
+    halving_search.fit(x_train, y_train)
+    return_train_score = True
+    y_predict = halving_search.predict(x_test)
+
+    print(f'Best score was using the following parameter set:')
+    for key, val in halving_search.best_params_.items():
+    print(f'>> {key} = {val}')
+
+    production_pipeline = halving_search.best_estimator_
+    production_pipeline.fit(x_train, y_train)
+    y_best_predict = production_pipeline.predict(x_test)
+
+    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
+    print(f'Root Mean Squared Error: {rmse}')
+    print(f'R2 Score: {r2_score(y_test, y_best_predict)}')
+
+    print(y_test[:20])
+    print(y_best_predict[:20])
+    return r2, rmse
 
 ##pyhton dictionary -- which functions correspond to what's in the config file
 descriptor_file = {
@@ -371,7 +434,10 @@ ML_models = {
 }
 
 Optimization_algorithms = {
-     "Random Search": Random_Search
+     "Random Search": Random_Search,
+     "Grid Search": Grid_Search,
+     "Successive Halving": Successive_Halving
+
 }
 
 ## running pre-processing functions 
