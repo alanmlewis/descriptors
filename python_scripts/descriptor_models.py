@@ -143,9 +143,9 @@ def Random_forest(config, final_property_file, running_descriptor):
         StandardScaler(),
         RandomForestRegressor(random_state=1))
     print("Random forest ran correctly!!")
-    return pipeline, model, x_test, x_train, y_test, y_train  ## maybe this??
+    return pipeline, model, x_test, x_train, y_test, y_train 
 
-def Random_Search(config, runnning_model): 
+def Random_Search(config, pipeline, model, x_train, x_test, y_train, y_test): 
     param_distributions = {
     'randomforestregressor__n_estimators': [200, 500, 1000],
     'randomforestregressor__max_depth': [None, 10, 20, 40, 60],
@@ -155,13 +155,13 @@ def Random_Search(config, runnning_model):
 }
 
     random_search = RandomizedSearchCV(
-        estimator = running_model.pipeline,
+        estimator = pipeline,
         param_distributions = param_distributions,
         n_iter = 50,
         cv = 5)
 
-    random_search.fit(running_model.x_train, running_model.y_train)
-    y_predict = random_search.predict(running_model.x_test)
+    random_search.fit(x_train, y_train)
+    y_predict = random_search.predict(x_test)
 
     print(f'Best score was using the following parameter set:')
     for key, val in random_search.best_params_.items():
@@ -170,16 +170,16 @@ def Random_Search(config, runnning_model):
     #production_pipeline = random_search.best_estimator_
     #production_pipeline.fit(x_train, y_train)
 
-    y_best_predict = random_search.best_estimator_.predict(running_model.x_test)
+    y_best_predict = random_search.best_estimator_.predict(x_test)
 
     ##############################################################
     ## predict and output r2 and RMSE
-    rmse = np.sqrt(root_mean_squared_error(running_model.y_test, y_best_predict))
-    r2 = r2_score(running_model.y_test, y_best_predict)
+    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
+    r2 = r2_score(y_test, y_best_predict)
     print(f'Root Mean Squared Error: {rmse}')
     print(f'R-squared: {r2}')
 
-    print(running_model.y_test[:20])
+    print(y_test[:20])
     print(y_best_predict[:20])
     print("yay, we ran!!")
     return rmse, r2
@@ -387,8 +387,11 @@ optimization_function = Optimization_algorithms[config.optimization_algorithm]
 ##call the functions to execute
 running_descriptor =descriptor_function(config)
 print("descriptor_function returned:", running_descriptor)
-running_model = model_function(config, pre_processing_function_2, running_descriptor)
-rmse, r2 = optimization_function(config, running_model)
+
+pipeline, model, x_train, x_test, y_train, y_test = model_function(config, pre_processing_function_2, running_descriptor)
+rmse, r2 = optimization_function(config, pipeline, model, x_train, x_test, y_train, y_test )
+
+
 
 
 # ## compare models
