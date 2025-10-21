@@ -387,7 +387,7 @@ def Grid_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
     print(y_best_predict[:20])
     return r2, rmse
 
-def Sucessive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test):
+def Successive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test):
     param_grid = {
         'randomforestregressor__n_estimators': [200, 300, 400],
         'randomforestregressor__max_depth': [None, 10, 20],
@@ -406,7 +406,7 @@ def Sucessive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test)
 
     print(f'Best score was using the following parameter set:')
     for key, val in halving_search.best_params_.items():
-    print(f'>> {key} = {val}')
+        print(f'>> {key} = {val}')
 
     production_pipeline = halving_search.best_estimator_
     production_pipeline.fit(x_train, y_train)
