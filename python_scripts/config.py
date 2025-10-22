@@ -7,7 +7,7 @@ from pathlib import Path
 property ='Boiling_point'
 descriptor = 'Bit Morgan'
 model= 'Random Forest'
-optimization_algorithm = "Grid Search"
+optimization_algorithm = "Successive Halving"
 
 ## CAPITALISE EACH LETTER FOR EACH WORD WHEN SELECTING MODEL
 
