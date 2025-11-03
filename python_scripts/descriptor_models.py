@@ -145,130 +145,18 @@ def Random_forest(config, final_property_file, running_descriptor):
     print("Random forest ran correctly!!")
     return pipeline, model, x_test, x_train, y_test, y_train 
 
-def SVR_grid_search(config, final_property_file):
-    pick_features = descriptor_file[config.descriptor]
+def SVR(config,final_property_file, running_desciptor): 
+    print("Loading features from:", running_descriptor)
+    features = pd.read_csv(running_descriptor, header=None)
+    dataset_RF = pd.read_csv(final_property_file, header=None)
+    
+    #pick_features = descriptor_file[config.descriptor]
 
-    features = pd.read_csv(pick_features, header=None)
-    dataset_RF = pd.read_csv(final_property_file)
-
-    x = features
-    y = dataset_RF
-
-    accuracies = []
-
-    from sklearn.model_selection import GridSearchCV
-
-    param_grid = {
-        'svr__C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
-        'svr__epsilon': [0.001, 0.01, 0.1, 1]
-    }
-
-    pipeline = make_pipeline(
-        StandardScaler(),
-        SVR()
-    )
-
-    x_train_full, x_test, y_train_full, y_test = train_test_split(x, y, test_size = 0.2, random_state = 1)
-
-    pipeline.fit(x_train_full, y_train_full.ravel())
-
-    y_predict_test = pipeline.predict(x_test)
-
-
-    accuracy = root_mean_squared_error(y_test, y_predict_test)
-
-    accuracies.append(accuracy)
-
-    grid_search = GridSearchCV(pipeline, param_grid, cv=5, scoring='neg_root_mean_squared_error', n_jobs=-1, verbose=2)
-    grid_search.fit(x_train_full, y_train_full.ravel())
-
-    print("Best parameters:", grid_search.best_params_)
-    print("Best RMSE:", -grid_search.best_score_)
-    y_predict_test = grid_search.best_estimator_.predict(x_test)
-    r2= r2_score(y_test, y_predict_test)
-    print("R2 score:", r2)
-    rmse = root_mean_squared_error(y_test, y_predict_test)  # RMSE
-    print(f"Test RMSE: {rmse}")
-
-    print(accuracy)
-    print(y_test[:20])
-    print(y_predict_test[:20])
-    print('')
-
-
-    print(accuracies)
-    return rmse, r2
-
-def SVR_random_search(config, final_property_file):
-
-    pick_features = descriptor_file[config.descriptor]
-
-    features = pd.read_csv(pick_features, header=None)
-    dataset_RF = pd.read_csv(final_property_file)
+    #features = pd.read_csv(pick_features, header=None)
+    #dataset_RF = pd.read_csv(final_property_file)
 
     x = features
     y = dataset_RF
-
-    accuracies = []
-
-    from sklearn.model_selection import GridSearchCV
-
-    param_grid = {
-    'svr__C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
-    'svr__epsilon': [0.001, 0.01, 0.1, 1]
-    }
-
-    pipeline = make_pipeline(
-    StandardScaler(),
-    SVR()
-    )
-
-    x_train_full, x_test, y_train_full, y_test = train_test_split(x, y, test_size = 0.2, random_state = 1)
-
-    pipeline.fit(x_train_full, y_train_full.ravel())
-
-    y_predict_test = pipeline.predict(x_test)
-
-    ##
-    accuracy = root_mean_squared_error(y_test, y_predict_test)
-
-    accuracies.append(accuracy)
-
-    random_search = RandomizedSearchCV(pipeline, param_distributions=param_grid, n_iter=20, cv=10, scoring='neg_root_mean_squared_error', n_jobs=-1, verbose=2, random_state=1)
-    random_search.fit(x_train_full, y_train_full.ravel())
-    ## this bit is weird and repetitive, accuracies doesn't make sense, why are you running it twice
-
-    print("Best parameters:", random_search.best_params_)
-    print("Best RMSE:", -random_search.best_score_)
-    y_predict_test = random_search.best_estimator_.predict(x_test)
-    r2= r2_score(y_test, y_predict_test)
-    print("R2 score:", r2)
-    rmse = root_mean_squared_error(y_test, y_predict_test)  # RMSE
-    print(f"Test RMSE: {rmse}")
-
-    print(accuracy)
-    print(y_test[:20])
-    print(y_predict_test[:20])
-    print('')
-
-
-    print(accuracies)
-    return r2, rmse
-
-def SVR_sucessive_halving(config,final_property_file): 
-    pick_features = descriptor_file[config.descriptor]
-
-    features = pd.read_csv(pick_features, header=None)
-    dataset_RF = pd.read_csv(final_property_file)
-
-    x = features
-    y = dataset_RF
-
-    # Define parameter grid for SVR
-    param_grid = {
-        'svr__C': [0.001, 0.01, 0.1, 1, 10, 100, 1000],
-        'svr__epsilon': [0.001, 0.01, 0.1, 1]
-    }
 
     # Define pipeline
     pipeline = make_pipeline(
@@ -288,29 +176,7 @@ def SVR_sucessive_halving(config,final_property_file):
 
     # Print results
     print(f"Test RMSE: {rmse}")
-
-    # Halving Grid Search
-    halving_grid_search = HalvingGridSearchCV(
-        estimator=pipeline,
-        param_grid=param_grid,
-        factor=2,
-        cv=5
-    )
-
-    halving_grid_search.fit(x_train_full, y_train_full.ravel())
-
-    print("Best parameters:", halving_grid_search.best_params_)
-    print("Best RMSE from cross-validation:", halving_grid_search.best_score_)
-    y_predict_test = halving_grid_search.best_estimator_.predict(x_test)
-    r2= r2_score(y_test, y_predict_test)
-    print("R2 score:", r2)
-    rmse = root_mean_squared_error(y_test, y_predict_test)  # RMSE
-    print(f"Test RMSE: {rmse}")
-
-    # Print actual vs predicted values for first 20 samples
-    print("Actual Y values (first 20):", y_test[:20])
-    print("Predicted Y values (first 20):", y_predict_test[:20])
-    return r2, rmse
+    return r2, rmse, pipeline, model, x_test, x_train, y_test, y_train 
 
 ####################################################################################
 ## OPTIMIZATION ALGORITHMS 
@@ -352,7 +218,7 @@ def Random_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
     print(y_test[:20])
     print(y_best_predict[:20])
     print("yay, we ran!!")
-    return rmse, r2
+    return rmse, r2, y_best_predict
 
 def Grid_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
     param_grid = {
@@ -385,7 +251,7 @@ def Grid_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
 
     print(y_test[:20])
     print(y_best_predict[:20])
-    return r2, rmse
+    return r2, rmse, y_best_predict
 
 def Successive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test):
     param_grid = {
@@ -413,12 +279,14 @@ def Successive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test
     y_best_predict = production_pipeline.predict(x_test)
 
     rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
+    r2 = r2_score(y_test, y_best_predict)
+
     print(f'Root Mean Squared Error: {rmse}')
-    print(f'R2 Score: {r2_score(y_test, y_best_predict)}')
+    print(f'R2 Score: {r2}')
 
     print(y_test[:20])
     print(y_best_predict[:20])
-    return r2, rmse
+    return r2, rmse, y_best_predict
 
 ##pyhton dictionary -- which functions correspond to what's in the config file
 descriptor_file = {
@@ -427,9 +295,7 @@ descriptor_file = {
 
 ML_models = {
       "Random Forest": Random_forest,
-      "SVR Grid Search": SVR_grid_search,
-      "SVR Random Search": SVR_random_search,
-      "SVR Sucessive Halving": SVR_sucessive_halving
+      "SVR" : SVR
 
 }
 
