@@ -44,10 +44,10 @@ def convert_to_csv(config, output_file = None):
 def extract_properties_from_csv(config, output_file):
     print(f"the property I'm extracting is {config.property}")
     ##exits function if you inputted the wrong property
-    ask = input("is this correct?")
+    #ask = input("is this correct?")
     #ask.evalaute()
-    if ask == "no":
-        exit()
+    #if ask == "no":
+    #    exit()
     #if input("is this correct? please answer yes or no: ").lower() == "no":
         #exit()
     root_only_prop =os.path.splitext(output_file)[0]
