@@ -122,41 +122,40 @@ def SMILES_to_BitMorgan(config):
 
     print("SMILES to BitMorgan ran correctly")
     return bit_array_fingerprint
-
 #############################################################
-## MODELS
-## train Ml model (here it's Random forest ) and test
-def Random_forest(config, final_property_file, running_descriptor):
-    
+## spliting data
+
+def split_test_train(config, final_property_file, running_descriptor): 
     print("Loading features from:", running_descriptor)
     features = pd.read_csv(running_descriptor, header=None)
     dataset_RF = pd.read_csv(final_property_file, header=None)
     
 
     x = features
-    y = dataset_RF.values.ravel() ## flatten in 1D cause read_csv does a dataframe which is 2D
-
-    model = RandomForestRegressor(random_state=1)
+    y = dataset_RF.values.ravel() ## flatten in 1D cause read_csv does a dataframe which is 2D 
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 1)
-
+    print("It's been split!!")
+    return x_test, x_train, y_test, y_train 
+#############################################################
+## MODELS
+def Random_forest(config, final_property_file, running_descriptor, running_the_split):
+    param_distributions = {
+    'randomforestregressor__n_estimators': [500, 1000, 1500],
+    'randomforestregressor__max_depth': [20, 40, 60, 80, None],
+    'randomforestregressor__min_samples_split': [2, 5, 10],
+    'randomforestregressor__min_samples_leaf': [1, 2, 3, 4],
+    'randomforestregressor__max_features': ['sqrt', 'log2'] 
+}
+    
+    model = RandomForestRegressor(random_state=1)
     pipeline = make_pipeline(
         StandardScaler(),
         RandomForestRegressor(random_state=1))
     print("Random forest ran correctly!!")
-    return pipeline, model, x_test, x_train, y_test, y_train 
+    return pipeline, model, param_distributions
 
-def SVR(config,final_property_file, running_desciptor): 
+def SVR(config,final_property_file, running_desciptor, running_the_split): 
     print("Loading features from:", running_descriptor)
-    features = pd.read_csv(running_descriptor, header=None)
-    dataset_RF = pd.read_csv(final_property_file, header=None)
-    
-    #pick_features = descriptor_file[config.descriptor]
-
-    #features = pd.read_csv(pick_features, header=None)
-    #dataset_RF = pd.read_csv(final_property_file)
-
-    x = features
-    y = dataset_RF
 
     # Define pipeline
     pipeline = make_pipeline(
@@ -164,32 +163,18 @@ def SVR(config,final_property_file, running_desciptor):
         SVR()
     )
 
-    # Train/test split
-    x_train_full, x_test, y_train_full, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
-
     # Fit pipeline
-    pipeline.fit(x_train_full, y_train_full.ravel())
+    pipeline.fit(running_the_split.x_train, running_the_split.y_train.ravel())
 
-    # Predict and evaluate
-    y_predict_test = pipeline.predict(x_test)
-    rmse = root_mean_squared_error(y_test, y_predict_test)  # RMSE
-
-    # Print results
-    print(f"Test RMSE: {rmse}")
-    return r2, rmse, pipeline, model, x_test, x_train, y_test, y_train 
+    # Predict and evaluate --- not sure i actually need this bit now that i have optimization functions??
+    y_predict_test = pipeline.predict(running_the_split.x_test)
+    
+    return pipeline, model
 
 ####################################################################################
 ## OPTIMIZATION ALGORITHMS 
 
-def Random_Search(config, pipeline, model, x_train, x_test, y_train, y_test): 
-    param_distributions = {
-    'randomforestregressor__n_estimators': [500, 1000, 1500],
-    'randomforestregressor__max_depth': [20, 40, 60, 80, None],
-    'randomforestregressor__min_samples_split': [2, 5, 10],
-    'randomforestregressor__min_samples_leaf': [1, 2, 4],
-    'randomforestregressor__max_features': ['sqrt', 'log2'] 
-}
-
+def Random_Search(config, pipeline, model, param_distributions, x_train, x_test, y_train, y_test): 
     random_search = RandomizedSearchCV(
         estimator = pipeline,
         param_distributions = param_distributions,
@@ -220,16 +205,10 @@ def Random_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
     print("yay, we ran!!")
     return rmse, r2, y_best_predict
 
-def Grid_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
-    param_grid = {
-        'randomforestregressor__n_estimators': [200, 250, 300, 350],
-        'randomforestregressor__max_depth': [None, 5, 10],
-        'randomforestregressor__min_samples_split': [2, 3, 4, 5],
-        'randomforestregressor__min_samples_leaf': [1, 2, 3, 4]}
-
+def Grid_Search(config, pipeline, model, param_distributions, x_train, x_test, y_train, y_test):
     grid_search = GridSearchCV(
         estimator = pipeline,
-        param_grid = param_grid,
+        param_grid = param_distributions,
         n_jobs = -1,
         cv = 5)
 
@@ -320,8 +299,10 @@ optimization_function = Optimization_algorithms[config.optimization_algorithm]
 running_descriptor =descriptor_function(config)
 print("descriptor_function returned:", running_descriptor)
 
-pipeline, model, x_train, x_test, y_train, y_test = model_function(config, pre_processing_function_2, running_descriptor)
-rmse, r2 = optimization_function(config, pipeline, model, x_train, x_test, y_train, y_test )
+running_the_split = split_test_train(config, pre_processing_function_2, running_descriptor)
+
+pipeline, model = model_function(config, pre_processing_function_2, running_descriptor, running_the_split)
+r2, rmse, y_best_predict = optimization_function(config, pipeline, model)
 
 
 
