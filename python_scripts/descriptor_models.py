@@ -138,7 +138,7 @@ def split_test_train(config, final_property_file, running_descriptor):
     return x_test, x_train, y_test, y_train 
 #############################################################
 ## MODELS
-def Random_forest(config, final_property_file, running_descriptor, running_the_split):
+def Random_forest(config, running_descriptor, running_the_split):
     param_distributions = {
     'randomforestregressor__n_estimators': [500, 1000, 1500],
     'randomforestregressor__max_depth': [20, 40, 60, 80, None],
@@ -154,7 +154,7 @@ def Random_forest(config, final_property_file, running_descriptor, running_the_s
     print("Random forest ran correctly!!")
     return pipeline, model, param_distributions
 
-def SVR(config,final_property_file, running_desciptor, running_the_split): 
+def SVR(config, running_desciptor, running_the_split): 
     print("Loading features from:", running_descriptor)
 
     # Define pipeline
@@ -305,12 +305,11 @@ pipeline, model = model_function(config, pre_processing_function_2, running_desc
 r2, rmse, y_best_predict = optimization_function(config, pipeline, model)
 
 
-
-
 # ## compare models
-# def compare(rmse, r2): 
+# def compare(rmse, r2, y_best_predict): 
 # ## make grpah 
 # graph ==
 
 # return graph
 
+#comparing_models = compare(rmse, r2, y_best_predict)
