@@ -1,0 +1,2 @@
+nohup: ignoring input
+python: can't open file '/home/cat/descriptors/python_scripts/test/descriptor_models.py': [Errno 2] No such file or directory

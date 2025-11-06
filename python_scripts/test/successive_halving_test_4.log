@@ -1,0 +1,23 @@
+nohup: ignoring input
+../descriptor_models.py: 2: import: not found
+../descriptor_models.py: 3: import: not found
+../descriptor_models.py: 4: import: not found
+../descriptor_models.py: 5: import: not found
+../descriptor_models.py: 6: import: not found
+../descriptor_models.py: 7: from: not found
+../descriptor_models.py: 8: from: not found
+../descriptor_models.py: 9: from: not found
+../descriptor_models.py: 10: from: not found
+../descriptor_models.py: 11: from: not found
+../descriptor_models.py: 12: from: not found
+../descriptor_models.py: 13: from: not found
+../descriptor_models.py: 14: from: not found
+../descriptor_models.py: 15: from: not found
+../descriptor_models.py: 17: from: not found
+../descriptor_models.py: 18: from: not found
+../descriptor_models.py: 19: from: not found
+../descriptor_models.py: 20: import: not found
+../descriptor_models.py: 21: from: not found
+../descriptor_models.py: 22: from: not found
+../descriptor_models.py: 25: import: not found
+../descriptor_models.py: 27: Syntax error: word unexpected (expecting ")")

@@ -122,6 +122,10 @@ def SMILES_to_BitMorgan(config):
 
     print("SMILES to BitMorgan ran correctly")
     return bit_array_fingerprint
+#############################################################
+## spliting the data
+
+def split_test_train():
 
 #############################################################
 ## MODELS
@@ -176,7 +180,7 @@ def SVR(config,final_property_file, running_desciptor):
 
     # Print results
     print(f"Test RMSE: {rmse}")
-    return r2, rmse, pipeline, model, x_test, x_train, y_test, y_train 
+    return pipeline, model, x_test, x_train, y_test, y_train 
 
 ####################################################################################
 ## OPTIMIZATION ALGORITHMS 
@@ -253,6 +257,8 @@ def Grid_Search(config, pipeline, model, x_train, x_test, y_train, y_test):
     print(y_best_predict[:20])
     return r2, rmse, y_best_predict
 
+
+## ignore this thing
 def Successive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test):
     param_grid = {
         'randomforestregressor__n_estimators': [200, 300, 400],
@@ -321,7 +327,7 @@ running_descriptor =descriptor_function(config)
 print("descriptor_function returned:", running_descriptor)
 
 pipeline, model, x_train, x_test, y_train, y_test = model_function(config, pre_processing_function_2, running_descriptor)
-rmse, r2 = optimization_function(config, pipeline, model, x_train, x_test, y_train, y_test )
+r2, rmse, y_best_predict = optimization_function(config, pipeline, model, x_train, x_test, y_train, y_test )
 
 
 
