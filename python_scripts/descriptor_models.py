@@ -21,6 +21,10 @@ import matplotlib.pyplot as plt
 from sklearn.experimental import enable_halving_search_cv
 from sklearn.model_selection import HalvingGridSearchCV
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
 
 import config
 ## print the configation just to check what im doing
@@ -284,32 +288,97 @@ Optimization_algorithms = {
      "Successive Halving": Successive_Halving
 
 }
-
 ## running pre-processing functions 
 pre_processing_function_1 = convert_to_csv(config)
 pre_processing_function_2 = extract_properties_from_csv(config, pre_processing_function_1)
-# exceution
-##these become the new functions
+
 descriptor_function = descriptor_file[config.descriptor]
-model_function = ML_models[config.model]
-optimization_function = Optimization_algorithms[config.optimization_algorithm]
 
-
-##call the functions to execute
+##call the functions to execute -- this system will work for multiple pairs of opts and models 
 running_descriptor =descriptor_function(config)
 print("descriptor_function returned:", running_descriptor)
+results= []
 
-running_the_split = split_test_train(config, pre_processing_function_2, running_descriptor)
+for model_name in config.model:
+    print(f"Current model running: {model_name}")
 
-pipeline, model = model_function(config, pre_processing_function_2, running_descriptor, running_the_split)
-r2, rmse, y_best_predict = optimization_function(config, pipeline, model)
+    model_function = ML_models[model_name]
+    running_the_split = split_test_train(config, pre_processing_function_2, running_descriptor)
+
+    pipeline, model, x_train, x_test, y_train, y_test = model_function(config, pre_processing_function_2, running_descriptor)
+
+    optimization_function = Optimization_algorithms[config.optimization_algorithm]
+    rmse, r2, y_best_predict = optimization_function(config, pipeline, model, x_train, x_test, y_train, y_test)
+
+    # store results in a list of dicts
+    results.append({
+        "Model": model_name,
+        "Optimization": config.optimization_algorithm,
+        "RMSE": rmse,
+        "R2": r2,
+        "y_true": y_test,
+        "y_pred": y_best_predict
+    })
+
+# Convert to DataFrame
+results_df = pd.DataFrame(results)
+print("The results as dataframe are:")
+print(results_df[["Model", "Optimization", "RMSE", "R2"]])
+
+####################
+## compare models
+
+def compare_models(results_df):
+    
+    sns.set(style="whitegrid")
+
+    ## RMSEs compare
+    plt.figure(figsize=(8, 5))
+    sns.barplot(data=results_df, x="Model", y="RMSE", hue="Optimization", palette="Blues")
+    plt.title("RMSE Comparison (lower = better)")
+    plt.xticks(rotation=30)
+    plt.tight_layout()
+    plt.show()
+
+    ## R2 comparison
+    plt.figure(figsize=(8, 5))
+    sns.barplot(data=results_df, x="Model", y="R2", hue="Optimization", palette="Greens")
+    plt.title("R² Comparison (higher = better)")
+    plt.xticks(rotation=30)
+    plt.tight_layout()
+    plt.savefig(f"R2_Plot_{model}") ## this might be wrong, check model name
+    plt.show()
 
 
-# ## compare models
-# def compare(rmse, r2, y_best_predict): 
-# ## make grpah 
-# graph ==
+    ## pairty + residual
+    for _, row in results_df.iterrows():
+        y_true = np.array(row["y_true"])
+        y_pred = np.array(row["y_pred"])
+        model_name = row["Model"]
+        opt_name = row["Optimization"]
 
-# return graph
+        ## paroty
+        plt.figure(figsize=(5, 5))
+        plt.scatter(y_true, y_pred, alpha=0.6)
+        min_val, max_val = min(y_true.min(), y_pred.min()), max(y_true.max(), y_pred.max())
+        plt.plot([min_val, max_val], [min_val, max_val], 'r--')
+        plt.title(f"{model_name} ({opt_name}) — True vs Predicted")
+        plt.xlabel("y_true")
+        plt.ylabel("y_pred")
+        plt.tight_layout()
+        plt.show()
+        plt.savefig(f"ParityPlot_{model_name}_{opt_name}")
 
-#comparing_models = compare(rmse, r2, y_best_predict)
+        ## residual
+        residuals = y_true - y_pred
+        plt.figure(figsize=(5, 5))
+        plt.scatter(y_pred, residuals, alpha=0.6)
+        plt.hlines(0, xmin=y_pred.min(), xmax=y_pred.max(), colors='red', linestyles='--')
+        plt.title(f"{model_name} ({opt_name}) — Residuals vs Predictions")
+        plt.xlabel("y_pred")
+        plt.ylabel("Residual (y_true − y_pred)")
+        plt.tight_layout()
+        plt.show()
+        plt.savefig(f"ResidualPlot_{model_name}_{opt_name}")
+
+comparing_models = compare_models(results_df)
