@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 341
+    "XGBoost" XGBoost
+            ^
+SyntaxError: ':' expected after dictionary key

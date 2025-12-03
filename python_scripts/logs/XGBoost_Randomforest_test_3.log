@@ -1,0 +1,8 @@
+nohup: ignoring input
+Boiling_point
+Bit Morgan
+('Random Forest', 'XGBoost')
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 341, in <module>
+    "XGBoost": XGBoost
+NameError: name 'XGBoost' is not defined. Did you mean: 'XGboost'?

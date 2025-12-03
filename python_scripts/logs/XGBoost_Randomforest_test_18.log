@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 421
+    plt.scatter(result["y_true"], result["y_pred"], label=f"{result["Model"]} (R2={result["R2"]:.2f})", alpha=0.6)## alpha controls transparency of points, set decimal points to 2 atm
+                                                                     ^^^^^
+SyntaxError: f-string: unmatched '['

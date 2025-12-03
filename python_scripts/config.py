@@ -1,15 +1,19 @@
 #config.py
-#lib
+#libs
 import os
 from pathlib import Path
 
 #property, descriptor and model
-property ='Boiling_point'
+
+property ='boiling_point'
 descriptor = 'Bit Morgan'
-model= 'Random Forest'
+model= 'Random Forest', 'CNN'
 optimization_algorithm = "Random Search"
 
-## CAPITALISE EACH LETTER FOR EACH WORD WHEN SELECTING MODEL
+##do you want graphs? 
+compare_graphs = "Yes".lower()
+
+## CAPITALISE EACH LETTER FOR START OF EACH WORD WHEN SELECTING MODEL
 
 #files to input
 #SMILES_file = r"C:\Users\cathe\OneDrive\Documents\MChem_Project\Descriptors_taken_from_datasets\compounds_Boiling point_InChI_SMILES_fixed.txt"
@@ -26,8 +30,5 @@ raw_properties_file = root_dir / "datasets_and_SMILES"/"values_boiling_point"
 # property file 
 
 
-## using YAML for config file as user friendly 
+## using YAML for config file as user friendly?? 
 
-## CODE RUN AND REORGANISATION
-## page 73 excerises 2 and 3
-## chapters 17 and 18

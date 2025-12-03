@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 251
+    def __innit__(self, input.dim): 
+                             ^
+SyntaxError: invalid syntax
