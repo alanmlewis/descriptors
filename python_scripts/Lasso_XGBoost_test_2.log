@@ -1,0 +1,258 @@
+nohup: ignoring input
+boiling_point
+('Bit Morgan', 'RDKit')
+('XGBoost', 'Lasso')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+Molecule 1 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 2 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 3 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 4 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 5 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 6 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 7 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 8 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 9 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 10 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 11 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 12 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 13 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 14 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 15 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 16 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 17 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 18 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 19 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 20 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 21 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 22 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 23 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 24 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 25 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 26 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 27 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 28 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 29 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 30 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 31 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 32 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 33 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 34 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 35 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 36 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 37 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 38 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 39 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 40 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 41 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 42 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 43 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 44 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 45 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 46 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 47 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 48 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 49 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 50 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 51 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 52 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 53 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 54 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 55 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 56 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 57 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 58 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 59 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 60 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 61 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 62 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 63 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 64 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 65 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 66 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 67 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 68 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 69 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 70 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 71 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 72 Fingerprint: [0 0 0 ... 0 0 1]
+Molecule 73 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 74 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 75 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 76 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 77 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 78 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 79 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 80 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 81 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 82 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 83 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 84 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 85 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 86 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 87 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 88 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 89 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 90 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 91 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 92 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 93 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 94 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 95 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 96 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 97 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 98 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 99 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 100 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 101 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 102 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 103 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 104 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 105 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 106 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 107 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 108 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 109 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 110 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 111 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 112 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 113 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 114 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 115 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 116 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 117 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 118 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 119 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 120 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 121 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 122 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 123 Fingerprint: [0 1 0 ... 0 0 0]
+Molecule 124 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 125 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 126 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 127 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 128 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 129 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 130 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 131 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 132 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 133 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 134 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 135 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 136 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 137 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 138 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 139 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 140 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 141 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 142 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 143 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 144 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 145 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 146 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 147 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 148 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 149 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 150 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 151 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 152 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 153 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 154 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 155 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 156 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 157 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 158 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 159 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 160 Fingerprint: [0 0 0 ... 0 1 0]
+Molecule 161 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 162 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 163 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 164 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 165 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 166 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 167 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 168 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 169 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 170 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 171 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 172 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 173 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 174 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 175 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 176 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 177 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 178 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 179 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 180 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 181 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 182 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 183 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 184 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 185 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 186 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 187 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 188 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 189 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 190 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 191 Fingerprint: [0 0 0 ... 0 0 0]
+[[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+(191, 4096)
+SMILES to BitMorgan ran correctly
+descriptor_function returned: bit_array_fingerprint.csv
+Current model running: XGBoost
+Loading features from: bit_array_fingerprint.csv
+It's been split!!
+loading feaure from: bit_array_fingerprint.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 500
+>> max_depth = 4
+>> learning_rate = 0.1
+>> colsample_bytree = 0.8
+Root Mean Squared Error: 6.330552613299113
+R-squared: 0.6295016341113496
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[299.34482 228.53172 395.21332 324.48157 243.31628 384.3433  290.00247
+ 361.623   328.4742  258.08276 329.9481  254.9055  255.13763 333.00583
+ 379.7737  274.8372  370.00803 295.92804 321.59418 270.03162]
+yay, we ran!!
+Current model running: Lasso
+Loading features from: bit_array_fingerprint.csv
+It's been split!!
+loading feature from: bit_array_fingerprint.csv
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 498, in <module>
+    rmse, r2, y_best_predict = optimization_function(config, pipeline, param_distributions, x_test, x_train, y_test, y_train)
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 350, in Random_Search
+    random_search.fit(x_train, y_train)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_search.py", line 1051, in fit
+    self._run_search(evaluate_candidates)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_search.py", line 1992, in _run_search
+    evaluate_candidates(
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_search.py", line 997, in evaluate_candidates
+    out = parallel(
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/utils/parallel.py", line 82, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+  File "/home/cat/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1986, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/cat/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1914, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/utils/parallel.py", line 147, in __call__
+    return self.function(*args, **kwargs)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 847, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/base.py", line 345, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'alphas' for estimator Lasso(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'precompute', 'random_state', 'selection', 'tol', 'warm_start'].

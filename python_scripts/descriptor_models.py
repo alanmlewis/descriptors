@@ -27,6 +27,8 @@ from sklearn.model_selection import HalvingGridSearchCV
 
 import xgboost as xgb
 from xgboost import XGBRegressor
+from sklearn.linear_model import LassoCV as LassoCVmodel
+from sklearn.linear_model import Lasso as LassoModel
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -121,7 +123,7 @@ def RDkit_Descriptors(config):
     # #export to csv
     df = pd.DataFrame(arr, columns=descriptor_names)
     descriptor_csv = "rdkit_descriptors.csv"
-    df.to_csv(descriptor_csv, index=False)
+    df.to_csv(descriptor_csv, header=False, index=False)
 
     print(arr.shape)
     print("RDKit descriptors ran correctly")
@@ -167,6 +169,8 @@ def SMILES_to_BitMorgan(config):
 
     print("SMILES to BitMorgan ran correctly")
     return bit_array_fingerprint
+
+#def SMILES_to_Matrices(
 #############################################################
 
 ## spliting data
@@ -211,10 +215,16 @@ def SVR(config, pre_processing_function_2, running_descriptor, x_test, x_train, 
     )
 
     # Fit pipeline
-    pipeline.fit(running_the_split.x_train, running_the_split.y_train.ravel())
+    #pipeline.fit(running_the_split.x_train, running_the_split.y_train.ravel())
     # Predict and evaluate --- not sure i actually need this bit now that i have optimization functions??
-    y_predict_test = pipeline.predict(running_the_split.x_test)
+    #y_predict_test = pipeline.predict(running_the_split.x_test)
     
+    param_distributions = {
+                    "svr__C": np.logspace(-2, 3, 20),
+                    "svr__gamma": ["scale", "auto"] + list(np.logspace(-4, 1, 10)),
+                    "svr__epsilon": np.logspace(-3, 0, 10),
+                    "svr__kernel": ["rbf"]
+                    }
     return pipeline, param_distributions
 
 def XGBoost(config, pre_processing_function_2, running_descriptor, x_test, x_train, y_test, y_train):
@@ -232,12 +242,20 @@ def XGBoost(config, pre_processing_function_2, running_descriptor, x_test, x_tra
     return pipeline, param_distributions
 
 def LassoCV(config, pre_processing_function_2, running_descriptor, x_test, x_train, y_test, y_train):
-    print("loading features from:", running_desciptor)
-    pipeline = LassoCV()
+    print("loading features from:", running_descriptor)
+    pipeline = LassoCVmodel()
     param_distributions = {"alphas":[0.001, 0.01, 0.1, 1, 10],
             "random_state": [42],
             "n_jobs": [5]
         }
+    return pipeline, param_distributions
+
+def Lasso(config, pre_processing_function_2, running_descriptor, x_test, x_train, y_test, y_train):
+    print("loading feature from:", running_descriptor)
+    pipeline = LassoModel()
+    param_distributions = {
+            "alpha": np.logspace(-4, 2, 50)
+            }
     return pipeline, param_distributions
 
 ##park this for now
@@ -420,7 +438,7 @@ def Successive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test
 ##pyhton dictionary -- which functions correspond to what's in the config file
 descriptor_file = {
       "Bit Morgan": SMILES_to_BitMorgan, 
-      "RDKit Descriptors": RDkit_Descriptors
+      "RDKit": RDkit_Descriptors
 }
 
 ML_models = {
@@ -428,7 +446,8 @@ ML_models = {
       "SVR" : SVR,
       "XGBoost": XGBoost,
       "LassoCV": LassoCV,
-      "CNN": CNN
+      "CNN": CNN,
+      "Lasso": Lasso
 }
 
 Optimization_algorithms = {
@@ -441,8 +460,8 @@ Optimization_algorithms = {
 pre_processing_function_1 = convert_to_csv(config)
 pre_processing_function_2 = extract_properties_from_csv(config, pre_processing_function_1)
 
-for descriptor in config.descriptors:
-    descriptor_function = descriptor_file[config.descriptor]
+for desc in config.descriptor:
+    descriptor_function = descriptor_file[desc]
 
 ##call the functions to execute -- this system will work for multiple pairs of opts and models 
     running_descriptor =descriptor_function(config)
@@ -454,22 +473,22 @@ for descriptor in config.descriptors:
         model_function = ML_models[model_name]
         x_test, x_train, y_test, y_train = split_test_train(config, pre_processing_function_2, running_descriptor)
 
-        if model_name == "CNN":
+        #if model_name == "CNN":
          ## processing into 3D for CNN: convert to NumPy float32
-            x_train_np = x_train.values.astype(np.float32)
-            x_test_np  = x_test.values.astype(np.float32)
+            #x_train_np = x_train.values.astype(np.float32)
+            #x_test_np  = x_test.values.astype(np.float32)
 
     ##Add channel dimension
-            x_train_tensor = torch.from_numpy(x_train_np[:, None, :]).float()
-            x_test_tensor  = torch.from_numpy(x_test_np[:, None, :]).float()
+            #x_train_tensor = torch.from_numpy(x_train_np[:, None, :]).float()
+            #x_test_tensor  = torch.from_numpy(x_test_np[:, None, :]).float()
 
     ##y as float32 tensors
-            y_train_tensor = torch.from_numpy(y_train.astype(np.float32))[:, None].float()
-            y_test_tensor  = torch.from_numpy(y_test.astype(np.float32))[:, None].float()
-            x_train = x_train_tensor
-            x_test = x_test_tensor
-            y_train = y_train_tensor
-            y_test = y_test_tensor
+            #y_train_tensor = torch.from_numpy(y_train.astype(np.float32))[:, None].float()
+            #y_test_tensor  = torch.from_numpy(y_test.astype(np.float32))[:, None].float()
+            #x_train = x_train_tensor
+            #x_test = x_test_tensor
+            #y_train = y_train_tensor
+            #y_test = y_test_tensor
 
 
         pipeline, param_distributions = model_function(config, pre_processing_function_2, running_descriptor, x_test, x_train, y_test, y_train)
@@ -493,14 +512,14 @@ results_df = pd.DataFrame(results)
 print("The results as dataframe are:")
 print(results_df[["Model", "Optimization", "RMSE", "R2", "y_true", "y_pred"]])
 ## save dataframe as its own output file
-filename = "_".join(config.models) + config.descriptor +".parquet"
+filename = "_".join(config.model) + "_" + "_".join(config.descriptor) + ".parquet"
 results_df.to_parquet(f"../results/{config.property}/parquet_files/{filename}.parquet", engine='fastparquet')
 
 
 ###################################################
 ## compare models
 
-def compare_models(results_df):
+def compare_models(results_df, config):
     
     sns.set(style="whitegrid")
 
@@ -514,7 +533,7 @@ def compare_models(results_df):
     plt.title("RMSE Comparison (lower = better)")
     plt.xticks(rotation=15)
     plt.tight_layout()
-    plt.savefig("RMSE_comparison.png")
+    plt.savefig(f"../results/{config.property}/RMSE_comparison.png")
     plt.close()
 
     ## R2 comparison
@@ -530,7 +549,7 @@ def compare_models(results_df):
     plt.ylabel("Predicted values")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f"R2_Plot.png")## figure out hwo to add the specific model to this
+    plt.savefig(f"../results/boiling_point/R2_Plot.png")## figure out hwo to add the specific model to this
     plt.close()
 
 
@@ -550,11 +569,11 @@ def compare_models(results_df):
         plt.scatter(y_true, y_pred, alpha=0.6)
         min_val, max_val = min(y_true.min(), y_pred.min()), max(y_true.max(), y_pred.max())
         plt.plot([min_val, max_val], [min_val, max_val], 'r--')
-        plt.title(f"{spaceless_model_name} ({spaceless_opt_name}) — True vs Predicted")
+        plt.title(f"../results/boiling_point/{spaceless_model_name}_{spaceless_opt_name}_True_vs_Predicted")
         plt.xlabel("y_true")
         plt.ylabel("y_pred")
         plt.tight_layout()
-        plt.savefig(f"ParityPlot_{spaceless_model_name}_{spaceless_opt_name}")
+        plt.savefig(f"../results/boiling_point/ParityPlot_{spaceless_model_name}_{spaceless_opt_name}")
         plt.close()
 
         ## residual
@@ -562,15 +581,15 @@ def compare_models(results_df):
         plt.figure(figsize=(5, 5))
         plt.scatter(y_pred, residuals, alpha=0.6)
         plt.hlines(0, xmin=y_pred.min(), xmax=y_pred.max(), colors='red', linestyles='--')
-        plt.title(f"{spaceless_model_name} ({spaceless_opt_name}) — Residuals vs Predictions")
+        plt.title(f"../results/boiling_point/{spaceless_model_name}_{spaceless_opt_name}_Residuals_vs_Predictions")
         plt.xlabel("y_pred")
         plt.ylabel("Residual (y_true − y_pred)")
         plt.tight_layout()
-        plt.savefig(f"ResidualPlot_{spaceless_model_name}_{spaceless_opt_name}")
+        plt.savefig(f"../results/boiling_point/ResidualPlot_{spaceless_model_name}_{spaceless_opt_name}")
         plt.close()
 
-if config.compare_graphs == "yes":
-    comparing_models = compare_models(results_df)
+if str(config.compare_graphs).lower() == "yes":
+    comparing_models = compare_models(results_df, config)
     print("compare models has run")
 else: 
     print("config models comparision set to No.") 

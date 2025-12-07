@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 221
+    erWarning: The total space of parameters 5 is smaller than n_iter=50. Running 5 iterations. For exhaustive searches, use GridSearchCV.
+                                                                                                                                          ^
+IndentationError: unindent does not match any outer indentation level

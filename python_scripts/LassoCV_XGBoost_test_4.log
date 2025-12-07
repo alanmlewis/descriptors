@@ -1,0 +1,11 @@
+nohup: ignoring input
+boiling_point
+('Bit Morgan', 'RDKit')
+('XGBoost', 'LassoCV')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 447, in <module>
+    descriptor_function = descriptor_file[config.desc]
+AttributeError: module 'config' has no attribute 'desc'

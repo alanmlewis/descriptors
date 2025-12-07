@@ -6,12 +6,12 @@ from pathlib import Path
 #property, descriptor and model
 
 property ='boiling_point'
-descriptor = 'Bit Morgan'
-model= 'Random Forest', 'CNN'
+descriptor = 'Bit Morgan', 'RDKit'
+model= 'XGBoost', 'Lasso'
 optimization_algorithm = "Random Search"
 
 ##do you want graphs? 
-compare_graphs = "Yes".lower()
+compare_graphs = "yes"
 
 ## CAPITALISE EACH LETTER FOR START OF EACH WORD WHEN SELECTING MODEL
 
