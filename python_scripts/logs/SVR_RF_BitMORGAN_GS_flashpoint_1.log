@@ -1,0 +1,219 @@
+nohup: ignoring input
+flashpoint
+('Bit Morgan',)
+('SVR', 'Random Forest')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+Molecule 1 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 2 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 3 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 4 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 5 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 6 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 7 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 8 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 9 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 10 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 11 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 12 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 13 Fingerprint: [0 0 1 ... 0 0 0]
+Molecule 14 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 15 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 16 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 17 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 18 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 19 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 20 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 21 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 22 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 23 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 24 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 25 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 26 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 27 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 28 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 29 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 30 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 31 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 32 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 33 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 34 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 35 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 36 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 37 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 38 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 39 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 40 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 41 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 42 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 43 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 44 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 45 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 46 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 47 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 48 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 49 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 50 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 51 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 52 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 53 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 54 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 55 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 56 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 57 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 58 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 59 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 60 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 61 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 62 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 63 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 64 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 65 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 66 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 67 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 68 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 69 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 70 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 71 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 72 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 73 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 74 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 75 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 76 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 77 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 78 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 79 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 80 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 81 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 82 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 83 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 84 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 85 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 86 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 87 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 88 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 89 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 90 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 91 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 92 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 93 Fingerprint: [0 0 1 ... 0 0 0]
+Molecule 94 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 95 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 96 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 97 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 98 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 99 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 100 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 101 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 102 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 103 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 104 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 105 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 106 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 107 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 108 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 109 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 110 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 111 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 112 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 113 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 114 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 115 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 116 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 117 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 118 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 119 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 120 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 121 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 122 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 123 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 124 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 125 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 126 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 127 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 128 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 129 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 130 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 131 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 132 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 133 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 134 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 135 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 136 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 137 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 138 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 139 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 140 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 141 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 142 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 143 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 144 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 145 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 146 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 147 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 148 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 149 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 150 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 151 Fingerprint: [0 0 0 ... 0 0 0]
+[[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+(151, 4096)
+SMILES to BitMorgan ran correctly
+descriptor_function returned: bit_array_fingerprint.csv
+Current model running: SVR
+Loading features from: bit_array_fingerprint.csv
+It's been split!!
+Loading features from: bit_array_fingerprint.csv
+Best score was using the following parameter set:
+>> svr__C = 1000.0
+>> svr__epsilon = 1.0
+>> svr__gamma = 0.004641588833612782
+>> svr__kernel = rbf
+Root Mean Squared Error: 7.474757931246626
+R-squared: -0.01595472922835106
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[177.28751704 271.99997246 145.76899927 111.7095996  374.41973894
+ 271.99997246 114.7764467  137.69378498 133.78007375 153.78502834
+ 176.13304715 168.67056841 194.47044486 180.31419996 113.35671056
+ 150.05084552 165.99115474 153.11072707 136.5205156  156.95479523]
+Current model running: Random Forest
+Loading features from: bit_array_fingerprint.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = log2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__n_estimators = 1500
+Root Mean Squared Error: 6.906295597019805
+R-squared: 0.25959988699411907
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[168.85821293 238.12849421 143.4528178  156.26264607 258.52781334
+ 238.12849421 155.1543125  146.56537411 156.89365436 168.27540107
+ 150.08062031 194.91808031 195.34530692 193.20108457 159.44113195
+ 151.05507976 152.69308039 154.27010884 151.17784808 152.63503788]
+The results as dataframe are:
+    Descriptor          Model Optimization  ...        R2  y_true      y_pred
+0   Bit Morgan            SVR  Grid Search  ...  7.474758     208  177.287517
+1   Bit Morgan            SVR  Grid Search  ...  7.474758     350  271.999972
+2   Bit Morgan            SVR  Grid Search  ...  7.474758     211  145.768999
+3   Bit Morgan            SVR  Grid Search  ...  7.474758     116  111.709600
+4   Bit Morgan            SVR  Grid Search  ...  7.474758     182  374.419739
+..         ...            ...          ...  ...       ...     ...         ...
+57  Bit Morgan  Random Forest  Grid Search  ...  6.906296     193  145.127539
+58  Bit Morgan  Random Forest  Grid Search  ...  6.906296     150  175.587623
+59  Bit Morgan  Random Forest  Grid Search  ...  6.906296     139  162.541455
+60  Bit Morgan  Random Forest  Grid Search  ...  6.906296     174  181.791789
+61  Bit Morgan  Random Forest  Grid Search  ...  6.906296     179  160.340305
+
+[62 rows x 7 columns]
+compare models has run

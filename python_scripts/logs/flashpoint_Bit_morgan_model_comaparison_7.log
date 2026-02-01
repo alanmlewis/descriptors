@@ -1,0 +1,13 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 103, in <module>
+    comparing_models = compare_models(same_descriptor_parquets, config)
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 30, in compare_models
+    dataframe = pd.concat(dataframes, ignore_index = True)
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 382, in concat
+    op = _Concatenator(
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 507, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate

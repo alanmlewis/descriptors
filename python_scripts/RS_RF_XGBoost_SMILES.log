@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 189
+    max_smiles_length= max(len(smiles)for smiles in smiles_list) 
+                                                                 ^
+IndentationError: unindent does not match any outer indentation level

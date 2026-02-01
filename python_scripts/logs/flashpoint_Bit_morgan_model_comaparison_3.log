@@ -1,0 +1,5 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 98, in <module>
+    comparing_models = compare_model_code(same_descriptor_parquets, config)
+NameError: name 'compare_model_code' is not defined. Did you mean: 'compare_models'?

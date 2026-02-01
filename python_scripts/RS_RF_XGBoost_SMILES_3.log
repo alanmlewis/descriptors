@@ -1,0 +1,63 @@
+nohup: ignoring input
+boiling_point
+('SMILES',)
+('Random Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 40
+Root Mean Squared Error: 6.434931333916448
+R-squared: 0.6044553866868686
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[283.25762    272.12768667 387.38942    338.68116667 310.22306
+ 366.15865333 288.70033333 352.77256667 315.25035333 296.89408
+ 348.22452    287.17459333 284.04886    324.4199     336.77414667
+ 277.03192    325.24354667 301.97088    338.22149333 301.8406    ]
+yay, we ran!!
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 500
+>> max_depth = 4
+>> learning_rate = 0.05
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 6.292291035364212
+R-squared: 0.6383778587852256
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[274.7423  238.70885 412.73315 371.72998 340.38828 409.3795  264.3776
+ 361.0809  321.05502 293.23132 361.4446  286.19656 262.01743 325.47308
+ 347.4788  291.1385  327.99597 315.048   360.61978 285.75034]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model   Optimization  ...        R2  y_true      y_pred
+0      SMILES  Random Forest  Random Search  ...  0.604455  285.15  283.257620
+1      SMILES  Random Forest  Random Search  ...  0.604455  243.75  272.127687
+2      SMILES  Random Forest  Random Search  ...  0.604455  482.05  387.389420
+3      SMILES  Random Forest  Random Search  ...  0.604455  364.65  338.681167
+4      SMILES  Random Forest  Random Search  ...  0.604455  263.55  310.223060
+..        ...            ...            ...  ...       ...     ...         ...
+73     SMILES        XGBoost  Random Search  ...  0.638378  145.15  207.688721
+74     SMILES        XGBoost  Random Search  ...  0.638378  305.00  347.496216
+75     SMILES        XGBoost  Random Search  ...  0.638378  318.25  271.805695
+76     SMILES        XGBoost  Random Search  ...  0.638378  288.25  274.352325
+77     SMILES        XGBoost  Random Search  ...  0.638378  184.55  262.183594
+
+[78 rows x 7 columns]

@@ -1,0 +1,65 @@
+nohup: ignoring input
+Viscosity_as_logVis
+('RDKit',)
+('Random Forest', 'Lasso')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 5
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = log2
+>> randomforestregressor__max_depth = 40
+Root Mean Squared Error: 0.6351907130552631
+R-squared: 0.3472813815153324
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54925164 1.35818751 1.54925164 1.35818751 1.58709174 1.47524086
+ 1.5586158  2.23180143 1.58709174 1.73742928 1.83718832 1.64899907
+ 2.30929521 1.54925164 2.50606245 1.47524086 1.43284344 1.54925164
+ 2.20979808 1.54925164]
+yay, we ran!!
+Current model running: Lasso
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feature from: rdkit_descriptors.csv
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 508, in <module>
+    rmse, r2, y_best_predict = optimization_function(config, pipeline, param_distributions, x_test, x_train, y_test, y_train)
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 360, in Random_Search
+    random_search.fit(x_train, y_train)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_search.py", line 1051, in fit
+    self._run_search(evaluate_candidates)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_search.py", line 1992, in _run_search
+    evaluate_candidates(
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_search.py", line 997, in evaluate_candidates
+    out = parallel(
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/utils/parallel.py", line 82, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+  File "/home/cat/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1986, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/cat/.local/lib/python3.10/site-packages/joblib/parallel.py", line 1914, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/utils/parallel.py", line 147, in __call__
+    return self.function(*args, **kwargs)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/model_selection/_validation.py", line 847, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/pipeline.py", line 319, in set_params
+    self._set_params("steps", **kwargs)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/utils/metaestimators.py", line 69, in _set_params
+    super().set_params(**params)
+  File "/home/cat/.local/lib/python3.10/site-packages/sklearn/base.py", line 345, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'alpha' for estimator Pipeline(steps=[('simpleimputer', SimpleImputer(strategy='median')),
+                ('standardscaler', StandardScaler()),
+                ('lasso', Lasso(max_iter=2000))]). Valid parameters are: ['memory', 'steps', 'transform_input', 'verbose'].

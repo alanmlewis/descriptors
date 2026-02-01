@@ -1,0 +1,65 @@
+nohup: ignoring input
+flashpoint
+('RDKit',)
+('Random Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+(151, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 40
+Root Mean Squared Error: 4.484155337802129
+R-squared: 0.8684143831334935
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[198.16541667 319.381      195.96525    178.59346667 212.5115
+ 300.917      153.4915     149.11066667 154.25966667  95.449
+ 137.74141905 155.70763333 238.89866667 180.07533333 127.4914
+ 165.49833333 137.3734381  164.96066667 157.55466667 192.62985   ]
+yay, we ran!!
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> subsample = 0.8
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 500
+>> max_depth = 6
+>> learning_rate = 0.1
+>> colsample_bytree = 0.8
+Root Mean Squared Error: 3.6864802356740145
+R-squared: 0.9398918151855469
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[201.5659  323.50064 197.84799 138.36957 221.86684 296.991   151.67216
+ 149.3498  154.86726  83.78822 138.15715 176.76752 252.67017 179.31235
+ 120.64839 172.69844 140.5599  172.41072 157.6293  185.54152]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model   Optimization  ...        R2  y_true      y_pred
+0       RDKit  Random Forest  Random Search  ...  0.868414     208  198.165417
+1       RDKit  Random Forest  Random Search  ...  0.868414     350  319.381000
+2       RDKit  Random Forest  Random Search  ...  0.868414     211  195.965250
+3       RDKit  Random Forest  Random Search  ...  0.868414     116  178.593467
+4       RDKit  Random Forest  Random Search  ...  0.868414     182  212.511500
+..        ...            ...            ...  ...       ...     ...         ...
+57      RDKit        XGBoost  Random Search  ...  0.939892     193  187.572372
+58      RDKit        XGBoost  Random Search  ...  0.939892     150  150.479187
+59      RDKit        XGBoost  Random Search  ...  0.939892     139  137.051834
+60      RDKit        XGBoost  Random Search  ...  0.939892     174  178.718582
+61      RDKit        XGBoost  Random Search  ...  0.939892     179  180.224426
+
+[62 rows x 7 columns]
+compare models has run

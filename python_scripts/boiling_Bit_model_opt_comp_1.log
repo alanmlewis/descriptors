@@ -1,0 +1,9 @@
+nohup: ignoring input
+matched parquet files:
+       XGBoost_Random Forest_Bit Morgan.parquet.parquet
+       XGBoost_Lasso_Bit Morgan.parquet.parquet
+       XGBoost_SVR_Bit Morgan.parquet.parquet
+       Random Forest_Lasso_Bit Morgan.parquet.parquet
+       Lasso_SVR_Bit Morgan.parquet.parquet
+       Random Forest_SVR_Bit Morgan.parquet.parquet
+compare models has run

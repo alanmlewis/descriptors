@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 612
+    print("email sent.)
+          ^
+SyntaxError: unterminated string literal (detected at line 612)

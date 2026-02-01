@@ -1,0 +1,23 @@
+nohup: ignoring input
+Viscosity_as_logVis
+('Bit Morgan',)
+('Random Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_enthalpy_of_vaporization_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_enthalpy_of_vaporization_Viscosity_as_logVis_Viscosity_as_logVis.csv
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 477, in <module>
+    running_descriptor =descriptor_function(config)
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 135, in SMILES_to_BitMorgan
+    smiles_list = pd.read_csv(config.SMILES_file, header=None, names=["SMILES"])
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: "/home/cat/descriptors/datasets_and_SMILES/compounds_enthalphy of vaporization_InChI_SMILES.txt'"

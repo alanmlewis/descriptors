@@ -1,10 +1,10 @@
 nohup: ignoring input
-boiling_point
-('Bit Morgan', 'RDKit')
-('XGBoost', 'Lasso')
-Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
-the property I'm extracting is boiling_point
-Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flashpoint
+('Bit Morgan',)
+('SVR', 'Random Forest')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
 Molecule 1 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 2 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 3 Fingerprint: [0 0 0 ... 0 0 0]
@@ -17,7 +17,7 @@ Molecule 9 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 10 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 11 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 12 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 13 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 13 Fingerprint: [0 0 1 ... 0 0 0]
 Molecule 14 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 15 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 16 Fingerprint: [0 0 0 ... 0 0 0]
@@ -76,7 +76,7 @@ Molecule 68 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 69 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 70 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 71 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 72 Fingerprint: [0 0 0 ... 0 0 1]
+Molecule 72 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 73 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 74 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 75 Fingerprint: [0 0 0 ... 0 0 0]
@@ -97,7 +97,7 @@ Molecule 89 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 90 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 91 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 92 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 93 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 93 Fingerprint: [0 0 1 ... 0 0 0]
 Molecule 94 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 95 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 96 Fingerprint: [0 0 0 ... 0 0 0]
@@ -127,7 +127,7 @@ Molecule 119 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 120 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 121 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 122 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 123 Fingerprint: [0 1 0 ... 0 0 0]
+Molecule 123 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 124 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 125 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 126 Fingerprint: [0 0 0 ... 0 0 0]
@@ -156,32 +156,66 @@ Molecule 148 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 149 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 150 Fingerprint: [0 0 0 ... 0 0 0]
 Molecule 151 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 152 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 153 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 154 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 155 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 156 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 157 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 158 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 159 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 160 Fingerprint: [0 0 0 ... 0 1 0]
-Molecule 161 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 162 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 163 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 164 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 165 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 166 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 167 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 168 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 169 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 170 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 171 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 172 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 173 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 174 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 175 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 176 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 177 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 178 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 179 Fingerprint: [0 0 0 ... 0 0 0]
-Molecule 180 Fingerprint: [0 0 0 ... 0 0 0]
+[[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+(151, 4096)
+SMILES to BitMorgan ran correctly
+descriptor_function returned: bit_array_fingerprint.csv
+Current model running: SVR
+Loading features from: bit_array_fingerprint.csv
+It's been split!!
+Loading features from: bit_array_fingerprint.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = scale
+>> svr__epsilon = 0.01
+>> svr__C = 1000.0
+Root Mean Squared Error: 7.629159791035605
+R-squared: -0.10253572433264235
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[174.21757589 254.93698719 128.70119807 121.84338834 377.68340624
+ 254.93698719 115.10018319 125.87830368 128.16664811 155.84255387
+ 166.26238049 177.85553658 196.84960004 190.80794628 115.79797643
+ 139.76053348 155.02835648 140.98986192 125.80384532 149.3696439 ]
+yay, we ran!!
+Current model running: Random Forest
+Loading features from: bit_array_fingerprint.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = log2
+>> randomforestregressor__max_depth = 20
+Root Mean Squared Error: 6.887589001803277
+R-squared: 0.2675892313862963
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[168.8604244  238.06140153 143.66303476 156.08135089 256.09323478
+ 238.06140153 154.895312   146.76046219 157.14744245 168.07286423
+ 150.25747903 193.17146701 195.80667788 192.16965375 159.70350172
+ 152.60941698 152.16076126 155.01775868 151.14386303 151.82979019]
+yay, we ran!!
+The results as dataframe are:
+    Descriptor          Model   Optimization  ...        R2  y_true      y_pred
+0   Bit Morgan            SVR  Random Search  ... -0.102536     208  174.217576
+1   Bit Morgan            SVR  Random Search  ... -0.102536     350  254.936987
+2   Bit Morgan            SVR  Random Search  ... -0.102536     211  128.701198
+3   Bit Morgan            SVR  Random Search  ... -0.102536     116  121.843388
+4   Bit Morgan            SVR  Random Search  ... -0.102536     182  377.683406
+..         ...            ...            ...  ...       ...     ...         ...
+57  Bit Morgan  Random Forest  Random Search  ...  0.267589     193  145.621847
+58  Bit Morgan  Random Forest  Random Search  ...  0.267589     150  176.335303
+59  Bit Morgan  Random Forest  Random Search  ...  0.267589     139  163.362352
+60  Bit Morgan  Random Forest  Random Search  ...  0.267589     174  181.184139
+61  Bit Morgan  Random Forest  Random Search  ...  0.267589     179  160.846793
+
+[62 rows x 7 columns]
+compare models has run

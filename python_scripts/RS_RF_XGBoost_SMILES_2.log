@@ -1,0 +1,13 @@
+nohup: ignoring input
+boiling_point
+('SMILES',)
+('Random Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 522, in <module>
+    running_descriptor =descriptor_function(config)
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 181, in SMILES_to_Matrices
+    smiles_list = df['SMILES'].dropna().astype(str).str.strip().str.replace(r'\s+', '', regex=True).tolist()
+UnboundLocalError: local variable 'df' referenced before assignment

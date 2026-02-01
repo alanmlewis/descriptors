@@ -1,0 +1,63 @@
+nohup: ignoring input
+Viscosity_as_logVis
+('RDKit',)
+('Random Forest', 'SVR')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 10
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = log2
+>> randomforestregressor__max_depth = None
+Root Mean Squared Error: 0.6387585088921329
+R-squared: 0.3324923681803056
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54934756 1.35822333 1.54934756 1.35822333 1.58733096 1.47713198
+ 1.54950618 2.24195868 1.58733096 1.73779579 1.83778201 1.64969005
+ 2.22940097 1.54934756 2.40231848 1.47713198 1.44212999 1.54934756
+ 2.20966469 1.54934756]
+yay, we ran!!
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.46415888336127775
+>> svr__C = 26.366508987303583
+Root Mean Squared Error: 0.6185273876344759
+R-squared: 0.413125581200786
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.52101995 1.41504324 1.52101995 1.41504324 1.5428026  1.57807771
+ 1.69046915 2.18682886 1.5428026  1.69172676 1.90982009 1.68707668
+ 2.74666788 1.52101995 2.61660722 1.57807771 1.66530494 1.52101995
+ 2.12692    1.52101995]
+yay, we ran!!
+The results as dataframe are:
+    Descriptor          Model   Optimization  ...        R2  y_true    y_pred
+0        RDKit  Random Forest  Random Search  ...  0.332492   1.571  1.549348
+1        RDKit  Random Forest  Random Search  ...  0.332492   0.954  1.358223
+2        RDKit  Random Forest  Random Search  ...  0.332492   1.534  1.549348
+3        RDKit  Random Forest  Random Search  ...  0.332492   1.779  1.358223
+4        RDKit  Random Forest  Random Search  ...  0.332492   1.190  1.587331
+..         ...            ...            ...  ...       ...     ...       ...
+117      RDKit            SVR  Random Search  ...  0.413126   1.411  2.126920
+118      RDKit            SVR  Random Search  ...  0.413126   1.013  1.578078
+119      RDKit            SVR  Random Search  ...  0.413126   1.954  1.521020
+120      RDKit            SVR  Random Search  ...  0.413126   0.979  1.542803
+121      RDKit            SVR  Random Search  ...  0.413126   1.762  2.186829
+
+[122 rows x 7 columns]
+compare models has run

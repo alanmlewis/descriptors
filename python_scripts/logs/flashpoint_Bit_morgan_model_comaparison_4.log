@@ -1,0 +1,7 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 98, in <module>
+    comparing_models = compare_models(same_descriptor_parquets, config)
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 26, in compare_models
+    sns.set(style="whitegrid")
+NameError: name 'sns' is not defined

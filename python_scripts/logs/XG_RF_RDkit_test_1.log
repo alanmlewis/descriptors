@@ -1,0 +1,65 @@
+nohup: ignoring input
+boiling_point
+('RDKit',)
+('Random Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 60
+Root Mean Squared Error: 4.680998597554123
+R-squared: 0.8892423198855974
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[276.11242667 268.03180667 440.36023333 357.94356    276.61788
+ 397.38066667 288.23546    398.33351333 315.20139333 293.97162667
+ 366.97994667 279.43284667 238.97859333 341.82122    357.39882667
+ 289.06436667 361.57587333 274.89794    352.55989333 304.14672   ]
+yay, we ran!!
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> subsample = 0.8
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 500
+>> max_depth = 4
+>> learning_rate = 0.1
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 3.8821218466884657
+R-squared: 0.9476042024065108
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[276.96548 255.86514 463.47638 363.715   271.1191  417.06998 302.21616
+ 389.07526 326.29752 290.03134 374.68573 270.91476 233.75659 352.15955
+ 374.0041  292.45255 385.8436  266.21774 354.724   288.47125]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model   Optimization  ...        R2  y_true      y_pred
+0       RDKit  Random Forest  Random Search  ...  0.889242  285.15  276.112427
+1       RDKit  Random Forest  Random Search  ...  0.889242  243.75  268.031807
+2       RDKit  Random Forest  Random Search  ...  0.889242  482.05  440.360233
+3       RDKit  Random Forest  Random Search  ...  0.889242  364.65  357.943560
+4       RDKit  Random Forest  Random Search  ...  0.889242  263.55  276.617880
+..        ...            ...            ...  ...       ...     ...         ...
+73      RDKit        XGBoost  Random Search  ...  0.947604  145.15  182.916794
+74      RDKit        XGBoost  Random Search  ...  0.947604  305.00  338.024719
+75      RDKit        XGBoost  Random Search  ...  0.947604  318.25  306.178040
+76      RDKit        XGBoost  Random Search  ...  0.947604  288.25  287.848541
+77      RDKit        XGBoost  Random Search  ...  0.947604  184.55  197.758118
+
+[78 rows x 7 columns]
+compare models has run

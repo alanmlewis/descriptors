@@ -1,0 +1,13 @@
+nohup: ignoring input
+matched parquet files:
+       XGBoost_Lasso_RDKit.parquet.parquet
+       Random Forest_SVR_RDKit.parquet.parquet
+       Lasso_XGBoost_RDKit.parquet.parquet
+       SVR_XGBoost_RDKit.parquet.parquet
+       Random Forest_XGBoost_RDKit.parquet.parquet
+       XGBoost_SVR_RDKit.parquet.parquet
+       SVR_Random Forest_RDKit.parquet.parquet
+       XGBoost_Random Forest_RDKit.parquet.parquet
+       SVR_Lasso_RDKit.parquet.parquet
+       Random Forest_Lasso_RDKit.parquet.parquet
+compare models has run

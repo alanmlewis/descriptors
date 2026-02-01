@@ -1,0 +1,7 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 102, in <module>
+    comparing_models = compare_models(same_descriptor_parquets, config)
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 29, in compare_models
+    dataframe = pd.concat(dataframes, ignore_index = True)
+NameError: name 'pd' is not defined. Did you mean: 'p'?

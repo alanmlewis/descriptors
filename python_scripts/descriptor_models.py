@@ -14,11 +14,12 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.datasets import make_regression
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline
+from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.model_selection import RandomizedSearchCV
 
-from sklearn.svm import SVR
+from sklearn.svm import SVR as SVRModel
 from sklearn.model_selection import GridSearchCV
 from sklearn.preprocessing import OneHotEncoder
 import matplotlib.pyplot as plt
@@ -32,8 +33,11 @@ from sklearn.linear_model import Lasso as LassoModel
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import textwrap
 
 
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
 
 import config
 ## print the configation just to check what im doing
@@ -170,7 +174,45 @@ def SMILES_to_BitMorgan(config):
     print("SMILES to BitMorgan ran correctly")
     return bit_array_fingerprint
 
-#def SMILES_to_Matrices(
+def SMILES_to_Matrices(config): 
+    df = pd.read_csv(config.SMILES_file, header=None, names=['SMILES'])
+
+## Convert column to a list of strings and remove anything unwanted
+    smiles_list = df['SMILES'].dropna().astype(str).str.strip().str.replace(r'\s+', '', regex=True).tolist()
+
+## set vocab up and enumerate (i.e. give each character a numerical value corresponding to position in list)
+    vocab = ('#', '%', "(", ")",'@','+','-','0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '=', 'B', 'C', 'F', 'H', 'I', 'N', 'O', 'P', 'S', "[", "]", 'c', 'i', 'l', 'n',"o", 'r', 's','/', "\\",".")
+    char_to_ind = {char: ind for ind, char in enumerate(vocab)}
+## define the matrix as N x L where N is charcters in vocab and L is the length of smiles string
+    vocab_size=len(vocab)
+
+    max_smiles_length= max(len(smiles)for smiles in smiles_list) 
+## flattened matrices
+    vectors = [] 
+    for smiles in smiles_list:
+            smiles_length= len(smiles)
+            one_hot_matrix = np.zeros((smiles_length,vocab_size), dtype=int) ## make a massive matrix of zeros
+            for i, char in enumerate(smiles):
+                if char in char_to_ind:
+            ## using char_to_ind as a dictionary
+                    one_hot_matrix[i, char_to_ind[char]]= 1
+                else: 
+                ## for every value in smiles, if it is also in vocab change the 0 to a 1. If the value in smiles 
+    ## is non existent in vocab, throw an error and say what the character was. 
+                    raise ValueError("the character",char,"does not exist in the vocabulary")
+        ## make padded matrices for consistency
+            padded_matrix= np.pad(one_hot_matrix,((0,max_smiles_length - smiles_length),(0, 0)), mode='constant',constant_values=0)
+        ## flatten matrix into vector for algorithm to read it
+            flattened_matrix= padded_matrix.flatten()
+            #flattened_string = ''.join(map(str, flattened_matrix))
+            #smile_string_with_label = flattened_string + ' '
+            #vectors.append(smile_string_with_label)
+            vectors.append(flattened_matrix)
+    temp_df = pd.DataFrame(vectors) 
+    SMILES_matrices_csv = "SMILES_matrices.csv"
+    temp_df.to_csv(SMILES_matrices_csv, header=False, index=False)
+    print(f"flattened one hot matrices all saved without SMILES lables and seperators added.")
+    return SMILES_matrices_csv
 #############################################################
 
 ## spliting data
@@ -210,8 +252,9 @@ def SVR(config, pre_processing_function_2, running_descriptor, x_test, x_train, 
 
     # Define pipeline
     pipeline = make_pipeline(
+        SimpleImputer(strategy="mean"),
         StandardScaler(),
-        SVR()
+        SVRModel()
     )
 
     # Fit pipeline
@@ -243,7 +286,11 @@ def XGBoost(config, pre_processing_function_2, running_descriptor, x_test, x_tra
 
 def LassoCV(config, pre_processing_function_2, running_descriptor, x_test, x_train, y_test, y_train):
     print("loading features from:", running_descriptor)
-    pipeline = LassoCVmodel()
+    pipeline = make_pipeline(
+            SimpleImputer(strategy="median"),
+            StandardScaler(),
+            LassoCVmodel(max_iter=2000) ## may want to up this to 10000 for morgan
+            )
     param_distributions = {"alphas":[0.001, 0.01, 0.1, 1, 10],
             "random_state": [42],
             "n_jobs": [5]
@@ -252,9 +299,13 @@ def LassoCV(config, pre_processing_function_2, running_descriptor, x_test, x_tra
 
 def Lasso(config, pre_processing_function_2, running_descriptor, x_test, x_train, y_test, y_train):
     print("loading feature from:", running_descriptor)
-    pipeline = LassoModel()
+    pipeline = make_pipeline(
+            SimpleImputer(strategy="median"),
+            StandardScaler(),
+            LassoModel(max_iter=2000)
+                        )
     param_distributions = {
-            "alpha": np.logspace(-4, 2, 50)
+            "lasso__alpha": np.logspace(-4, 2, 50)
             }
     return pipeline, param_distributions
 
@@ -345,7 +396,8 @@ def Random_Search(config, pipeline, param_distributions, x_test, x_train, y_test
         estimator = pipeline,
         param_distributions = param_distributions,
         n_iter = 50,
-        cv = 5)
+        cv = 5,
+        n_jobs = 4)
 
     random_search.fit(x_train, y_train)
     y_predict = random_search.predict(x_test)
@@ -369,13 +421,14 @@ def Random_Search(config, pipeline, param_distributions, x_test, x_train, y_test
     print(y_test[:20])
     print(y_best_predict[:20])
     print("yay, we ran!!")
-    return rmse, r2, y_best_predict
+    optimizer_object = random_search
+    return rmse, r2, y_best_predict, optimizer_object
 
-def Grid_Search(config, pipeline, model, param_distributions, x_train, x_test, y_train, y_test):
+def Grid_Search(config, pipeline, param_distributions, x_test, x_train, y_test, y_train):
     grid_search = GridSearchCV(
         estimator = pipeline,
         param_grid = param_distributions,
-        n_jobs = -1,
+        n_jobs = 10,
         cv = 5)
 
     grid_search.fit(x_train, y_train)
@@ -396,7 +449,8 @@ def Grid_Search(config, pipeline, model, param_distributions, x_train, x_test, y
 
     print(y_test[:20])
     print(y_best_predict[:20])
-    return r2, rmse, y_best_predict
+    optimizer_object = grid_search
+    return r2, rmse, y_best_predict, optimizer_object
 
 
 ## ignore this thing
@@ -438,7 +492,8 @@ def Successive_Halving(config, pipeline, model, x_train, x_test, y_train, y_test
 ##pyhton dictionary -- which functions correspond to what's in the config file
 descriptor_file = {
       "Bit Morgan": SMILES_to_BitMorgan, 
-      "RDKit": RDkit_Descriptors
+      "RDKit": RDkit_Descriptors,
+      "SMILES": SMILES_to_Matrices
 }
 
 ML_models = {
@@ -495,101 +550,47 @@ for desc in config.descriptor:
 
         optimization_function = Optimization_algorithms[config.optimization_algorithm]
     
-        rmse, r2, y_best_predict = optimization_function(config, pipeline, param_distributions, x_test, x_train, y_test, y_train)
+        rmse, r2, y_best_predict, optimizer_object = optimization_function(config, pipeline, param_distributions, x_test, x_train, y_test, y_train)
 
-    # store results in a list of dicts
-        results.append({
-            "Model": model_name,
-            "Optimization": config.optimization_algorithm,
-            "RMSE": rmse,
-            "R2": r2,
-            "y_true": y_test,
-            "y_pred": y_best_predict
-    })
+    
+    # store results in a list of dicts -- CHANGED TO BE SEPERATE ROWS FOR PY ARROW TO WORK
+        for yt, yp in zip(y_test, y_best_predict):
+            results.append({
+                "Descriptor": desc,
+                "Model": model_name,
+                "Optimization": config.optimization_algorithm,
+                "RMSE": rmse,
+                "R2": r2,
+                "y_true": yt,
+                "y_pred": yp,
+                **optimizer_object.best_params_ ##idk if this will work
+                })
 
 ## convert to dataframe (to see and for later)
 results_df = pd.DataFrame(results)
 print("The results as dataframe are:")
-print(results_df[["Model", "Optimization", "RMSE", "R2", "y_true", "y_pred"]])
+print(results_df[["Descriptor", "Model", "Optimization", "RMSE", "R2", "y_true", "y_pred"]])
 ## save dataframe as its own output file
-filename = "_".join(config.model) + "_" + "_".join(config.descriptor) + ".parquet"
-results_df.to_parquet(f"../results/{config.property}/parquet_files/{filename}.parquet", engine='fastparquet')
+#import pyarrow as pa
 
+#results_df["y_true"] = results_df["y_true"].apply(lambda x: pa.array(x))
+#results_df["y_pred"] = results_df["y_pred"].apply(lambda x: pa.array(x))
 
-###################################################
-## compare models
+filename = "_".join(map(str, config.model)) + "_" + "_".join(map(str, config.descriptor))
+results_df.to_parquet(f"../new_results/{config.property}/parquet_files/{filename}.parquet", index=False)
 
-def compare_models(results_df, config):
-    
-    sns.set(style="whitegrid")
+##SHAP ANALYSIS -- maybe this isnt needed since running in seperate file?
+#import shap_analysis
+#shap_analysis.running_shap()
+#print("shap sucessfully ran")
+#print("files saved")
 
-    ## RMSEs comparison
-    plt.figure(figsize=(12, 12))
-    ax = sns.barplot(data=results_df, x="Model", y="RMSE", hue="Optimization", palette="Blues"
-            )
-    for p in ax.patches: ## for each bar as a rectangle
-        ax.annotate(f'{p.get_height():.3f}', (p.get_x() + p.get_width() / 2., p.get_height()), ha= "center", va="bottom", fontsize = 12) ## add RMSE values at the top of each bar 
-
-    plt.title("RMSE Comparison (lower = better)")
-    plt.xticks(rotation=15)
-    plt.tight_layout()
-    plt.savefig(f"../results/{config.property}/RMSE_comparison.png")
-    plt.close()
-
-    ## R2 comparison
-    plt.figure(figsize=(12,12))
-    for result in results:
-        plt.scatter(result["y_true"], result["y_pred"], label=f"{result['Model']} (R2={result['R2']:.2f})", alpha=0.6)## alpha controls transparency of points, set decimal points to 2 atm
-    min_val = min(min(res["y_true"]) for res in results)
-    max_val = max(max(res["y_true"]) for res in results)
-    plt.plot([min_val, max_val], [min_val, max_val], "k--", label="Perfect Prediction")
-
-    plt.title("R² Comparison (higher = better)")
-    plt.xlabel("True values") 
-    plt.ylabel("Predicted values")
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(f"../results/boiling_point/R2_Plot.png")## figure out hwo to add the specific model to this
-    plt.close()
-
-
-    ## pairty + residual
-    for _, row in results_df.iterrows():
-        y_true = np.array(row["y_true"])
-        y_pred = np.array(row["y_pred"])
-        model_name = row["Model"]
-        opt_name = row["Optimization"]
-        
-        spaceless_model_name = model_name.replace(" ", "_") 
-        spaceless_opt_name = opt_name.replace(" ", "_")
-
-
-        ## parity
-        plt.figure(figsize=(5, 5))
-        plt.scatter(y_true, y_pred, alpha=0.6)
-        min_val, max_val = min(y_true.min(), y_pred.min()), max(y_true.max(), y_pred.max())
-        plt.plot([min_val, max_val], [min_val, max_val], 'r--')
-        plt.title(f"../results/boiling_point/{spaceless_model_name}_{spaceless_opt_name}_True_vs_Predicted")
-        plt.xlabel("y_true")
-        plt.ylabel("y_pred")
-        plt.tight_layout()
-        plt.savefig(f"../results/boiling_point/ParityPlot_{spaceless_model_name}_{spaceless_opt_name}")
-        plt.close()
-
-        ## residual
-        residuals = y_true - y_pred
-        plt.figure(figsize=(5, 5))
-        plt.scatter(y_pred, residuals, alpha=0.6)
-        plt.hlines(0, xmin=y_pred.min(), xmax=y_pred.max(), colors='red', linestyles='--')
-        plt.title(f"../results/boiling_point/{spaceless_model_name}_{spaceless_opt_name}_Residuals_vs_Predictions")
-        plt.xlabel("y_pred")
-        plt.ylabel("Residual (y_true − y_pred)")
-        plt.tight_layout()
-        plt.savefig(f"../results/boiling_point/ResidualPlot_{spaceless_model_name}_{spaceless_opt_name}")
-        plt.close()
-
-if str(config.compare_graphs).lower() == "yes":
-    comparing_models = compare_models(results_df, config)
-    print("compare models has run")
-else: 
-    print("config models comparision set to No.") 
+#####################################################
+##NOTIFICATION EMAIL
+#import notify 
+#try: 
+ #   notify.notify()
+#except: 
+ #   print("couldn't sent the email."
+#else: 
+ #   print("email sent.)

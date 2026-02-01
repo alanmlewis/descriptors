@@ -1,0 +1,7 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 100, in <module>
+    comparing_models = compare_models(same_descriptor_parquets, config)
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 32, in compare_models
+    ax = sns.barplot(data=results_df, x="Model", y="RMSE", hue="Optimization", palette="Blues")
+NameError: name 'results_df' is not defined

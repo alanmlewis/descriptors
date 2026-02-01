@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 50
+    wrapped_title = "\n".join(textwrap.wrap(f"R2 comparision - {model_names_str}")
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?

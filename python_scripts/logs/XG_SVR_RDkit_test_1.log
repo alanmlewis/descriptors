@@ -1,0 +1,64 @@
+nohup: ignoring input
+boiling_point
+('RDKit',)
+('SVR', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.0001
+>> svr__epsilon = 0.1
+>> svr__C = 1000.0
+Root Mean Squared Error: 3.851221137994414
+R-squared: 0.9492526190899495
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[280.66919102 244.95871287 482.03001391 358.25175196 282.18920774
+ 424.08923889 293.50421362 409.94312135 296.65409452 296.26359898
+ 361.29462977 276.2509806  226.1786622  337.88604453 364.90020893
+ 286.31134656 397.1127128  261.47762572 364.95632364 297.36736607]
+yay, we ran!!
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 500
+>> max_depth = 4
+>> learning_rate = 0.05
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 3.863469852909617
+R-squared: 0.9486039293362875
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[281.76773 260.14206 460.68695 363.20297 274.42847 412.23257 302.03
+ 392.50632 326.9429  292.24423 376.83765 268.44107 227.14586 350.86853
+ 371.15665 286.3539  384.00565 273.3904  358.82794 300.12454]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor    Model   Optimization      RMSE        R2  y_true      y_pred
+0       RDKit      SVR  Random Search  3.851221  0.949253  285.15  280.669191
+1       RDKit      SVR  Random Search  3.851221  0.949253  243.75  244.958713
+2       RDKit      SVR  Random Search  3.851221  0.949253  482.05  482.030014
+3       RDKit      SVR  Random Search  3.851221  0.949253  364.65  358.251752
+4       RDKit      SVR  Random Search  3.851221  0.949253  263.55  282.189208
+..        ...      ...            ...       ...       ...     ...         ...
+73      RDKit  XGBoost  Random Search  3.863470  0.948604  145.15  182.680420
+74      RDKit  XGBoost  Random Search  3.863470  0.948604  305.00  343.192200
+75      RDKit  XGBoost  Random Search  3.863470  0.948604  318.25  301.407471
+76      RDKit  XGBoost  Random Search  3.863470  0.948604  288.25  285.223419
+77      RDKit  XGBoost  Random Search  3.863470  0.948604  184.55  204.208740
+
+[78 rows x 7 columns]
+compare models has run

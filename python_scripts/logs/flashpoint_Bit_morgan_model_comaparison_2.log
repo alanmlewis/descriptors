@@ -1,0 +1,5 @@
+nohup: ignoring input
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 88
+    wrapped_title = "\n".join(textwrap.wrap(f"{config.property}_{spaceless_opt_name}_Residuals_vs_Predictions")
+                             ^
+SyntaxError: '(' was never closed

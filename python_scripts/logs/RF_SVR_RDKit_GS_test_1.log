@@ -1,0 +1,61 @@
+nohup: ignoring input
+boiling_point
+('RDKit',)
+('SVR', 'Random Forest')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__C = 1000.0
+>> svr__epsilon = 0.001
+>> svr__gamma = 0.00035938136638046257
+>> svr__kernel = rbf
+Root Mean Squared Error: 3.4682165005650645
+R-squared: 0.9666232068622655
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[283.39949894 242.71303469 476.40308006 358.98677539 273.28386716
+ 426.54281999 301.02625733 405.71078196 295.80634413 303.63027772
+ 379.16660745 277.38396638 221.02219016 343.19643902 366.34207941
+ 285.2664676  394.09492954 257.56136135 368.25855877 290.28580551]
+Current model running: Random Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__n_estimators = 1500
+Root Mean Squared Error: 4.680998597554123
+R-squared: 0.8892423198855974
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[276.11242667 268.03180667 440.36023333 357.94356    276.61788
+ 397.38066667 288.23546    398.33351333 315.20139333 293.97162667
+ 366.97994667 279.43284667 238.97859333 341.82122    357.39882667
+ 289.06436667 361.57587333 274.89794    352.55989333 304.14672   ]
+The results as dataframe are:
+   Descriptor          Model Optimization  ...        R2  y_true      y_pred
+0       RDKit            SVR  Grid Search  ...  3.468217  285.15  283.399499
+1       RDKit            SVR  Grid Search  ...  3.468217  243.75  242.713035
+2       RDKit            SVR  Grid Search  ...  3.468217  482.05  476.403080
+3       RDKit            SVR  Grid Search  ...  3.468217  364.65  358.986775
+4       RDKit            SVR  Grid Search  ...  3.468217  263.55  273.283867
+..        ...            ...          ...  ...       ...     ...         ...
+73      RDKit  Random Forest  Grid Search  ...  4.680999  145.15  211.777847
+74      RDKit  Random Forest  Grid Search  ...  4.680999  305.00  334.443173
+75      RDKit  Random Forest  Grid Search  ...  4.680999  318.25  299.960487
+76      RDKit  Random Forest  Grid Search  ...  4.680999  288.25  285.021807
+77      RDKit  Random Forest  Grid Search  ...  4.680999  184.55  223.539820
+
+[78 rows x 7 columns]
+compare models has run

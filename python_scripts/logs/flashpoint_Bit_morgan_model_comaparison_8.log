@@ -1,0 +1,14 @@
+nohup: ignoring input
+matched parquet files:
+  XGBoost_Random Forest_Bit Morgan.parquet.parquet
+  XGBoost_Lasso_Bit Morgan.parquet.parquet
+  XGBoost_SVR_Bit Morgan.parquet.parquet
+  Random Forest_Lasso_Bit Morgan.parquet.parquet
+  Lasso_SVR_Bit Morgan.parquet.parquet
+  Random Forest_SVR_Bit Morgan.parquet.parquet
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 98, in <module>
+    comparing_models = compare_models(same_descriptor_parquets, config)
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 50, in compare_models
+    wrapped_title = "\n".join(textwrap.wrap(f"R2 comparision - {model_names_str}"))
+NameError: name 'textwrap' is not defined
