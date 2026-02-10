@@ -1,0 +1,70 @@
+flashpoint
+('RDKit',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+(151, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.00035938136638046257
+>> svr__epsilon = 0.004641588833612777
+>> svr__C = 297.63514416313194
+Root Mean Squared Error: 4.517892216640902
+R-squared: 0.8644094917735231
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[201.35223967 341.2470151  207.3812591  162.41252651 235.22782313
+ 311.20270819 157.10693586 148.5213227  157.6769402   80.65975592
+ 134.4487882  155.66340905 219.44084172 183.27859069 120.57104837
+ 176.53698609 126.68538773 175.2971398  154.59109845 189.99247317]
+yay, we ran!!
+x_train size: 120
+x_test size: 31
+Descriptor for the SHAP analysis was: ('RDKit',)
+  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [00:01<00:33,  1.12s/it]  6%|▋         | 2/31 [00:02<00:31,  1.10s/it] 10%|▉         | 3/31 [00:03<00:31,  1.11s/it] 13%|█▎        | 4/31 [00:04<00:30,  1.13s/it] 16%|█▌        | 5/31 [00:05<00:29,  1.13s/it] 19%|█▉        | 6/31 [00:06<00:28,  1.12s/it] 23%|██▎       | 7/31 [00:07<00:26,  1.12s/it] 26%|██▌       | 8/31 [00:08<00:25,  1.12s/it] 29%|██▉       | 9/31 [00:10<00:24,  1.12s/it] 32%|███▏      | 10/31 [00:11<00:23,  1.13s/it] 35%|███▌      | 11/31 [00:12<00:22,  1.14s/it] 39%|███▊      | 12/31 [00:13<00:21,  1.15s/it] 42%|████▏     | 13/31 [00:14<00:20,  1.14s/it] 45%|████▌     | 14/31 [00:15<00:19,  1.14s/it] 48%|████▊     | 15/31 [00:16<00:18,  1.14s/it] 52%|█████▏    | 16/31 [00:18<00:16,  1.13s/it] 55%|█████▍    | 17/31 [00:19<00:16,  1.14s/it] 58%|█████▊    | 18/31 [00:20<00:14,  1.13s/it] 61%|██████▏   | 19/31 [00:21<00:13,  1.12s/it] 65%|██████▍   | 20/31 [00:22<00:12,  1.11s/it] 68%|██████▊   | 21/31 [00:23<00:11,  1.10s/it] 71%|███████   | 22/31 [00:24<00:09,  1.10s/it] 74%|███████▍  | 23/31 [00:25<00:08,  1.09s/it] 77%|███████▋  | 24/31 [00:26<00:07,  1.09s/it] 81%|████████  | 25/31 [00:27<00:06,  1.09s/it] 84%|████████▍ | 26/31 [00:29<00:05,  1.10s/it] 87%|████████▋ | 27/31 [00:30<00:04,  1.09s/it] 90%|█████████ | 28/31 [00:31<00:03,  1.09s/it] 94%|█████████▎| 29/31 [00:32<00:02,  1.10s/it] 97%|█████████▋| 30/31 [00:33<00:01,  1.11s/it]100%|██████████| 31/31 [00:34<00:00,  1.11s/it]100%|██████████| 31/31 [00:34<00:00,  1.12s/it]
+SHAP ran correctly, and file was saved
+shap sucessfully ran
+files saved
+The results as dataframe are:
+   Descriptor Model             Optimization  ...        R2  y_true      y_pred
+0       RDKit   SVR  Random_Search_optimizer  ...  0.864409     208  201.352240
+1       RDKit   SVR  Random_Search_optimizer  ...  0.864409     350  341.247015
+2       RDKit   SVR  Random_Search_optimizer  ...  0.864409     211  207.381259
+3       RDKit   SVR  Random_Search_optimizer  ...  0.864409     116  162.412527
+4       RDKit   SVR  Random_Search_optimizer  ...  0.864409     182  235.227823
+5       RDKit   SVR  Random_Search_optimizer  ...  0.864409     298  311.202708
+6       RDKit   SVR  Random_Search_optimizer  ...  0.864409     157  157.106936
+7       RDKit   SVR  Random_Search_optimizer  ...  0.864409     149  148.521323
+8       RDKit   SVR  Random_Search_optimizer  ...  0.864409     153  157.676940
+9       RDKit   SVR  Random_Search_optimizer  ...  0.864409      70   80.659756
+10      RDKit   SVR  Random_Search_optimizer  ...  0.864409     147  134.448788
+11      RDKit   SVR  Random_Search_optimizer  ...  0.864409     199  155.663409
+12      RDKit   SVR  Random_Search_optimizer  ...  0.864409     265  219.440842
+13      RDKit   SVR  Random_Search_optimizer  ...  0.864409     149  183.278591
+14      RDKit   SVR  Random_Search_optimizer  ...  0.864409     116  120.571048
+15      RDKit   SVR  Random_Search_optimizer  ...  0.864409     164  176.536986
+16      RDKit   SVR  Random_Search_optimizer  ...  0.864409     129  126.685388
+17      RDKit   SVR  Random_Search_optimizer  ...  0.864409     173  175.297140
+18      RDKit   SVR  Random_Search_optimizer  ...  0.864409     156  154.591098
+19      RDKit   SVR  Random_Search_optimizer  ...  0.864409     190  189.992473
+20      RDKit   SVR  Random_Search_optimizer  ...  0.864409     207  194.282466
+21      RDKit   SVR  Random_Search_optimizer  ...  0.864409     141  143.557511
+22      RDKit   SVR  Random_Search_optimizer  ...  0.864409     106  124.991346
+23      RDKit   SVR  Random_Search_optimizer  ...  0.864409     110  147.224690
+24      RDKit   SVR  Random_Search_optimizer  ...  0.864409     133  131.443321
+25      RDKit   SVR  Random_Search_optimizer  ...  0.864409     178  180.219713
+26      RDKit   SVR  Random_Search_optimizer  ...  0.864409     193  194.436919
+27      RDKit   SVR  Random_Search_optimizer  ...  0.864409     150  153.408103
+28      RDKit   SVR  Random_Search_optimizer  ...  0.864409     139  139.915200
+29      RDKit   SVR  Random_Search_optimizer  ...  0.864409     174  165.692182
+30      RDKit   SVR  Random_Search_optimizer  ...  0.864409     179  177.742123
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 42, in <module>
+    import config
+  File "/home/cat/descriptors/python_scripts/config.py", line 11, in <module>
+    model = (Lasso, SVR)
+NameError: name 'Lasso' is not defined

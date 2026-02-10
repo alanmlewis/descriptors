@@ -1,0 +1,69 @@
+flashpoint
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.46415888336127775
+>> svr__C = 297.63514416313194
+Root Mean Squared Error: 5.513691837687166
+R-squared: 0.6992152704821513
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[200.96315715 318.49990897 205.18971537 167.12491235 106.67412458
+ 292.59795034 150.55322487 152.72386086 159.26017958 110.680086
+ 199.86215834 227.59052749 196.64085881 198.72685912 128.5901733
+ 175.16302764 180.89568688 164.94657208 161.67013143 192.17146546]
+yay, we ran!!
+x_train size: 120
+x_test size: 31
+Descriptor for the SHAP analysis was: ('SMILES',)
+  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [00:02<01:23,  2.79s/it]  6%|▋         | 2/31 [00:05<01:21,  2.81s/it] 10%|▉         | 3/31 [00:08<01:19,  2.83s/it] 13%|█▎        | 4/31 [00:11<01:16,  2.82s/it] 16%|█▌        | 5/31 [00:13<01:11,  2.77s/it] 19%|█▉        | 6/31 [00:16<01:08,  2.75s/it] 23%|██▎       | 7/31 [00:19<01:05,  2.72s/it] 26%|██▌       | 8/31 [00:21<01:02,  2.71s/it] 29%|██▉       | 9/31 [00:24<00:59,  2.70s/it] 32%|███▏      | 10/31 [00:27<00:56,  2.69s/it] 35%|███▌      | 11/31 [00:30<00:54,  2.72s/it] 39%|███▊      | 12/31 [00:32<00:51,  2.72s/it] 42%|████▏     | 13/31 [00:35<00:49,  2.75s/it] 45%|████▌     | 14/31 [00:38<00:46,  2.74s/it] 48%|████▊     | 15/31 [00:41<00:44,  2.76s/it] 52%|█████▏    | 16/31 [00:44<00:41,  2.78s/it] 55%|█████▍    | 17/31 [00:46<00:39,  2.80s/it] 58%|█████▊    | 18/31 [00:49<00:36,  2.80s/it] 61%|██████▏   | 19/31 [00:52<00:33,  2.80s/it] 65%|██████▍   | 20/31 [00:55<00:30,  2.77s/it] 68%|██████▊   | 21/31 [00:57<00:27,  2.78s/it] 71%|███████   | 22/31 [01:00<00:24,  2.76s/it] 74%|███████▍  | 23/31 [01:03<00:21,  2.73s/it] 77%|███████▋  | 24/31 [01:06<00:19,  2.72s/it] 81%|████████  | 25/31 [01:08<00:16,  2.71s/it] 84%|████████▍ | 26/31 [01:11<00:13,  2.70s/it] 87%|████████▋ | 27/31 [01:14<00:10,  2.70s/it] 90%|█████████ | 28/31 [01:16<00:08,  2.70s/it] 94%|█████████▎| 29/31 [01:19<00:05,  2.69s/it] 97%|█████████▋| 30/31 [01:22<00:02,  2.71s/it]100%|██████████| 31/31 [01:25<00:00,  2.74s/it]100%|██████████| 31/31 [01:25<00:00,  2.74s/it]
+SHAP ran correctly, and file was saved
+shap sucessfully ran
+files saved
+The results as dataframe are:
+   Descriptor Model             Optimization  ...        R2  y_true      y_pred
+0      SMILES   SVR  Random_Search_optimizer  ...  0.699215     208  200.963157
+1      SMILES   SVR  Random_Search_optimizer  ...  0.699215     350  318.499909
+2      SMILES   SVR  Random_Search_optimizer  ...  0.699215     211  205.189715
+3      SMILES   SVR  Random_Search_optimizer  ...  0.699215     116  167.124912
+4      SMILES   SVR  Random_Search_optimizer  ...  0.699215     182  106.674125
+5      SMILES   SVR  Random_Search_optimizer  ...  0.699215     298  292.597950
+6      SMILES   SVR  Random_Search_optimizer  ...  0.699215     157  150.553225
+7      SMILES   SVR  Random_Search_optimizer  ...  0.699215     149  152.723861
+8      SMILES   SVR  Random_Search_optimizer  ...  0.699215     153  159.260180
+9      SMILES   SVR  Random_Search_optimizer  ...  0.699215      70  110.680086
+10     SMILES   SVR  Random_Search_optimizer  ...  0.699215     147  199.862158
+11     SMILES   SVR  Random_Search_optimizer  ...  0.699215     199  227.590527
+12     SMILES   SVR  Random_Search_optimizer  ...  0.699215     265  196.640859
+13     SMILES   SVR  Random_Search_optimizer  ...  0.699215     149  198.726859
+14     SMILES   SVR  Random_Search_optimizer  ...  0.699215     116  128.590173
+15     SMILES   SVR  Random_Search_optimizer  ...  0.699215     164  175.163028
+16     SMILES   SVR  Random_Search_optimizer  ...  0.699215     129  180.895687
+17     SMILES   SVR  Random_Search_optimizer  ...  0.699215     173  164.946572
+18     SMILES   SVR  Random_Search_optimizer  ...  0.699215     156  161.670131
+19     SMILES   SVR  Random_Search_optimizer  ...  0.699215     190  192.171465
+20     SMILES   SVR  Random_Search_optimizer  ...  0.699215     207  193.014022
+21     SMILES   SVR  Random_Search_optimizer  ...  0.699215     141  144.083524
+22     SMILES   SVR  Random_Search_optimizer  ...  0.699215     106  136.987886
+23     SMILES   SVR  Random_Search_optimizer  ...  0.699215     110   75.073510
+24     SMILES   SVR  Random_Search_optimizer  ...  0.699215     133  123.988003
+25     SMILES   SVR  Random_Search_optimizer  ...  0.699215     178  172.137234
+26     SMILES   SVR  Random_Search_optimizer  ...  0.699215     193  175.206158
+27     SMILES   SVR  Random_Search_optimizer  ...  0.699215     150  147.520710
+28     SMILES   SVR  Random_Search_optimizer  ...  0.699215     139  151.081937
+29     SMILES   SVR  Random_Search_optimizer  ...  0.699215     174  200.226377
+30     SMILES   SVR  Random_Search_optimizer  ...  0.699215     179  175.053970
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet

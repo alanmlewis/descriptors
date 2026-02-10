@@ -1,0 +1,72 @@
+boiling_point
+('RDKit',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.7
+>> learning_rate = 0.05
+>> max_depth = 4
+>> n_estimators = 500
+>> n_jobs = 8
+>> random_state = 42
+>> subsample = 0.7
+Root Mean Squared Error: 3.863469852909617
+R-squared: 0.9486039293362875
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[281.76773 260.14206 460.68695 363.20297 274.42847 412.23257 302.03
+ 392.50632 326.9429  292.24423 376.83765 268.44107 227.14586 350.86853
+ 371.15665 286.3539  384.00565 273.3904  358.82794 300.12454]
+The results as dataframe are:
+   Descriptor    Model           Optimization  ...       R2  y_true      y_pred
+0       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  285.15  281.767731
+1       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  243.75  260.142059
+2       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  482.05  460.686951
+3       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  364.65  363.202972
+4       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  263.55  274.428467
+5       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  432.15  412.232574
+6       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  304.77  302.029999
+7       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  411.15  392.506317
+8       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  308.85  326.942902
+9       RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  316.25  292.244232
+10      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  378.05  376.837646
+11      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  279.35  268.441071
+12      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  225.05  227.145859
+13      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  346.95  350.868530
+14      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  369.55  371.156647
+15      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  309.65  286.353912
+16      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  400.65  384.005646
+17      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  261.15  273.390411
+18      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  366.00  358.827942
+19      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  298.75  300.124542
+20      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  271.25  280.969757
+21      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  259.25  253.409821
+22      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  331.08  328.362915
+23      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  350.15  356.689545
+24      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  261.45  267.110168
+25      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  332.75  331.090485
+26      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  276.17  276.896332
+27      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  336.42  337.423553
+28      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  261.55  255.913177
+29      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  332.65  333.185089
+30      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  303.15  303.478485
+31      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  374.85  342.618927
+32      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  296.45  287.269806
+33      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  419.45  409.744354
+34      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  145.15  182.680420
+35      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  305.00  343.192200
+36      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  318.25  301.407471
+37      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  288.25  285.223419
+38      RDKit  XGBoost  Grid_Search_optimizer  ...  3.86347  184.55  204.208740
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet

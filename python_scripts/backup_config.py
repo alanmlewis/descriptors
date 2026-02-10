@@ -5,9 +5,9 @@ from pathlib import Path
 
 #property, descriptor and model
 
-property = 'boiling_point'
+property = 'Viscosity_as_logVis'
 ##put _ between property words?? 
-descriptor = ('SMILES',)
+descriptor = ("Bit_Morgan",)
 model= 'Random Forest', 'XGBoost'
 optimization_algorithm = "Random Search"
 

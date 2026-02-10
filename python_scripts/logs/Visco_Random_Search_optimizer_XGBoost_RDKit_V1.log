@@ -1,0 +1,45 @@
+Viscosity_as_logVis
+('RDKit',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 200
+>> max_depth = 8
+>> learning_rate = 0.1
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 0.629693539365563
+R-squared: 0.3695852124937753
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.5502595 1.3442137 1.5502595 1.3442137 1.5656892 1.4699264 1.5120839
+ 2.292668  1.5656892 1.7537355 1.8299143 1.6563706 2.7383194 1.5502595
+ 2.6393013 1.4699264 1.4279493 1.5502595 2.2021375 1.5502595]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor    Model             Optimization  ...        R2  y_true    y_pred
+0       RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.571  1.550259
+1       RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   0.954  1.344214
+2       RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.534  1.550259
+3       RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.779  1.344214
+4       RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.190  1.565689
+..        ...      ...                      ...  ...       ...     ...       ...
+56      RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.411  2.202137
+57      RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.013  1.469926
+58      RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.954  1.550259
+59      RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   0.979  1.565689
+60      RDKit  XGBoost  Random_Search_optimizer  ...  0.369585   1.762  2.292668
+
+[61 rows x 7 columns]
+results saved as parquet to ../new_results/Viscosity_as_logVis/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet

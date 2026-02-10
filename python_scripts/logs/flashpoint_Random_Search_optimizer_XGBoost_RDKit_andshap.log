@@ -1,0 +1,51 @@
+flashpoint
+('RDKit',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+(151, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> subsample = 0.8
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 500
+>> max_depth = 4
+>> learning_rate = 0.1
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 3.735156500217323
+R-squared: 0.936653733253479
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[202.3101   324.04395  201.9674   142.96652  224.50255  299.2503
+ 151.29713  146.77246  155.98349   82.329025 141.62952  172.90868
+ 264.5503   170.51096  120.432045 171.25279  140.71446  169.21991
+ 153.02817  185.82738 ]
+yay, we ran!!
+x_train size: 120
+x_test size: 31
+Descriptor for the SHAP analysis was: ('RDKit',)
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
+    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
+  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 59, in running_shap
+    explainer = shap.Explainer(best_model, background.iloc[:shap_size])
+  File "/home/cat/.local/lib/python3.10/site-packages/shap/explainers/_explainer.py", line 204, in __init__
+    raise TypeError(
+TypeError: The passed model is not callable and cannot be analyzed directly with the given masker! Model: XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=0.7, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             feature_weights=None, gamma=None, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.1, max_bin=None, max_cat_threshold=None,
+             max_cat_to_onehot=None, max_delta_step=None, max_depth=4,
+             max_leaves=None, min_child_weight=None, missing=nan,
+             monotone_constraints=None, multi_strategy=None, n_estimators=500,
+             n_jobs=8, num_parallel_tree=None, ...)

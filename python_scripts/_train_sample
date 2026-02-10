@@ -1,0 +1,77 @@
+## shap analysis
+import config
+import os
+import rdkit
+import pandas as pd
+import numpy as np
+from rdkit import Chem
+from rdkit.Chem import AllChem as AChem
+from rdkit.Chem import Draw
+from rdkit.Chem import Descriptors
+from rdkit.Chem import Descriptors
+from rdkit.ML.Descriptors.MoleculeDescriptors import MolecularDescriptorCalculator
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.datasets import make_regression
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import make_pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import root_mean_squared_error, r2_score
+from sklearn.model_selection import RandomizedSearchCV
+
+from sklearn.svm import SVR as SVRModel
+from sklearn.model_selection import GridSearchCV
+from sklearn.preprocessing import OneHotEncoder
+import matplotlib.pyplot as plt
+from sklearn.experimental import enable_halving_search_cv
+from sklearn.model_selection import HalvingGridSearchCV
+
+import xgboost as xgb
+from xgboost import XGBRegressor
+from sklearn.linear_model import LassoCV as LassoCVmodel
+from sklearn.linear_model import Lasso as LassoModel
+import matplotlib.pyplot as plt
+import seaborn as sns
+import textwrap
+
+
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+import shap
+import matplotlib.pyplot as plt
+
+#parquet_path = ("../new_results/{config.property}/parquet_files")
+def running_shap(model, x_train, x_test, model_name, config):
+    import shap
+    import matplotlib.pyplot as plt
+    import os
+    ##Max_SHAP_samples = 200
+    print(f"Descriptor for the SHAP analysis was: {config.descriptor}")
+    background = x_train_sample(200, random_state=42)
+    Max_SHAP_samples = 500
+    if model_name in ["XGBoost", "Random Forest"]:
+        explainer = shap.TreeExplainer(model, background[:Max_SHAP_samples])
+    elif model_name == "Lasso":
+        explainer = shap.LinearExplainer(model, background[:Max_SHAP_samples])
+    elif model_name == "SVR":
+        New_Max_SHAP_samples = 75
+        explainer = shap.KernelExplainer(model.predict, background[:New_Max_SHAP_samples])
+    else: 
+        raise Valuerror(f"Unknown Model, check input. Model inputted was {model_name}")
+
+    if model_name == "SVR":
+        shap_values = explainer.shap_values(x_test[:New_Max_SHAP_samples])
+    else: 
+        shap_values = explainer.shap_values(x_test[:Max_SHAP_samples])
+    ##shap.summary_plot(shap_values, x_test_processed, ##all features from the descriptor?? - ouput of running_desciptor idk )
+    shap.plots.beeswarm(shap_values, order=shap_values.abs.max(0))
+    plt.tight_layout()
+    plt.title(f"SHAP plot for {config.property} using {model_name} and {config.descriptor}")
+    plt.savefig(f"../new_results/{config.property}/SHAP/shap_{config.descriptor}_{model_name}")
+    plt.close()
+    print("SHAP ran correctly, and file was saved")
+    return shap_values
+
+
+run_shap = running_shap(model, x_train, x_test, model_name, config)
+

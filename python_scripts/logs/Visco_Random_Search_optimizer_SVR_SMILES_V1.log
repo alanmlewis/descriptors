@@ -1,0 +1,42 @@
+Viscosity_as_logVis
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.21544346900318845
+>> svr__epsilon = 0.21544346900318823
+>> svr__C = 0.11288378916846889
+Root Mean Squared Error: 0.6812282343179111
+R-squared: 0.13646489018467334
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.49757945 1.38852138 1.49757945 1.38852138 1.58941133 1.54839874
+ 1.72861011 2.01241133 1.58941133 1.73857945 1.78057945 1.66128253
+ 1.77416685 1.49757945 1.77416632 1.54839874 1.54839874 1.49757945
+ 2.11152138 1.49757945]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor Model             Optimization  ...        R2  y_true    y_pred
+0      SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.571  1.497579
+1      SMILES   SVR  Random_Search_optimizer  ...  0.136465   0.954  1.388521
+2      SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.534  1.497579
+3      SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.779  1.388521
+4      SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.190  1.589411
+..        ...   ...                      ...  ...       ...     ...       ...
+56     SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.411  2.111521
+57     SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.013  1.548399
+58     SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.954  1.497579
+59     SMILES   SVR  Random_Search_optimizer  ...  0.136465   0.979  1.589411
+60     SMILES   SVR  Random_Search_optimizer  ...  0.136465   1.762  2.012411
+
+[61 rows x 7 columns]
+results saved as parquet to ../new_results/Viscosity_as_logVis/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet

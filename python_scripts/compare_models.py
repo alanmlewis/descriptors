@@ -1,31 +1,48 @@
 ### this is where i will compare modelsffffff
 ##didnt work
-import config
+import backup_config
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 import textwrap
+import os
 ##collecting all the foles with the same descriptor 
 from pathlib import Path 
-directory = Path("../results/Viscosity_as_logVis/parquet_files")
+directory = Path(f"../new_results/{backup_config.property}/parquet_files")
 parquet_files = list(directory.glob("*.parquet"))
+print("current working directory is:", os.getcwd())
 
-def get_all_descriptor_files(parquet_files, config):
-    target_descriptor = str(config.descriptor[0])
-    return [f for f in parquet_files if target_descriptor in f.stem] ## if file in paruqet files has the desired descriptor name, add to returned list
+################################################
+def normalise_all_names(y):
+    return y.replace(" ","_").lower()
+
+def get_all_descriptor_files(parquet_files, backup_config):
+    target_descriptor = [normalise_all_names(d) for d in backup_config.descriptor]
+    ##check im not going totally insane:
+    print("All parquet files found are:")
+    for p in parquet_files:
+        print("   ", p.name)
+
+        print("The target descriptor:", backup_config.descriptor)
+    return [
+            f for f in parquet_files 
+            if any(normalise_all_names(d) in normalise_all_names(f.stem) for d in target_descriptor)
+                ] ## if file in paruqet files has the desired descriptor name, add to returned list
         
-same_descriptor_parquets = get_all_descriptor_files(parquet_files, config)
+same_descriptor_parquets = get_all_descriptor_files(parquet_files, backup_config)
 
+##sanity check 2
 print("matched parquet files:")
 for p in same_descriptor_parquets: 
     print("      ", p.name)
+########################################################
 ##main func for comparing models 
-def compare_models(same_descriptor_parquets, config):
+def compare_models(same_descriptor_parquets, backup_config):
     
     dataframes = [pd.read_parquet(p) for p in same_descriptor_parquets]
     dataframe = pd.concat(dataframes, ignore_index = True)
     sns.set(style="whitegrid")
-    filename = "_".join(map(str, config.descriptor))
+    filename = "_".join(map(str, backup_config.descriptor))
     ## RMSEs comparison
     plt.figure(figsize=(12, 12))
     ax = sns.barplot(data=dataframe, x="Model", y="RMSE", hue="Optimization", palette="Blues")
@@ -35,7 +52,7 @@ def compare_models(same_descriptor_parquets, config):
     plt.title("RMSE Comparison (lower = better)")
     plt.xticks(rotation=15)
     plt.tight_layout()
-    plt.savefig(f"../new_results/{config.property}/RMSE_comparison_{filename}.png")
+    plt.savefig(f"../new_results/{backup_config.property}/RMSE_comparison_{filename}.png")
     plt.close()
 
     ## R2 comparison
@@ -54,7 +71,7 @@ def compare_models(same_descriptor_parquets, config):
     plt.ylabel("Predicted values")
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f"../new_results/{config.property}/R2_Plot_{filename}.png")## figure out hwo to add the specific model to this
+    plt.savefig(f"../new_results/{backup_config.property}/R2_Plot_{filename}.png")## figure out hwo to add the specific model to this
     plt.close()
 
 
@@ -78,7 +95,7 @@ def compare_models(same_descriptor_parquets, config):
         plt.xlabel("True values")
         plt.ylabel("Predicted values")
         plt.tight_layout()
-        plt.savefig(f"../new_results/{config.property}/ParityPlot_{filename}_{spaceless_opt_name}")
+        plt.savefig(f"../new_results/{backup_config.property}/ParityPlot_{filename}_{spaceless_opt_name}")
         plt.close()
 
         ## residual
@@ -86,17 +103,17 @@ def compare_models(same_descriptor_parquets, config):
         plt.figure(figsize=(5, 5))
         plt.scatter(y_pred, residuals, alpha=0.6)
         plt.hlines(0, xmin=y_pred.min(), xmax=y_pred.max(), colors='red', linestyles='--')
-        wrapped_title = "\n".join(textwrap.wrap(f"{config.property}_{spaceless_opt_name}_Residuals_vs_Predictions"))
+        wrapped_title = "\n".join(textwrap.wrap(f"{backup_config.property}_{spaceless_opt_name}_Residuals_vs_Predictions"))
         plt.title(wrapped_title)
         plt.xlabel("Predicted values")
         plt.ylabel("Residual (True values − Predicted values)")
         plt.tight_layout()
-        plt.savefig(f"../new_results/{config.property}/ResidualPlot_{filename}_{spaceless_opt_name}")
+        plt.savefig(f"../new_results/{backup_config.property}/ResidualPlot_{filename}_{spaceless_opt_name}")
         plt.close()
 
 
-if str(config.compare_graphs).lower() == "yes":
-    comparing_models = compare_models(same_descriptor_parquets, config)
+if str(backup_config.compare_graphs).lower() == "yes":
+    comparing_models = compare_models(same_descriptor_parquets, backup_config)
     print("compare models has run")
 else: 
     print("config models comparision set to No.")

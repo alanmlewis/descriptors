@@ -1,0 +1,69 @@
+boiling_point
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__C = 1000.0
+>> svr__epsilon = 1.0
+>> svr__gamma = auto
+>> svr__kernel = rbf
+Root Mean Squared Error: 5.552309799195432
+R-squared: 0.7807626381536058
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[287.46735069 217.57760389 445.46716925 350.83449089 296.16346036
+ 421.79264564 251.59630133 398.37391914 310.56364005 296.5436414
+ 368.8132065  277.23060264 262.63558868 363.93685113 357.39763977
+ 283.48745015 344.08334185 287.97863723 345.03510884 340.9520351 ]
+The results as dataframe are:
+   Descriptor Model           Optimization  ...       R2  y_true      y_pred
+0      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  285.15  287.467351
+1      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  243.75  217.577604
+2      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  482.05  445.467169
+3      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  364.65  350.834491
+4      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  263.55  296.163460
+5      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  432.15  421.792646
+6      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  304.77  251.596301
+7      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  411.15  398.373919
+8      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  308.85  310.563640
+9      SMILES   SVR  Grid_Search_optimizer  ...  5.55231  316.25  296.543641
+10     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  378.05  368.813206
+11     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  279.35  277.230603
+12     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  225.05  262.635589
+13     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  346.95  363.936851
+14     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  369.55  357.397640
+15     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  309.65  283.487450
+16     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  400.65  344.083342
+17     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  261.15  287.978637
+18     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  366.00  345.035109
+19     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  298.75  340.952035
+20     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  271.25  307.021302
+21     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  259.25  278.545850
+22     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  331.08  342.253282
+23     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  350.15  294.519881
+24     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  261.45  292.427390
+25     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  332.75  322.272196
+26     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  276.17  285.401875
+27     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  336.42  339.442601
+28     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  261.55  295.016459
+29     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  332.65  333.916700
+30     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  303.15  316.199566
+31     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  374.85  347.857950
+32     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  296.45  264.160930
+33     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  419.45  404.031646
+34     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  145.15  208.807015
+35     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  305.00  325.658713
+36     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  318.25  315.866765
+37     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  288.25  252.195725
+38     SMILES   SVR  Grid_Search_optimizer  ...  5.55231  184.55  264.602012
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet

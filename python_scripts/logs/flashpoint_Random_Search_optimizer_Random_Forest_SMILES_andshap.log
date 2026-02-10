@@ -1,0 +1,36 @@
+flashpoint
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = None
+Root Mean Squared Error: 5.1533778046851735
+R-squared: 0.7704624424106279
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[172.99786667 306.33488889 194.02732222 162.41277778 133.49919444
+ 283.37933333 155.96764444 154.41794444 165.22064444 102.996
+ 155.41055556 214.676      222.01483333 209.13333333 143.24316667
+ 177.54615556 167.31938889 172.18182778 161.57997778 182.56354444]
+yay, we ran!!
+x_train size: 120
+x_test size: 31
+Descriptor for the SHAP analysis was: ('SMILES',)
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
+    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
+  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 66, in running_shap
+    raise ValueError(f"Unknown Model, check input. Model inputted was {model_name}")
+ValueError: Unknown Model, check input. Model inputted was Random_Forest

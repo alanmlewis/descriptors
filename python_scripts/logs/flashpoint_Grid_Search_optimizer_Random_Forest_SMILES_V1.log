@@ -1,0 +1,62 @@
+flashpoint
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__n_estimators = 1500
+Root Mean Squared Error: 5.164620760419678
+R-squared: 0.76845277941518
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[172.14846667 306.05630556 194.49669394 162.40677778 133.84848968
+ 282.58271459 156.22081111 154.8010672  165.71771111 104.26665029
+ 155.88824286 215.28118389 221.92169103 209.16565796 143.74986335
+ 177.08917967 167.16432222 171.93019968 162.32975556 182.91316349]
+The results as dataframe are:
+   Descriptor          Model  ... y_true      y_pred
+0      SMILES  Random_Forest  ...    208  172.148467
+1      SMILES  Random_Forest  ...    350  306.056306
+2      SMILES  Random_Forest  ...    211  194.496694
+3      SMILES  Random_Forest  ...    116  162.406778
+4      SMILES  Random_Forest  ...    182  133.848490
+5      SMILES  Random_Forest  ...    298  282.582715
+6      SMILES  Random_Forest  ...    157  156.220811
+7      SMILES  Random_Forest  ...    149  154.801067
+8      SMILES  Random_Forest  ...    153  165.717711
+9      SMILES  Random_Forest  ...     70  104.266650
+10     SMILES  Random_Forest  ...    147  155.888243
+11     SMILES  Random_Forest  ...    199  215.281184
+12     SMILES  Random_Forest  ...    265  221.921691
+13     SMILES  Random_Forest  ...    149  209.165658
+14     SMILES  Random_Forest  ...    116  143.749863
+15     SMILES  Random_Forest  ...    164  177.089180
+16     SMILES  Random_Forest  ...    129  167.164322
+17     SMILES  Random_Forest  ...    173  171.930200
+18     SMILES  Random_Forest  ...    156  162.329756
+19     SMILES  Random_Forest  ...    190  182.913163
+20     SMILES  Random_Forest  ...    207  189.324207
+21     SMILES  Random_Forest  ...    141  152.004567
+22     SMILES  Random_Forest  ...    106  147.200456
+23     SMILES  Random_Forest  ...    110   98.430632
+24     SMILES  Random_Forest  ...    133  142.889982
+25     SMILES  Random_Forest  ...    178  153.888429
+26     SMILES  Random_Forest  ...    193  172.359533
+27     SMILES  Random_Forest  ...    150  150.883957
+28     SMILES  Random_Forest  ...    139  158.076602
+29     SMILES  Random_Forest  ...    174  156.482188
+30     SMILES  Random_Forest  ...    179  167.340874
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_SMILES.parquet

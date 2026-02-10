@@ -1,0 +1,61 @@
+flashpoint
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__C = 1000.0
+>> svr__epsilon = 1.0
+>> svr__gamma = auto
+>> svr__kernel = rbf
+Root Mean Squared Error: 5.120600448475742
+R-squared: 0.7762467329293348
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[198.33487648 319.97004096 200.32461479 171.62819737 127.58422495
+ 295.59237089 149.44939423 153.32785945 158.06866504  88.73651431
+ 202.15453943 232.76577994 226.61226821 182.43635237 129.5585445
+ 190.26507792 174.62290586 164.42994457 156.38571005 197.18590144]
+The results as dataframe are:
+   Descriptor Model           Optimization  ...      R2  y_true      y_pred
+0      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     208  198.334876
+1      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     350  319.970041
+2      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     211  200.324615
+3      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     116  171.628197
+4      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     182  127.584225
+5      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     298  295.592371
+6      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     157  149.449394
+7      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     149  153.327859
+8      SMILES   SVR  Grid_Search_optimizer  ...  5.1206     153  158.068665
+9      SMILES   SVR  Grid_Search_optimizer  ...  5.1206      70   88.736514
+10     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     147  202.154539
+11     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     199  232.765780
+12     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     265  226.612268
+13     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     149  182.436352
+14     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     116  129.558545
+15     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     164  190.265078
+16     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     129  174.622906
+17     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     173  164.429945
+18     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     156  156.385710
+19     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     190  197.185901
+20     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     207  193.057847
+21     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     141  140.951915
+22     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     106  134.307386
+23     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     110   75.183784
+24     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     133  123.578512
+25     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     178  168.829622
+26     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     193  168.924936
+27     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     150  152.378270
+28     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     139  146.683034
+29     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     174  202.356268
+30     SMILES   SVR  Grid_Search_optimizer  ...  5.1206     179  176.397619
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet

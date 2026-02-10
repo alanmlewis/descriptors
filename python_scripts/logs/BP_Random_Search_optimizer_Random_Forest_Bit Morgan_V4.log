@@ -1,0 +1,270 @@
+boiling_point
+('Bit Morgan',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+Molecule 1 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 2 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 3 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 4 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 5 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 6 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 7 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 8 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 9 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 10 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 11 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 12 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 13 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 14 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 15 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 16 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 17 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 18 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 19 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 20 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 21 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 22 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 23 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 24 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 25 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 26 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 27 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 28 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 29 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 30 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 31 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 32 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 33 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 34 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 35 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 36 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 37 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 38 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 39 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 40 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 41 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 42 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 43 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 44 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 45 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 46 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 47 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 48 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 49 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 50 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 51 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 52 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 53 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 54 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 55 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 56 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 57 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 58 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 59 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 60 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 61 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 62 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 63 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 64 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 65 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 66 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 67 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 68 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 69 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 70 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 71 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 72 Fingerprint: [0 0 0 ... 0 0 1]
+Molecule 73 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 74 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 75 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 76 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 77 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 78 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 79 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 80 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 81 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 82 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 83 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 84 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 85 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 86 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 87 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 88 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 89 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 90 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 91 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 92 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 93 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 94 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 95 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 96 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 97 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 98 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 99 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 100 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 101 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 102 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 103 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 104 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 105 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 106 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 107 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 108 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 109 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 110 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 111 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 112 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 113 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 114 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 115 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 116 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 117 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 118 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 119 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 120 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 121 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 122 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 123 Fingerprint: [0 1 0 ... 0 0 0]
+Molecule 124 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 125 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 126 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 127 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 128 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 129 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 130 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 131 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 132 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 133 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 134 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 135 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 136 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 137 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 138 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 139 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 140 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 141 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 142 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 143 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 144 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 145 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 146 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 147 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 148 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 149 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 150 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 151 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 152 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 153 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 154 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 155 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 156 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 157 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 158 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 159 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 160 Fingerprint: [0 0 0 ... 0 1 0]
+Molecule 161 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 162 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 163 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 164 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 165 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 166 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 167 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 168 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 169 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 170 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 171 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 172 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 173 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 174 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 175 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 176 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 177 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 178 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 179 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 180 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 181 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 182 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 183 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 184 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 185 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 186 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 187 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 188 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 189 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 190 Fingerprint: [0 0 0 ... 0 0 0]
+Molecule 191 Fingerprint: [0 0 0 ... 0 0 0]
+[[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+(191, 4096)
+SMILES to BitMorgan ran correctly
+descriptor_function returned: bit_array_fingerprint.csv
+Current model running: Random_Forest
+Loading features from: bit_array_fingerprint.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 500
+>> randomforestregressor__min_samples_split = 5
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 80
+Root Mean Squared Error: 7.01287178068125
+R-squared: 0.44203956923685217
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[299.35033075 252.15012052 366.45760402 314.3591927  262.69043977
+ 369.30408052 279.16721272 324.74499745 317.3398725  273.71963813
+ 302.71523998 275.27756259 278.72833693 311.22741777 336.15867109
+ 275.04989256 344.61609251 313.71922681 313.09281624 276.42205306]
+yay, we ran!!
+The results as dataframe are:
+    Descriptor          Model  ...  y_true      y_pred
+0   Bit Morgan  Random_Forest  ...  285.15  299.350331
+1   Bit Morgan  Random_Forest  ...  243.75  252.150121
+2   Bit Morgan  Random_Forest  ...  482.05  366.457604
+3   Bit Morgan  Random_Forest  ...  364.65  314.359193
+4   Bit Morgan  Random_Forest  ...  263.55  262.690440
+5   Bit Morgan  Random_Forest  ...  432.15  369.304081
+6   Bit Morgan  Random_Forest  ...  304.77  279.167213
+7   Bit Morgan  Random_Forest  ...  411.15  324.744997
+8   Bit Morgan  Random_Forest  ...  308.85  317.339873
+9   Bit Morgan  Random_Forest  ...  316.25  273.719638
+10  Bit Morgan  Random_Forest  ...  378.05  302.715240
+11  Bit Morgan  Random_Forest  ...  279.35  275.277563
+12  Bit Morgan  Random_Forest  ...  225.05  278.728337
+13  Bit Morgan  Random_Forest  ...  346.95  311.227418
+14  Bit Morgan  Random_Forest  ...  369.55  336.158671
+15  Bit Morgan  Random_Forest  ...  309.65  275.049893
+16  Bit Morgan  Random_Forest  ...  400.65  344.616093
+17  Bit Morgan  Random_Forest  ...  261.15  313.719227
+18  Bit Morgan  Random_Forest  ...  366.00  313.092816
+19  Bit Morgan  Random_Forest  ...  298.75  276.422053
+20  Bit Morgan  Random_Forest  ...  271.25  279.159418
+21  Bit Morgan  Random_Forest  ...  259.25  292.742822
+22  Bit Morgan  Random_Forest  ...  331.08  310.249152
+23  Bit Morgan  Random_Forest  ...  350.15  332.262603
+24  Bit Morgan  Random_Forest  ...  261.45  306.290161
+25  Bit Morgan  Random_Forest  ...  332.75  305.341399
+26  Bit Morgan  Random_Forest  ...  276.17  299.732788
+27  Bit Morgan  Random_Forest  ...  336.42  336.130903
+28  Bit Morgan  Random_Forest  ...  261.55  304.351534
+29  Bit Morgan  Random_Forest  ...  332.65  289.028839
+30  Bit Morgan  Random_Forest  ...  303.15  326.642133
+31  Bit Morgan  Random_Forest  ...  374.85  327.587022
+32  Bit Morgan  Random_Forest  ...  296.45  279.697922
+33  Bit Morgan  Random_Forest  ...  419.45  324.309272
+34  Bit Morgan  Random_Forest  ...  145.15  263.774066
+35  Bit Morgan  Random_Forest  ...  305.00  305.757579
+36  Bit Morgan  Random_Forest  ...  318.25  309.244060
+37  Bit Morgan  Random_Forest  ...  288.25  274.562406
+38  Bit Morgan  Random_Forest  ...  184.55  270.588467
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_Bit Morgan.parquet

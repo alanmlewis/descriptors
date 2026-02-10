@@ -1,0 +1,72 @@
+boiling_point
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.9
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 200
+>> max_depth = 4
+>> learning_rate = 0.1
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 6.267584786510939
+R-squared: 0.6440240338496512
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[285.90408 221.96005 428.8589  370.80145 344.26648 426.0793  265.01636
+ 370.15613 334.95322 280.16733 377.33307 277.2773  259.26028 329.3923
+ 341.50394 292.78198 329.02667 313.0901  367.04306 294.23566]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor    Model             Optimization  ...        R2  y_true      y_pred
+0      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  285.15  285.904083
+1      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  243.75  221.960052
+2      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  482.05  428.858887
+3      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  364.65  370.801453
+4      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  263.55  344.266479
+5      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  432.15  426.079315
+6      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  304.77  265.016357
+7      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  411.15  370.156128
+8      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  308.85  334.953217
+9      SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  316.25  280.167328
+10     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  378.05  377.333069
+11     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  279.35  277.277313
+12     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  225.05  259.260284
+13     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  346.95  329.392303
+14     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  369.55  341.503937
+15     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  309.65  292.781982
+16     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  400.65  329.026672
+17     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  261.15  313.090088
+18     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  366.00  367.043060
+19     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  298.75  294.235657
+20     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  271.25  318.965729
+21     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  259.25  228.437408
+22     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  331.08  359.643250
+23     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  350.15  304.839996
+24     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  261.45  278.892761
+25     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  332.75  288.853210
+26     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  276.17  271.334656
+27     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  336.42  332.669128
+28     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  261.55  328.622040
+29     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  332.65  294.235657
+30     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  303.15  324.870361
+31     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  374.85  331.274384
+32     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  296.45  257.133209
+33     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  419.45  396.827362
+34     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  145.15  217.748276
+35     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  305.00  341.903076
+36     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  318.25  272.160217
+37     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  288.25  261.349121
+38     SMILES  XGBoost  Random_Search_optimizer  ...  0.644024  184.55  264.506134
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet

@@ -1,0 +1,35 @@
+boiling_point
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 40
+Root Mean Squared Error: 6.41216389890883
+R-squared: 0.6100236544449431
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[284.17843 272.71948 389.90905 338.48149 312.48711 367.34696 288.19873
+ 352.97196 314.31198 298.09932 347.27713 286.08048 283.28167 324.10433
+ 336.80227 277.22349 325.32201 301.56573 337.41122 301.28499]
+yay, we ran!!
+x_train size: 152
+x_test size: 39
+Descriptor for the SHAP analysis was: ('SMILES',)
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
+    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
+  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 66, in running_shap
+    raise ValueError(f"Unknown Model, check input. Model inputted was {model_name}")
+ValueError: Unknown Model, check input. Model inputted was Random_Forest

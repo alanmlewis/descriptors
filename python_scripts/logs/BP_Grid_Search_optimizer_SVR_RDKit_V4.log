@@ -1,0 +1,70 @@
+boiling_point
+('RDKit',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__C = 1000.0
+>> svr__epsilon = 0.001
+>> svr__gamma = 0.00035938136638046257
+>> svr__kernel = rbf
+Root Mean Squared Error: 3.4682165005650645
+R-squared: 0.9666232068622655
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[283.39949894 242.71303469 476.40308006 358.98677539 273.28386716
+ 426.54281999 301.02625733 405.71078196 295.80634413 303.63027772
+ 379.16660745 277.38396638 221.02219016 343.19643902 366.34207941
+ 285.2664676  394.09492954 257.56136135 368.25855877 290.28580551]
+The results as dataframe are:
+   Descriptor Model           Optimization  ...        R2  y_true      y_pred
+0       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  285.15  283.399499
+1       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  243.75  242.713035
+2       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  482.05  476.403080
+3       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  364.65  358.986775
+4       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  263.55  273.283867
+5       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  432.15  426.542820
+6       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  304.77  301.026257
+7       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  411.15  405.710782
+8       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  308.85  295.806344
+9       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  316.25  303.630278
+10      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  378.05  379.166607
+11      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  279.35  277.383966
+12      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  225.05  221.022190
+13      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  346.95  343.196439
+14      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  369.55  366.342079
+15      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  309.65  285.266468
+16      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  400.65  394.094930
+17      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  261.15  257.561361
+18      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  366.00  368.258559
+19      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  298.75  290.285806
+20      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  271.25  275.756947
+21      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  259.25  263.324800
+22      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  331.08  326.018934
+23      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  350.15  344.511747
+24      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  261.45  257.085032
+25      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  332.75  327.132137
+26      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  276.17  280.400389
+27      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  336.42  335.440056
+28      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  261.55  268.598066
+29      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  332.65  316.677735
+30      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  303.15  296.554437
+31      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  374.85  369.487601
+32      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  296.45  290.530251
+33      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  419.45  417.498386
+34      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  145.15  181.712887
+35      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  305.00  347.670141
+36      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  318.25  308.363579
+37      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  288.25  286.172709
+38      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  184.55  206.073371
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet

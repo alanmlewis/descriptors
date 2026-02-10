@@ -1,0 +1,43 @@
+Viscosity_as_logVis
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.8
+>> learning_rate = 0.1
+>> max_depth = 6
+>> n_estimators = 500
+>> n_jobs = 8
+>> random_state = 42
+>> subsample = 0.8
+Root Mean Squared Error: 0.6449452572115802
+R-squared: 0.3062534195985288
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.560404  1.36243   1.560404  1.36243   1.6029837 1.4684832 1.5238634
+ 2.2239993 1.6029837 1.7304415 1.8414776 1.6582873 2.7506196 1.560404
+ 1.918819  1.4684832 1.4441981 1.560404  2.204097  1.560404 ]
+The results as dataframe are:
+   Descriptor    Model           Optimization  ...        R2  y_true    y_pred
+0      SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.571  1.560404
+1      SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   0.954  1.362430
+2      SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.534  1.560404
+3      SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.779  1.362430
+4      SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.190  1.602984
+..        ...      ...                    ...  ...       ...     ...       ...
+56     SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.411  2.204097
+57     SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.013  1.468483
+58     SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.954  1.560404
+59     SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   0.979  1.602984
+60     SMILES  XGBoost  Grid_Search_optimizer  ...  0.644945   1.762  2.223999
+
+[61 rows x 7 columns]
+results saved as parquet to ../new_results/Viscosity_as_logVis/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet

@@ -1,0 +1,60 @@
+current working directory is: /home/cat/descriptors/python_scripts
+All matching parquet files found are:
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_SMILES.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_SMILES.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_SMILES.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_SMILES.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_RDKit.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_RDKit.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet
+The target descriptor: ('RDKit',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet
+The target descriptor: ('RDKit',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_Bit Morgan.parquet
+The target descriptor: ('RDKit',)
+matched parquet files:
+       R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet
+       G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+       G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_RDKit.parquet
+       R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_RDKit.parquet
+       G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet
+       R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+       G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet
+       R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet
+compare models has run

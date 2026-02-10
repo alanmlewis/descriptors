@@ -1,0 +1,49 @@
+boiling_point
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.9
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 200
+>> max_depth = 4
+>> learning_rate = 0.1
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 6.267584786510939
+R-squared: 0.6440240338496512
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[285.90408 221.96005 428.8589  370.80145 344.26648 426.0793  265.01636
+ 370.15613 334.95322 280.16733 377.33307 277.2773  259.26028 329.3923
+ 341.50394 292.78198 329.02667 313.0901  367.04306 294.23566]
+yay, we ran!!
+x_train size: 152
+x_test size: 39
+Descriptor for the SHAP analysis was: ('SMILES',)
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
+    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
+  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 59, in running_shap
+    explainer = shap.Explainer(best_model, background.iloc[:shap_size])
+  File "/home/cat/.local/lib/python3.10/site-packages/shap/explainers/_explainer.py", line 204, in __init__
+    raise TypeError(
+TypeError: The passed model is not callable and cannot be analyzed directly with the given masker! Model: XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=0.7, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             feature_weights=None, gamma=None, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.1, max_bin=None, max_cat_threshold=None,
+             max_cat_to_onehot=None, max_delta_step=None, max_depth=4,
+             max_leaves=None, min_child_weight=None, missing=nan,
+             monotone_constraints=None, multi_strategy=None, n_estimators=200,
+             n_jobs=8, num_parallel_tree=None, ...)

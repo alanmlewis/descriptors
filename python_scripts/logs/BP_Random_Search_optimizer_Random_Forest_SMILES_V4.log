@@ -1,0 +1,70 @@
+boiling_point
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = None
+Root Mean Squared Error: 6.411842371040696
+R-squared: 0.6101018675625147
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[284.20072 272.69266 389.90905 338.48329 312.48711 367.34696 288.19873
+ 352.97196 314.31198 298.07552 347.27713 286.08748 283.28167 324.06565
+ 336.80227 277.22349 325.32201 301.57943 337.38702 301.29869]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model  ...  y_true     y_pred
+0      SMILES  Random_Forest  ...  285.15  284.20072
+1      SMILES  Random_Forest  ...  243.75  272.69266
+2      SMILES  Random_Forest  ...  482.05  389.90905
+3      SMILES  Random_Forest  ...  364.65  338.48329
+4      SMILES  Random_Forest  ...  263.55  312.48711
+5      SMILES  Random_Forest  ...  432.15  367.34696
+6      SMILES  Random_Forest  ...  304.77  288.19873
+7      SMILES  Random_Forest  ...  411.15  352.97196
+8      SMILES  Random_Forest  ...  308.85  314.31198
+9      SMILES  Random_Forest  ...  316.25  298.07552
+10     SMILES  Random_Forest  ...  378.05  347.27713
+11     SMILES  Random_Forest  ...  279.35  286.08748
+12     SMILES  Random_Forest  ...  225.05  283.28167
+13     SMILES  Random_Forest  ...  346.95  324.06565
+14     SMILES  Random_Forest  ...  369.55  336.80227
+15     SMILES  Random_Forest  ...  309.65  277.22349
+16     SMILES  Random_Forest  ...  400.65  325.32201
+17     SMILES  Random_Forest  ...  261.15  301.57943
+18     SMILES  Random_Forest  ...  366.00  337.38702
+19     SMILES  Random_Forest  ...  298.75  301.29869
+20     SMILES  Random_Forest  ...  271.25  267.14263
+21     SMILES  Random_Forest  ...  259.25  260.71790
+22     SMILES  Random_Forest  ...  331.08  340.63752
+23     SMILES  Random_Forest  ...  350.15  281.00519
+24     SMILES  Random_Forest  ...  261.45  296.66029
+25     SMILES  Random_Forest  ...  332.75  308.25495
+26     SMILES  Random_Forest  ...  276.17  271.97675
+27     SMILES  Random_Forest  ...  336.42  326.03713
+28     SMILES  Random_Forest  ...  261.55  316.32780
+29     SMILES  Random_Forest  ...  332.65  301.25239
+30     SMILES  Random_Forest  ...  303.15  314.09586
+31     SMILES  Random_Forest  ...  374.85  330.58736
+32     SMILES  Random_Forest  ...  296.45  283.37305
+33     SMILES  Random_Forest  ...  419.45  370.36168
+34     SMILES  Random_Forest  ...  145.15  234.27905
+35     SMILES  Random_Forest  ...  305.00  318.18650
+36     SMILES  Random_Forest  ...  318.25  299.61824
+37     SMILES  Random_Forest  ...  288.25  257.82837
+38     SMILES  Random_Forest  ...  184.55  256.88125
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_SMILES.parquet

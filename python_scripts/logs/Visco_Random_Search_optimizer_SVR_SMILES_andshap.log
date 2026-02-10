@@ -1,0 +1,30 @@
+Viscosity_as_logVis
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.21544346900318845
+>> svr__epsilon = 0.21544346900318823
+>> svr__C = 0.37926901907322497
+Root Mean Squared Error: 0.6770548748579454
+R-squared: 0.15743208060232783
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.44587001 1.37116232 1.44587001 1.37116232 1.58756011 1.49460144
+ 1.72850828 2.13256011 1.58756011 1.73896968 1.82513903 1.63856804
+ 1.8251408  1.44587001 1.82513903 1.49460144 1.44587001 1.44587001
+ 2.18097456 1.44587001]
+yay, we ran!!
+x_train size: 243
+x_test size: 61
+Descriptor for the SHAP analysis was: ('SMILES',)
+  0%|          | 0/50 [00:00<?, ?it/s]  2%|▏         | 1/50 [00:10<08:40, 10.62s/it]  4%|▍         | 2/50 [00:21<08:29, 10.61s/it]  6%|▌         | 3/50 [00:31<08:17, 10.59s/it]  8%|▊         | 4/50 [00:43<08:21, 10.91s/it] 10%|█         | 5/50 [00:53<08:05, 10.78s/it] 12%|█▏        | 6/50 [01:05<08:04, 11.01s/it] 14%|█▍        | 7/50 [01:15<07:49, 10.92s/it]

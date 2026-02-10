@@ -1,0 +1,63 @@
+flashpoint
+('RDKit',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+(151, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random_Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__n_estimators = 1500
+Root Mean Squared Error: 4.439557482243888
+R-squared: 0.8735716239388616
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[198.2155     319.42866667 196.21811111 176.7488     212.12988889
+ 300.76       153.817      148.92377778 154.828       94.27466667
+ 137.7030582  156.19982963 239.23244444 178.52111111 127.09742222
+ 165.58072222 137.41620317 164.77733333 157.54577778 192.80734444]
+The results as dataframe are:
+   Descriptor          Model  ... y_true      y_pred
+0       RDKit  Random_Forest  ...    208  198.215500
+1       RDKit  Random_Forest  ...    350  319.428667
+2       RDKit  Random_Forest  ...    211  196.218111
+3       RDKit  Random_Forest  ...    116  176.748800
+4       RDKit  Random_Forest  ...    182  212.129889
+5       RDKit  Random_Forest  ...    298  300.760000
+6       RDKit  Random_Forest  ...    157  153.817000
+7       RDKit  Random_Forest  ...    149  148.923778
+8       RDKit  Random_Forest  ...    153  154.828000
+9       RDKit  Random_Forest  ...     70   94.274667
+10      RDKit  Random_Forest  ...    147  137.703058
+11      RDKit  Random_Forest  ...    199  156.199830
+12      RDKit  Random_Forest  ...    265  239.232444
+13      RDKit  Random_Forest  ...    149  178.521111
+14      RDKit  Random_Forest  ...    116  127.097422
+15      RDKit  Random_Forest  ...    164  165.580722
+16      RDKit  Random_Forest  ...    129  137.416203
+17      RDKit  Random_Forest  ...    173  164.777333
+18      RDKit  Random_Forest  ...    156  157.545778
+19      RDKit  Random_Forest  ...    190  192.807344
+20      RDKit  Random_Forest  ...    207  195.937922
+21      RDKit  Random_Forest  ...    141  146.395056
+22      RDKit  Random_Forest  ...    106  127.967467
+23      RDKit  Random_Forest  ...    110  142.768667
+24      RDKit  Random_Forest  ...    133  128.796971
+25      RDKit  Random_Forest  ...    178  167.463944
+26      RDKit  Random_Forest  ...    193  192.477833
+27      RDKit  Random_Forest  ...    150  151.431111
+28      RDKit  Random_Forest  ...    139  142.076667
+29      RDKit  Random_Forest  ...    174  171.930178
+30      RDKit  Random_Forest  ...    179  181.116900
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet

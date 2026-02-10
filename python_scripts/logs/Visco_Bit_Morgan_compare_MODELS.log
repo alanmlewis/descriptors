@@ -1,0 +1,63 @@
+current working directory is: /home/cat/descriptors/python_scripts
+All parquet files found are:
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rLasso_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet
+The target descriptor: ('Bit_Morgan',)
+    G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet
+The target descriptor: ('Bit_Morgan',)
+    R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_Bit Morgan.parquet
+The target descriptor: ('Bit_Morgan',)
+matched parquet files:
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 113, in <module>
+    comparing_models = compare_models(same_descriptor_parquets, backup_config)
+  File "/home/cat/descriptors/python_scripts/compare_models.py", line 40, in compare_models
+    dataframe = pd.concat(dataframes, ignore_index = True)
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 382, in concat
+    op = _Concatenator(
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+  File "/home/cat/.local/lib/python3.10/site-packages/pandas/core/reshape/concat.py", line 507, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate

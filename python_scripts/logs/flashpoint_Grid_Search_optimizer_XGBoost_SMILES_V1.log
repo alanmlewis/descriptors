@@ -1,0 +1,64 @@
+flashpoint
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.7
+>> learning_rate = 0.05
+>> max_depth = 6
+>> n_estimators = 500
+>> n_jobs = 8
+>> random_state = 42
+>> subsample = 0.7
+Root Mean Squared Error: 4.897371459021829
+R-squared: 0.8127861022949219
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[185.65181  330.27225  214.12108  164.56094  147.99495  298.90323
+ 153.05273  147.29117  176.75885   90.761246 144.3534   244.47083
+ 281.83658  194.39894  129.13922  219.27783  154.0749   178.18506
+ 162.56003  204.86636 ]
+The results as dataframe are:
+   Descriptor    Model           Optimization  ...        R2  y_true      y_pred
+0      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     208  185.651810
+1      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     350  330.272247
+2      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     211  214.121078
+3      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     116  164.560944
+4      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     182  147.994949
+5      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     298  298.903229
+6      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     157  153.052734
+7      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     149  147.291168
+8      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     153  176.758850
+9      SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371      70   90.761246
+10     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     147  144.353394
+11     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     199  244.470825
+12     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     265  281.836578
+13     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     149  194.398941
+14     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     116  129.139221
+15     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     164  219.277832
+16     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     129  154.074905
+17     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     173  178.185059
+18     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     156  162.560028
+19     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     190  204.866364
+20     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     207  204.628082
+21     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     141  149.484146
+22     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     106  129.129333
+23     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     110   84.597504
+24     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     133  146.790894
+25     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     178  167.330704
+26     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     193  152.246307
+27     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     150  151.313065
+28     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     139  157.554611
+29     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     174  187.370895
+30     SMILES  XGBoost  Grid_Search_optimizer  ...  4.897371     179  169.500305
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet

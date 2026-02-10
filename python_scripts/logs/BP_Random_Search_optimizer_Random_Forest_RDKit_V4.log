@@ -1,0 +1,71 @@
+boiling_point
+('RDKit',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random_Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 40
+Root Mean Squared Error: 4.667647768081814
+R-squared: 0.8905005067334464
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[276.05707 267.7084  442.06001 358.3264  276.92994 397.0379  288.66806
+ 398.04973 315.92368 294.29259 366.20183 278.6858  239.30126 340.83403
+ 357.4959  288.49629 361.72375 274.40575 352.09885 304.88066]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model  ...  y_true     y_pred
+0       RDKit  Random_Forest  ...  285.15  276.05707
+1       RDKit  Random_Forest  ...  243.75  267.70840
+2       RDKit  Random_Forest  ...  482.05  442.06001
+3       RDKit  Random_Forest  ...  364.65  358.32640
+4       RDKit  Random_Forest  ...  263.55  276.92994
+5       RDKit  Random_Forest  ...  432.15  397.03790
+6       RDKit  Random_Forest  ...  304.77  288.66806
+7       RDKit  Random_Forest  ...  411.15  398.04973
+8       RDKit  Random_Forest  ...  308.85  315.92368
+9       RDKit  Random_Forest  ...  316.25  294.29259
+10      RDKit  Random_Forest  ...  378.05  366.20183
+11      RDKit  Random_Forest  ...  279.35  278.68580
+12      RDKit  Random_Forest  ...  225.05  239.30126
+13      RDKit  Random_Forest  ...  346.95  340.83403
+14      RDKit  Random_Forest  ...  369.55  357.49590
+15      RDKit  Random_Forest  ...  309.65  288.49629
+16      RDKit  Random_Forest  ...  400.65  361.72375
+17      RDKit  Random_Forest  ...  261.15  274.40575
+18      RDKit  Random_Forest  ...  366.00  352.09885
+19      RDKit  Random_Forest  ...  298.75  304.88066
+20      RDKit  Random_Forest  ...  271.25  299.15359
+21      RDKit  Random_Forest  ...  259.25  266.46947
+22      RDKit  Random_Forest  ...  331.08  336.10354
+23      RDKit  Random_Forest  ...  350.15  340.36461
+24      RDKit  Random_Forest  ...  261.45  274.93551
+25      RDKit  Random_Forest  ...  332.75  325.67173
+26      RDKit  Random_Forest  ...  276.17  293.37437
+27      RDKit  Random_Forest  ...  336.42  341.87633
+28      RDKit  Random_Forest  ...  261.55  280.52325
+29      RDKit  Random_Forest  ...  332.65  326.11456
+30      RDKit  Random_Forest  ...  303.15  310.77629
+31      RDKit  Random_Forest  ...  374.85  347.99021
+32      RDKit  Random_Forest  ...  296.45  285.10505
+33      RDKit  Random_Forest  ...  419.45  387.19806
+34      RDKit  Random_Forest  ...  145.15  210.87759
+35      RDKit  Random_Forest  ...  305.00  334.25360
+36      RDKit  Random_Forest  ...  318.25  300.30054
+37      RDKit  Random_Forest  ...  288.25  284.35200
+38      RDKit  Random_Forest  ...  184.55  224.19255
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet

@@ -1,0 +1,70 @@
+boiling_point
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.046415888336127774
+>> svr__C = 545.5594781168514
+Root Mean Squared Error: 5.796574901948133
+R-squared: 0.7395612424031706
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[286.74846317 227.51581572 436.63167053 354.59516025 299.91137631
+ 416.29547886 250.64228828 381.32945474 309.43549861 303.78166809
+ 366.63661717 278.35084991 266.53964799 363.28678084 363.06168834
+ 280.74647304 343.17793055 287.8222156  339.88903314 356.32147614]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor Model             Optimization  ...        R2  y_true      y_pred
+0      SMILES   SVR  Random_Search_optimizer  ...  0.739561  285.15  286.748463
+1      SMILES   SVR  Random_Search_optimizer  ...  0.739561  243.75  227.515816
+2      SMILES   SVR  Random_Search_optimizer  ...  0.739561  482.05  436.631671
+3      SMILES   SVR  Random_Search_optimizer  ...  0.739561  364.65  354.595160
+4      SMILES   SVR  Random_Search_optimizer  ...  0.739561  263.55  299.911376
+5      SMILES   SVR  Random_Search_optimizer  ...  0.739561  432.15  416.295479
+6      SMILES   SVR  Random_Search_optimizer  ...  0.739561  304.77  250.642288
+7      SMILES   SVR  Random_Search_optimizer  ...  0.739561  411.15  381.329455
+8      SMILES   SVR  Random_Search_optimizer  ...  0.739561  308.85  309.435499
+9      SMILES   SVR  Random_Search_optimizer  ...  0.739561  316.25  303.781668
+10     SMILES   SVR  Random_Search_optimizer  ...  0.739561  378.05  366.636617
+11     SMILES   SVR  Random_Search_optimizer  ...  0.739561  279.35  278.350850
+12     SMILES   SVR  Random_Search_optimizer  ...  0.739561  225.05  266.539648
+13     SMILES   SVR  Random_Search_optimizer  ...  0.739561  346.95  363.286781
+14     SMILES   SVR  Random_Search_optimizer  ...  0.739561  369.55  363.061688
+15     SMILES   SVR  Random_Search_optimizer  ...  0.739561  309.65  280.746473
+16     SMILES   SVR  Random_Search_optimizer  ...  0.739561  400.65  343.177931
+17     SMILES   SVR  Random_Search_optimizer  ...  0.739561  261.15  287.822216
+18     SMILES   SVR  Random_Search_optimizer  ...  0.739561  366.00  339.889033
+19     SMILES   SVR  Random_Search_optimizer  ...  0.739561  298.75  356.321476
+20     SMILES   SVR  Random_Search_optimizer  ...  0.739561  271.25  341.376054
+21     SMILES   SVR  Random_Search_optimizer  ...  0.739561  259.25  278.189018
+22     SMILES   SVR  Random_Search_optimizer  ...  0.739561  331.08  338.098200
+23     SMILES   SVR  Random_Search_optimizer  ...  0.739561  350.15  291.454423
+24     SMILES   SVR  Random_Search_optimizer  ...  0.739561  261.45  299.910881
+25     SMILES   SVR  Random_Search_optimizer  ...  0.739561  332.75  320.375384
+26     SMILES   SVR  Random_Search_optimizer  ...  0.739561  276.17  291.465774
+27     SMILES   SVR  Random_Search_optimizer  ...  0.739561  336.42  337.672596
+28     SMILES   SVR  Random_Search_optimizer  ...  0.739561  261.55  291.617127
+29     SMILES   SVR  Random_Search_optimizer  ...  0.739561  332.65  350.991554
+30     SMILES   SVR  Random_Search_optimizer  ...  0.739561  303.15  316.586062
+31     SMILES   SVR  Random_Search_optimizer  ...  0.739561  374.85  351.089770
+32     SMILES   SVR  Random_Search_optimizer  ...  0.739561  296.45  274.144337
+33     SMILES   SVR  Random_Search_optimizer  ...  0.739561  419.45  395.710388
+34     SMILES   SVR  Random_Search_optimizer  ...  0.739561  145.15  206.619830
+35     SMILES   SVR  Random_Search_optimizer  ...  0.739561  305.00  325.482825
+36     SMILES   SVR  Random_Search_optimizer  ...  0.739561  318.25  317.010384
+37     SMILES   SVR  Random_Search_optimizer  ...  0.739561  288.25  248.690955
+38     SMILES   SVR  Random_Search_optimizer  ...  0.739561  184.55  259.344021
+
+[39 rows x 7 columns]
+results saved as parquet to ../new_results/boiling_point/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet

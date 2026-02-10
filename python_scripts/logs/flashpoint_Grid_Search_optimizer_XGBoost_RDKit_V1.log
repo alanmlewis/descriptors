@@ -1,0 +1,64 @@
+flashpoint
+('RDKit',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+(151, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.8
+>> learning_rate = 0.1
+>> max_depth = 4
+>> n_estimators = 500
+>> n_jobs = 8
+>> random_state = 42
+>> subsample = 0.8
+Root Mean Squared Error: 3.6805196092557653
+R-squared: 0.9402796626091003
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[203.37788 322.08847 204.00182 136.86298 219.40816 299.58542 151.45009
+ 147.02559 155.54117  85.58087 140.58624 169.26408 258.52008 176.83945
+ 120.12357 172.2821  137.88815 170.98863 156.28925 188.74622]
+The results as dataframe are:
+   Descriptor    Model           Optimization  ...       R2  y_true      y_pred
+0       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     208  203.377884
+1       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     350  322.088470
+2       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     211  204.001816
+3       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     116  136.862976
+4       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     182  219.408157
+5       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     298  299.585419
+6       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     157  151.450089
+7       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     149  147.025589
+8       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     153  155.541168
+9       RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052      70   85.580872
+10      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     147  140.586243
+11      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     199  169.264084
+12      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     265  258.520081
+13      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     149  176.839447
+14      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     116  120.123573
+15      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     164  172.282104
+16      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     129  137.888153
+17      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     173  170.988632
+18      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     156  156.289246
+19      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     190  188.746216
+20      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     207  197.842621
+21      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     141  145.943008
+22      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     106  122.833466
+23      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     110  114.624847
+24      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     133  135.863052
+25      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     178  167.219467
+26      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     193  186.395691
+27      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     150  151.665695
+28      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     139  136.613312
+29      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     174  188.638962
+30      RDKit  XGBoost  Grid_Search_optimizer  ...  3.68052     179  177.769531
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_RDKit.parquet

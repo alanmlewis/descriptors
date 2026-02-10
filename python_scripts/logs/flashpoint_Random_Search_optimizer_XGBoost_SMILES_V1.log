@@ -1,0 +1,65 @@
+flashpoint
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 300
+>> max_depth = 6
+>> learning_rate = 0.05
+>> colsample_bytree = 0.8
+Root Mean Squared Error: 4.8810649216423165
+R-squared: 0.8152671456336975
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[182.5358   332.51562  221.93515  156.19644  152.80919  298.3608
+ 148.77158  148.63614  172.47878   92.308464 148.743    238.69965
+ 280.4697   200.95111  127.456505 220.83882  158.48494  179.2223
+ 165.06927  202.79594 ]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor    Model             Optimization  ...        R2  y_true      y_pred
+0      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     208  182.535797
+1      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     350  332.515625
+2      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     211  221.935150
+3      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     116  156.196442
+4      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     182  152.809189
+5      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     298  298.360809
+6      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     157  148.771576
+7      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     149  148.636139
+8      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     153  172.478775
+9      SMILES  XGBoost  Random_Search_optimizer  ...  0.815267      70   92.308464
+10     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     147  148.742996
+11     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     199  238.699646
+12     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     265  280.469696
+13     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     149  200.951111
+14     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     116  127.456505
+15     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     164  220.838821
+16     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     129  158.484940
+17     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     173  179.222305
+18     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     156  165.069275
+19     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     190  202.795944
+20     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     207  203.545807
+21     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     141  149.977432
+22     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     106  130.896164
+23     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     110   88.473259
+24     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     133  148.483231
+25     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     178  166.869598
+26     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     193  145.759003
+27     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     150  147.197861
+28     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     139  148.446899
+29     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     174  175.991577
+30     SMILES  XGBoost  Random_Search_optimizer  ...  0.815267     179  164.710556
+
+[31 rows x 7 columns]
+results saved as parquet to ../new_results/flashpoint/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rXGBoost_SMILES.parquet

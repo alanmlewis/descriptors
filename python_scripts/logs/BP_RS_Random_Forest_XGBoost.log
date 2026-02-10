@@ -1,0 +1,66 @@
+boiling_point
+('SMILES',)
+('Random_Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 20
+Root Mean Squared Error: 6.465417554254376
+R-squared: 0.596906199603519
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[284.54454669 273.9577309  390.37715283 338.03675096 314.52184466
+ 371.03277385 289.87326778 350.80135717 314.6368047  298.28835602
+ 346.79453552 286.70598419 283.60601813 325.53351837 334.47625017
+ 276.72446797 324.94166097 300.77647666 338.05112903 301.95872075]
+yay, we ran!!
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.9
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 200
+>> max_depth = 4
+>> learning_rate = 0.1
+>> colsample_bytree = 0.8
+Root Mean Squared Error: 6.317332402871699
+R-squared: 0.6325868274104341
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[278.86435 225.05373 441.81622 367.9102  343.2293  424.84775 260.5369
+ 367.48697 337.54877 284.68854 372.0922  280.367   263.42087 328.0664
+ 344.51617 294.33304 327.55746 314.6096  358.3472  296.92484]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model   Optimization  ...        R2  y_true      y_pred
+0      SMILES  Random_Forest  Random Search  ...  0.596906  285.15  284.544547
+1      SMILES  Random_Forest  Random Search  ...  0.596906  243.75  273.957731
+2      SMILES  Random_Forest  Random Search  ...  0.596906  482.05  390.377153
+3      SMILES  Random_Forest  Random Search  ...  0.596906  364.65  338.036751
+4      SMILES  Random_Forest  Random Search  ...  0.596906  263.55  314.521845
+..        ...            ...            ...  ...       ...     ...         ...
+73     SMILES        XGBoost  Random Search  ...  0.632587  145.15  219.309418
+74     SMILES        XGBoost  Random Search  ...  0.632587  305.00  335.676575
+75     SMILES        XGBoost  Random Search  ...  0.632587  318.25  265.560242
+76     SMILES        XGBoost  Random Search  ...  0.632587  288.25  260.869904
+77     SMILES        XGBoost  Random Search  ...  0.632587  184.55  262.844269
+
+[78 rows x 7 columns]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 579, in <module>
+    filename = "_".join(str, config.optimization_algorithm) + "_".join(map(str, config.model)) + "_" + "_".join(map(str, config.descriptor))
+TypeError: str.join() takes exactly one argument (2 given)

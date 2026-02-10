@@ -1,0 +1,49 @@
+flashpoint
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.7
+>> learning_rate = 0.05
+>> max_depth = 6
+>> n_estimators = 500
+>> n_jobs = 8
+>> random_state = 42
+>> subsample = 0.7
+Root Mean Squared Error: 4.897371459021829
+R-squared: 0.8127861022949219
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[185.65181  330.27225  214.12108  164.56094  147.99495  298.90323
+ 153.05273  147.29117  176.75885   90.761246 144.3534   244.47083
+ 281.83658  194.39894  129.13922  219.27783  154.0749   178.18506
+ 162.56003  204.86636 ]
+x_train size: 120
+x_test size: 31
+Descriptor for the SHAP analysis was: ('SMILES',)
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
+    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
+  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 59, in running_shap
+    explainer = shap.Explainer(best_model, background.iloc[:shap_size])
+  File "/home/cat/.local/lib/python3.10/site-packages/shap/explainers/_explainer.py", line 204, in __init__
+    raise TypeError(
+TypeError: The passed model is not callable and cannot be analyzed directly with the given masker! Model: XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=0.7, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             feature_weights=None, gamma=None, grow_policy=None,
+             importance_type=None, interaction_constraints=None,
+             learning_rate=0.05, max_bin=None, max_cat_threshold=None,
+             max_cat_to_onehot=None, max_delta_step=None, max_depth=6,
+             max_leaves=None, min_child_weight=None, missing=nan,
+             monotone_constraints=None, multi_strategy=None, n_estimators=500,
+             n_jobs=8, num_parallel_tree=None, ...)

@@ -1,0 +1,43 @@
+Viscosity_as_logVis
+('RDKit',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random_Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = log2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 5
+>> randomforestregressor__n_estimators = 1500
+Root Mean Squared Error: 0.6351907130552631
+R-squared: 0.3472813815153324
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54925164 1.35818751 1.54925164 1.35818751 1.58709174 1.47524086
+ 1.5586158  2.23180143 1.58709174 1.73742928 1.83718832 1.64899907
+ 2.30929521 1.54925164 2.50606245 1.47524086 1.43284344 1.54925164
+ 2.20979808 1.54925164]
+The results as dataframe are:
+   Descriptor          Model           Optimization  ...        R2  y_true    y_pred
+0       RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.571  1.549252
+1       RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   0.954  1.358188
+2       RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.534  1.549252
+3       RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.779  1.358188
+4       RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.190  1.587092
+..        ...            ...                    ...  ...       ...     ...       ...
+56      RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.411  2.209798
+57      RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.013  1.475241
+58      RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.954  1.549252
+59      RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   0.979  1.587092
+60      RDKit  Random_Forest  Grid_Search_optimizer  ...  0.635191   1.762  2.231801
+
+[61 rows x 7 columns]
+results saved as parquet to ../new_results/Viscosity_as_logVis/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_RDKit.parquet

@@ -1,0 +1,66 @@
+Viscosity_as_logVis
+('SMILES',)
+('Random_Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 60
+Root Mean Squared Error: 0.6516401163105743
+R-squared: 0.27699601345977976
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54964354 1.36071133 1.54964354 1.36071133 1.58741981 1.47552288
+ 1.65052244 2.24068944 1.58741981 1.74108725 1.83329783 1.64975668
+ 2.44252424 1.54964354 1.77781055 1.47552288 1.43233599 1.54964354
+ 2.21485687 1.54964354]
+yay, we ran!!
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.8
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 500
+>> max_depth = 8
+>> learning_rate = 0.1
+>> colsample_bytree = 0.8
+Root Mean Squared Error: 0.6457160083242203
+R-squared: 0.30293118275011843
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.5584043 1.3623818 1.5584043 1.3623818 1.604499  1.4660167 1.5186403
+ 2.2241325 1.604499  1.7306966 1.8419603 1.6574274 2.678394  1.5584043
+ 1.9368699 1.4660167 1.4432194 1.5584043 2.2044814 1.5584043]
+yay, we ran!!
+The results as dataframe are:
+    Descriptor          Model   Optimization  ...        R2  y_true    y_pred
+0       SMILES  Random_Forest  Random Search  ...  0.276996   1.571  1.549644
+1       SMILES  Random_Forest  Random Search  ...  0.276996   0.954  1.360711
+2       SMILES  Random_Forest  Random Search  ...  0.276996   1.534  1.549644
+3       SMILES  Random_Forest  Random Search  ...  0.276996   1.779  1.360711
+4       SMILES  Random_Forest  Random Search  ...  0.276996   1.190  1.587420
+..         ...            ...            ...  ...       ...     ...       ...
+117     SMILES        XGBoost  Random Search  ...  0.302931   1.411  2.204481
+118     SMILES        XGBoost  Random Search  ...  0.302931   1.013  1.466017
+119     SMILES        XGBoost  Random Search  ...  0.302931   1.954  1.558404
+120     SMILES        XGBoost  Random Search  ...  0.302931   0.979  1.604499
+121     SMILES        XGBoost  Random Search  ...  0.302931   1.762  2.224133
+
+[122 rows x 7 columns]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 581, in <module>
+    print(f"results saved as parquet to ../new_results/{config.property}/parquet_files/{filename}.parquet", index=False)
+TypeError: 'index' is an invalid keyword argument for print()

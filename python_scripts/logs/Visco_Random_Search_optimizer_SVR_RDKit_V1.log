@@ -1,0 +1,43 @@
+Viscosity_as_logVis
+('RDKit',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.0001
+>> svr__epsilon = 0.21544346900318823
+>> svr__C = 7.847599703514606
+Root Mean Squared Error: 0.6161835619454216
+R-squared: 0.42197067045625747
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.61117554 1.37136171 1.61117554 1.37136171 1.5403201  1.49425453
+ 1.59479818 2.04696382 1.5403201  1.73604431 2.0063006  1.724708
+ 2.71802614 1.61117554 2.58776888 1.49425453 1.64974049 1.61117554
+ 2.00683696 1.61117554]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor Model             Optimization  ...        R2  y_true    y_pred
+0       RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.571  1.611176
+1       RDKit   SVR  Random_Search_optimizer  ...  0.421971   0.954  1.371362
+2       RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.534  1.611176
+3       RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.779  1.371362
+4       RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.190  1.540320
+..        ...   ...                      ...  ...       ...     ...       ...
+56      RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.411  2.006837
+57      RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.013  1.494255
+58      RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.954  1.611176
+59      RDKit   SVR  Random_Search_optimizer  ...  0.421971   0.979  1.540320
+60      RDKit   SVR  Random_Search_optimizer  ...  0.421971   1.762  2.046964
+
+[61 rows x 7 columns]
+results saved as parquet to ../new_results/Viscosity_as_logVis/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet

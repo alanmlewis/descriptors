@@ -1,0 +1,43 @@
+Viscosity_as_logVis
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 20
+Root Mean Squared Error: 0.6503401302037495
+R-squared: 0.28274818429448134
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54925005 1.35823604 1.54925005 1.35823604 1.58709818 1.47493693
+ 1.63501793 2.23168521 1.58709818 1.73741983 1.83710307 1.64906477
+ 2.4585923  1.54925005 1.78548037 1.47493693 1.4308334  1.54925005
+ 2.20951699 1.54925005]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model  ... y_true    y_pred
+0      SMILES  Random_Forest  ...  1.571  1.549250
+1      SMILES  Random_Forest  ...  0.954  1.358236
+2      SMILES  Random_Forest  ...  1.534  1.549250
+3      SMILES  Random_Forest  ...  1.779  1.358236
+4      SMILES  Random_Forest  ...  1.190  1.587098
+..        ...            ...  ...    ...       ...
+56     SMILES  Random_Forest  ...  1.411  2.209517
+57     SMILES  Random_Forest  ...  1.013  1.474937
+58     SMILES  Random_Forest  ...  1.954  1.549250
+59     SMILES  Random_Forest  ...  0.979  1.587098
+60     SMILES  Random_Forest  ...  1.762  2.231685
+
+[61 rows x 7 columns]
+results saved as parquet to ../new_results/Viscosity_as_logVis/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rRandom_Forest_SMILES.parquet

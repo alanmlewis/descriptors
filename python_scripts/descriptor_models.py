@@ -497,7 +497,7 @@ descriptor_file = {
 }
 
 ML_models = {
-      "Random Forest": Random_forest,
+      "Random_Forest": Random_forest,
       "SVR" : SVR,
       "XGBoost": XGBoost,
       "LassoCV": LassoCV,
@@ -506,9 +506,9 @@ ML_models = {
 }
 
 Optimization_algorithms = {
-     "Random Search": Random_Search,
-     "Grid Search": Grid_Search,
-     "Successive Halving": Successive_Halving
+     "Random_Search_optimizer": Random_Search,
+     "Grid_Search_optimizer": Grid_Search,
+     "Successive_Halving_optimizer": Successive_Halving
 
 }
 ## running pre-processing functions 
@@ -551,8 +551,13 @@ for desc in config.descriptor:
         optimization_function = Optimization_algorithms[config.optimization_algorithm]
     
         rmse, r2, y_best_predict, optimizer_object = optimization_function(config, pipeline, param_distributions, x_test, x_train, y_test, y_train)
-
-    
+        best_model = optimizer_object.best_estimator_
+        
+        import shap_analysis
+        
+        shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
+        print("shap sucessfully ran")
+        print("files saved")
     # store results in a list of dicts -- CHANGED TO BE SEPERATE ROWS FOR PY ARROW TO WORK
         for yt, yp in zip(y_test, y_best_predict):
             results.append({
@@ -576,12 +581,14 @@ print(results_df[["Descriptor", "Model", "Optimization", "RMSE", "R2", "y_true",
 #results_df["y_true"] = results_df["y_true"].apply(lambda x: pa.array(x))
 #results_df["y_pred"] = results_df["y_pred"].apply(lambda x: pa.array(x))
 
-filename = "_".join(map(str, config.model)) + "_" + "_".join(map(str, config.descriptor))
+filename = "_".join(map(str, config.optimization_algorithm)) + "_".join(map(str, config.model)) + "_" + "_".join(map(str, config.descriptor))
 results_df.to_parquet(f"../new_results/{config.property}/parquet_files/{filename}.parquet", index=False)
+print(f"results saved as parquet to ../new_results/{config.property}/parquet_files/{filename}.parquet")
+
 
 ##SHAP ANALYSIS -- maybe this isnt needed since running in seperate file?
-#import shap_analysis
-#shap_analysis.running_shap()
+##import shap_analysis
+##shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
 #print("shap sucessfully ran")
 #print("files saved")
 

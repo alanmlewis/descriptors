@@ -1,0 +1,63 @@
+flashpoint
+('SMILES',)
+('Random_Forest', 'XGBoost')
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = log2
+>> randomforestregressor__max_depth = 20
+Root Mean Squared Error: 5.136032086150811
+R-squared: 0.7735372699607721
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[171.89144406 304.78663887 189.40179259 161.64405655 133.85979132
+ 284.04829919 156.52533135 154.81338267 166.54154861 107.67411145
+ 152.07444317 208.44566705 219.59859443 202.27346388 143.950755
+ 176.67216469 161.75389951 174.22673338 163.05315986 181.66325253]
+yay, we ran!!
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 300
+>> max_depth = 6
+>> learning_rate = 0.05
+>> colsample_bytree = 0.8
+Root Mean Squared Error: 4.8810649216423165
+R-squared: 0.8152671456336975
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[182.5358   332.51562  221.93515  156.19644  152.80919  298.3608
+ 148.77158  148.63614  172.47878   92.308464 148.743    238.69965
+ 280.4697   200.95111  127.456505 220.83882  158.48494  179.2223
+ 165.06927  202.79594 ]
+yay, we ran!!
+The results as dataframe are:
+   Descriptor          Model   Optimization  ...        R2  y_true      y_pred
+0      SMILES  Random_Forest  Random Search  ...  0.773537     208  171.891444
+1      SMILES  Random_Forest  Random Search  ...  0.773537     350  304.786639
+2      SMILES  Random_Forest  Random Search  ...  0.773537     211  189.401793
+3      SMILES  Random_Forest  Random Search  ...  0.773537     116  161.644057
+4      SMILES  Random_Forest  Random Search  ...  0.773537     182  133.859791
+..        ...            ...            ...  ...       ...     ...         ...
+57     SMILES        XGBoost  Random Search  ...  0.815267     193  145.759003
+58     SMILES        XGBoost  Random Search  ...  0.815267     150  147.197861
+59     SMILES        XGBoost  Random Search  ...  0.815267     139  148.446899
+60     SMILES        XGBoost  Random Search  ...  0.815267     174  175.991577
+61     SMILES        XGBoost  Random Search  ...  0.815267     179  164.710556
+
+[62 rows x 7 columns]
