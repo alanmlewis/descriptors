@@ -1,0 +1,32 @@
+Viscosity_as_logVis
+('RDKit',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random_Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 5
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = log2
+>> randomforestregressor__max_depth = 20
+Root Mean Squared Error: 0.40372817232312663
+R-squared: 0.34643685602898355
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54985846 1.35913231 1.54985846 1.35913231 1.58648883 1.47806147
+ 1.56342177 2.2366049  1.58648883 1.73839419 1.84036408 1.64869424
+ 2.30293526 1.54985846 2.50599055 1.47806147 1.43391462 1.54985846
+ 2.21170035 1.54985846]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

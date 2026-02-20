@@ -1,0 +1,28 @@
+boiling_point
+('RDKit',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.00035938136638046257
+>> svr__epsilon = 0.0021544346900318843
+>> svr__C = 1000.0
+Root Mean Squared Error: 12.02847437221395
+R-squared: 0.9666234916817775
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[283.40019929 242.71432568 476.40234755 358.98687453 273.28245761
+ 426.54027767 301.02624651 405.71154453 295.80442328 303.62802495
+ 379.16562773 277.38385456 221.02433779 343.19638306 366.3412131
+ 285.26779841 394.09333084 257.56455707 368.26008015 290.28771916]
+yay, we ran!!
+PICKLE SAVED

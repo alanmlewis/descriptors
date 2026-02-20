@@ -1,0 +1,35 @@
+Viscosity_as_logVis
+('RDKit',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.7
+>> gamma = 0.5
+>> learning_rate = 0.05
+>> max_depth = 2
+>> min_child_weight = 1
+>> n_estimators = 200
+>> n_jobs = 8
+>> random_state = 42
+>> reg_alpha = 0
+>> reg_lambda = 1
+>> subsample = 0.6
+Root Mean Squared Error: 0.39723321189811694
+R-squared: 0.36729605032862533
+Train R2: 0.3828884273146126
+best alpha: {'colsample_bytree': 0.7, 'gamma': 0.5, 'learning_rate': 0.05, 'max_depth': 2, 'min_child_weight': 1, 'n_estimators': 200, 'n_jobs': 8, 'random_state': 42, 'reg_alpha': 0, 'reg_lambda': 1, 'subsample': 0.6}
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.5624721 1.3516223 1.5624721 1.3516223 1.5860647 1.5290473 1.5523283
+ 2.2910075 1.5860647 1.7007734 1.8839222 1.683559  2.4626548 1.5624721
+ 2.4154968 1.5290473 1.4852023 1.5624721 2.197593  1.5624721]
+PICKLE SAVED

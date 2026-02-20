@@ -1,0 +1,35 @@
+flashpoint
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.6
+>> gamma = 0.1
+>> learning_rate = 0.05
+>> max_depth = 4
+>> min_child_weight = 1
+>> n_estimators = 400
+>> n_jobs = 8
+>> random_state = 42
+>> reg_alpha = 0
+>> reg_lambda = 10
+>> subsample = 0.6
+Root Mean Squared Error: 23.895702362060547
+R-squared: 0.8141658902168274
+Train R2: 0.9440563321113586
+best alpha: {'colsample_bytree': 0.6, 'gamma': 0.1, 'learning_rate': 0.05, 'max_depth': 4, 'min_child_weight': 1, 'n_estimators': 400, 'n_jobs': 8, 'random_state': 42, 'reg_alpha': 0, 'reg_lambda': 10, 'subsample': 0.6}
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[201.36896  321.44336  180.50598  174.69394  158.44899  304.67325
+ 141.18604  152.96632  149.98337   91.781494 124.825294 245.30566
+ 269.2534   194.9481   130.43651  188.35083  162.17107  168.0912
+ 160.7127   188.07852 ]
+PICKLE SAVED

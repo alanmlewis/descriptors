@@ -12,66 +12,19 @@ It's been split!!
 Loading features from: SMILES_matrices.csv
 Best score was using the following parameter set:
 >> svr__kernel = rbf
->> svr__gamma = scale
->> svr__epsilon = 1.0
->> svr__C = 88.58667904100822
-Root Mean Squared Error: 6.54513602575969
-R-squared: 0.5766549230272674
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.1
+>> svr__C = 297.63514416313194
+Root Mean Squared Error: 5.798673642075826
+R-squared: 0.73918385388931
 [285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
  378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
-[286.43535483 297.2159179  368.83321187 346.95648199 318.7105812
- 355.70607683 275.53969106 345.16321784 311.48312331 323.9652795
- 361.40065011 279.45522081 278.01915298 352.20771057 353.35278057
- 280.17989216 339.08535873 306.19613267 345.54277937 343.82040364]
+[286.8929387  245.1175237  438.77925297 355.64265908 303.28016689
+ 415.89338406 257.62351407 379.74037516 315.85642852 307.21099664
+ 367.64979368 278.74110719 268.66526665 361.32725064 353.15673168
+ 279.53567507 344.30084235 289.48959634 348.28484221 352.01143472]
 yay, we ran!!
-x_train size: 152
-x_test size: 39
-Descriptor for the SHAP analysis was: ('SMILES',)
-  0%|          | 0/39 [00:00<?, ?it/s]  3%|▎         | 1/39 [00:06<04:05,  6.45s/it]  5%|▌         | 2/39 [00:13<04:08,  6.71s/it]  8%|▊         | 3/39 [00:20<04:04,  6.79s/it] 10%|█         | 4/39 [00:26<03:52,  6.63s/it] 13%|█▎        | 5/39 [00:33<03:49,  6.75s/it] 15%|█▌        | 6/39 [00:39<03:38,  6.62s/it] 18%|█▊        | 7/39 [00:46<03:34,  6.71s/it] 21%|██        | 8/39 [00:53<03:29,  6.76s/it] 23%|██▎       | 9/39 [01:00<03:22,  6.76s/it] 26%|██▌       | 10/39 [01:07<03:16,  6.79s/it] 28%|██▊       | 11/39 [01:13<03:06,  6.66s/it] 31%|███       | 12/39 [01:20<03:00,  6.70s/it] 33%|███▎      | 13/39 [01:27<02:54,  6.73s/it] 36%|███▌      | 14/39 [01:34<02:48,  6.75s/it] 38%|███▊      | 15/39 [01:40<02:42,  6.78s/it] 41%|████      | 16/39 [01:47<02:33,  6.66s/it] 44%|████▎     | 17/39 [01:54<02:27,  6.72s/it] 46%|████▌     | 18/39 [02:00<02:21,  6.74s/it] 49%|████▊     | 19/39 [02:07<02:13,  6.65s/it] 51%|█████▏    | 20/39 [02:14<02:07,  6.72s/it] 54%|█████▍    | 21/39 [02:21<02:01,  6.77s/it] 56%|█████▋    | 22/39 [02:27<01:55,  6.79s/it] 59%|█████▉    | 23/39 [02:34<01:48,  6.79s/it] 62%|██████▏   | 24/39 [02:41<01:40,  6.67s/it] 64%|██████▍   | 25/39 [02:47<01:32,  6.58s/it] 67%|██████▋   | 26/39 [02:53<01:24,  6.52s/it] 69%|██████▉   | 27/39 [03:00<01:19,  6.60s/it] 72%|███████▏  | 28/39 [03:07<01:11,  6.53s/it] 74%|███████▍  | 29/39 [03:13<01:06,  6.63s/it] 77%|███████▋  | 30/39 [03:20<01:00,  6.69s/it] 79%|███████▉  | 31/39 [03:27<00:52,  6.59s/it] 82%|████████▏ | 32/39 [03:33<00:45,  6.53s/it] 85%|████████▍ | 33/39 [03:39<00:38,  6.49s/it] 87%|████████▋ | 34/39 [03:46<00:32,  6.60s/it] 90%|████████▉ | 35/39 [03:53<00:26,  6.52s/it] 92%|█████████▏| 36/39 [03:59<00:19,  6.61s/it] 95%|█████████▍| 37/39 [04:06<00:13,  6.67s/it] 97%|█████████▋| 38/39 [04:13<00:06,  6.72s/it]100%|██████████| 39/39 [04:19<00:00,  6.61s/it]100%|██████████| 39/39 [04:19<00:00,  6.66s/it]
-SHAP ran correctly, and file was saved
-shap sucessfully ran
-files saved
-The results as dataframe are:
-   Descriptor Model             Optimization  ...        R2  y_true      y_pred
-0      SMILES   SVR  Random_Search_optimizer  ...  0.576655  285.15  286.435355
-1      SMILES   SVR  Random_Search_optimizer  ...  0.576655  243.75  297.215918
-2      SMILES   SVR  Random_Search_optimizer  ...  0.576655  482.05  368.833212
-3      SMILES   SVR  Random_Search_optimizer  ...  0.576655  364.65  346.956482
-4      SMILES   SVR  Random_Search_optimizer  ...  0.576655  263.55  318.710581
-5      SMILES   SVR  Random_Search_optimizer  ...  0.576655  432.15  355.706077
-6      SMILES   SVR  Random_Search_optimizer  ...  0.576655  304.77  275.539691
-7      SMILES   SVR  Random_Search_optimizer  ...  0.576655  411.15  345.163218
-8      SMILES   SVR  Random_Search_optimizer  ...  0.576655  308.85  311.483123
-9      SMILES   SVR  Random_Search_optimizer  ...  0.576655  316.25  323.965280
-10     SMILES   SVR  Random_Search_optimizer  ...  0.576655  378.05  361.400650
-11     SMILES   SVR  Random_Search_optimizer  ...  0.576655  279.35  279.455221
-12     SMILES   SVR  Random_Search_optimizer  ...  0.576655  225.05  278.019153
-13     SMILES   SVR  Random_Search_optimizer  ...  0.576655  346.95  352.207711
-14     SMILES   SVR  Random_Search_optimizer  ...  0.576655  369.55  353.352781
-15     SMILES   SVR  Random_Search_optimizer  ...  0.576655  309.65  280.179892
-16     SMILES   SVR  Random_Search_optimizer  ...  0.576655  400.65  339.085359
-17     SMILES   SVR  Random_Search_optimizer  ...  0.576655  261.15  306.196133
-18     SMILES   SVR  Random_Search_optimizer  ...  0.576655  366.00  345.542779
-19     SMILES   SVR  Random_Search_optimizer  ...  0.576655  298.75  343.820404
-20     SMILES   SVR  Random_Search_optimizer  ...  0.576655  271.25  343.252213
-21     SMILES   SVR  Random_Search_optimizer  ...  0.576655  259.25  276.024646
-22     SMILES   SVR  Random_Search_optimizer  ...  0.576655  331.08  338.823024
-23     SMILES   SVR  Random_Search_optimizer  ...  0.576655  350.15  295.944036
-24     SMILES   SVR  Random_Search_optimizer  ...  0.576655  261.45  312.983950
-25     SMILES   SVR  Random_Search_optimizer  ...  0.576655  332.75  319.558306
-26     SMILES   SVR  Random_Search_optimizer  ...  0.576655  276.17  300.976855
-27     SMILES   SVR  Random_Search_optimizer  ...  0.576655  336.42  339.355411
-28     SMILES   SVR  Random_Search_optimizer  ...  0.576655  261.55  297.411648
-29     SMILES   SVR  Random_Search_optimizer  ...  0.576655  332.65  343.571908
-30     SMILES   SVR  Random_Search_optimizer  ...  0.576655  303.15  322.813105
-31     SMILES   SVR  Random_Search_optimizer  ...  0.576655  374.85  345.921216
-32     SMILES   SVR  Random_Search_optimizer  ...  0.576655  296.45  313.121788
-33     SMILES   SVR  Random_Search_optimizer  ...  0.576655  419.45  388.297889
-34     SMILES   SVR  Random_Search_optimizer  ...  0.576655  145.15  212.547174
-35     SMILES   SVR  Random_Search_optimizer  ...  0.576655  305.00  327.467350
-36     SMILES   SVR  Random_Search_optimizer  ...  0.576655  318.25  315.405398
-37     SMILES   SVR  Random_Search_optimizer  ...  0.576655  288.25  243.144795
-38     SMILES   SVR  Random_Search_optimizer  ...  0.576655  184.55  262.159226
-
-[39 rows x 7 columns]
-results saved as parquet to ../new_results/boiling_point/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_SMILES.parquet
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/boiling_point/pickle_files/BEST_best_model_('SMILES',)_('SVR',)_Random_Search_optimizer.pickle"

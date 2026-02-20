@@ -5,14 +5,15 @@ from pathlib import Path
 
 #property, descriptor and model
 
-property = 'Viscosity_as_logVis'
-##put _ between property words?? 
-descriptor = ("SMILES",)
-model = ("SVR",)
-optimization_algorithm = ("Random_Search_optimizer")
 
-##do you want graphs? 
+property = 'flashpoint'
+##put _ between property words??
+descriptor = ("Bit Morgan",)
+model = ("Lasso",)
+optimization_algorithm = ("Grid_Search_optimizer")
+##do you want graphs?
 compare_graphs = "yes"
+
 
 ## CAPITALISE EACH LETTER FOR START OF EACH WORD WHEN SELECTING MODEL
 
@@ -23,8 +24,19 @@ compare_graphs = "yes"
 
 
 root_dir = Path(__file__).resolve().parent.parent
-SMILES_file = root_dir / "datasets_and_SMILES"/ "viscosity_compounds_InChI_SMILES.txt"
-raw_properties_file = root_dir / "datasets_and_SMILES"/"values_Viscosity_as_logVis"
+#SMILES_file = root_dir / "datasets_and_SMILES"/ "BP_InChI_SMILES_fixed.txt"
+#raw_properties_file = root_dir / "datasets_and_SMILES"/"values_boiling_point"
+
+SMILES_file = root_dir / "datasets_and_SMILES"/ "flashpoint_compounds_InChI_SMILES.txt"
+raw_properties_file = root_dir / "datasets_and_SMILES"/"values_flashpoint"
+#SMILES_file = root_dir / "datasets_and_SMILES"/ "viscosity_compounds_InChI_SMILES.txt"
+#raw_properties_file = root_dir / "datasets_and_SMILES"/"values_Viscosity_as_logVis"
+
+## RUN PICKLE
+run_pickle = "no"
+
+## RUN PARQUETS
+run_parquets = "yes"
 
 
 

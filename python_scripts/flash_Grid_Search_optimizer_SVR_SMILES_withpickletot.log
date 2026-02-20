@@ -1,0 +1,31 @@
+flashpoint
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__C = 1000.0
+>> svr__epsilon = 1.0
+>> svr__gamma = auto
+>> svr__kernel = rbf
+Root Mean Squared Error: 26.22054895292997
+R-squared: 0.7762467329293348
+Train R2: 0.9111843835065105
+best alpha: {'svr__C': np.float64(1000.0), 'svr__epsilon': np.float64(1.0), 'svr__gamma': 'auto', 'svr__kernel': 'rbf'}
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[198.33487648 319.97004096 200.32461479 171.62819737 127.58422495
+ 295.59237089 149.44939423 153.32785945 158.06866504  88.73651431
+ 202.15453943 232.76577994 226.61226821 182.43635237 129.5585445
+ 190.26507792 174.62290586 164.42994457 156.38571005 197.18590144]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

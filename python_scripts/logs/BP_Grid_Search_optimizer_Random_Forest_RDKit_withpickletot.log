@@ -1,0 +1,30 @@
+boiling_point
+('RDKit',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random_Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__n_estimators = 1500
+Root Mean Squared Error: 21.911747870303667
+R-squared: 0.8892423198855974
+Train R2: 0.9801462180928929
+best alpha: {'randomforestregressor__max_depth': 20, 'randomforestregressor__max_features': 'sqrt', 'randomforestregressor__min_samples_leaf': 1, 'randomforestregressor__min_samples_split': 2, 'randomforestregressor__n_estimators': 1500}
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[276.11242667 268.03180667 440.36023333 357.94356    276.61788
+ 397.38066667 288.23546    398.33351333 315.20139333 293.97162667
+ 366.97994667 279.43284667 238.97859333 341.82122    357.39882667
+ 289.06436667 361.57587333 274.89794    352.55989333 304.14672   ]
+PICKLE SAVED

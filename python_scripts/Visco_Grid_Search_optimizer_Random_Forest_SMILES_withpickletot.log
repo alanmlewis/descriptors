@@ -1,0 +1,32 @@
+Viscosity_as_logVis
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__n_estimators = 500
+Root Mean Squared Error: 0.42463484118525874
+R-squared: 0.27699601345977976
+Train R2: 0.38731573949176823
+best alpha: {'randomforestregressor__max_depth': 20, 'randomforestregressor__max_features': 'sqrt', 'randomforestregressor__min_samples_leaf': 1, 'randomforestregressor__min_samples_split': 2, 'randomforestregressor__n_estimators': 500}
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54964354 1.36071133 1.54964354 1.36071133 1.58741981 1.47552288
+ 1.65052244 2.24068944 1.58741981 1.74108725 1.83329783 1.64975668
+ 2.44252424 1.54964354 1.77781055 1.47552288 1.43233599 1.54964354
+ 2.21485687 1.54964354]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

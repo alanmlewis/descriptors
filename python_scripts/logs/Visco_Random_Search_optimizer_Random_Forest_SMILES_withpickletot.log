@@ -1,0 +1,28 @@
+Viscosity_as_logVis
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1000
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 20
+Root Mean Squared Error: 0.4231373848690848
+R-squared: 0.2820863065425696
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.54958353 1.35917199 1.54958353 1.35917199 1.58653686 1.47766284
+ 1.64323302 2.23658471 1.58653686 1.73838002 1.84025211 1.64872064
+ 2.46238654 1.54958353 1.78035227 1.47766284 1.43219089 1.54958353
+ 2.21128796 1.54958353]
+yay, we ran!!
+PICKLE SAVED

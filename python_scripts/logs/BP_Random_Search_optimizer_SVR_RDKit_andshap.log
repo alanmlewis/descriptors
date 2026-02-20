@@ -13,66 +13,19 @@ It's been split!!
 Loading features from: rdkit_descriptors.csv
 Best score was using the following parameter set:
 >> svr__kernel = rbf
->> svr__gamma = 0.00035938136638046257
->> svr__epsilon = 0.46415888336127775
->> svr__C = 1000.0
-Root Mean Squared Error: 3.4720596560600385
-R-squared: 0.9664750205278743
+>> svr__gamma = 0.0001
+>> svr__epsilon = 0.01
+>> svr__C = 545.5594781168514
+Root Mean Squared Error: 4.172214153384402
+R-squared: 0.9300985516186261
 [285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
  378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
-[284.5855566  243.34620414 475.72053081 359.35936789 271.6054089
- 425.44608385 301.43364284 405.920189   294.97067493 303.16121627
- 378.54743985 277.2228384  221.28951602 343.55370062 365.59499526
- 285.24136977 393.31364733 258.28932938 369.19175437 291.1870313 ]
+[281.32903457 248.8910244  469.27145998 357.10329833 285.3509447
+ 417.52734852 288.36638411 410.94824442 296.73081014 296.01724933
+ 356.09099364 276.09671357 231.60655696 340.6640162  361.85069896
+ 283.44239992 395.03612492 266.68990266 361.86561299 295.73907427]
 yay, we ran!!
-x_train size: 152
-x_test size: 39
-Descriptor for the SHAP analysis was: ('RDKit',)
-  0%|          | 0/39 [00:00<?, ?it/s]  3%|▎         | 1/39 [00:01<00:47,  1.24s/it]  5%|▌         | 2/39 [00:02<00:47,  1.29s/it]  8%|▊         | 3/39 [00:03<00:46,  1.29s/it] 10%|█         | 4/39 [00:05<00:45,  1.29s/it] 13%|█▎        | 5/39 [00:06<00:44,  1.31s/it] 15%|█▌        | 6/39 [00:07<00:43,  1.31s/it] 18%|█▊        | 7/39 [00:09<00:42,  1.32s/it] 21%|██        | 8/39 [00:10<00:40,  1.31s/it] 23%|██▎       | 9/39 [00:11<00:39,  1.31s/it] 26%|██▌       | 10/39 [00:13<00:38,  1.32s/it] 28%|██▊       | 11/39 [00:14<00:36,  1.31s/it] 31%|███       | 12/39 [00:15<00:35,  1.31s/it] 33%|███▎      | 13/39 [00:17<00:34,  1.32s/it] 36%|███▌      | 14/39 [00:18<00:33,  1.33s/it] 38%|███▊      | 15/39 [00:19<00:31,  1.33s/it] 41%|████      | 16/39 [00:20<00:30,  1.32s/it] 44%|████▎     | 17/39 [00:22<00:28,  1.31s/it] 46%|████▌     | 18/39 [00:23<00:27,  1.31s/it] 49%|████▊     | 19/39 [00:24<00:26,  1.31s/it] 51%|█████▏    | 20/39 [00:26<00:24,  1.31s/it] 54%|█████▍    | 21/39 [00:27<00:23,  1.29s/it] 56%|█████▋    | 22/39 [00:28<00:21,  1.29s/it] 59%|█████▉    | 23/39 [00:30<00:20,  1.29s/it] 62%|██████▏   | 24/39 [00:31<00:19,  1.29s/it] 64%|██████▍   | 25/39 [00:32<00:17,  1.28s/it] 67%|██████▋   | 26/39 [00:33<00:16,  1.28s/it] 69%|██████▉   | 27/39 [00:35<00:15,  1.27s/it] 72%|███████▏  | 28/39 [00:36<00:14,  1.28s/it] 74%|███████▍  | 29/39 [00:37<00:12,  1.29s/it] 77%|███████▋  | 30/39 [00:38<00:11,  1.28s/it] 79%|███████▉  | 31/39 [00:40<00:10,  1.28s/it] 82%|████████▏ | 32/39 [00:41<00:09,  1.29s/it] 85%|████████▍ | 33/39 [00:42<00:07,  1.29s/it] 87%|████████▋ | 34/39 [00:44<00:06,  1.28s/it] 90%|████████▉ | 35/39 [00:45<00:05,  1.29s/it] 92%|█████████▏| 36/39 [00:46<00:03,  1.30s/it] 95%|█████████▍| 37/39 [00:48<00:02,  1.29s/it] 97%|█████████▋| 38/39 [00:49<00:01,  1.28s/it]100%|██████████| 39/39 [00:50<00:00,  1.29s/it]100%|██████████| 39/39 [00:50<00:00,  1.30s/it]
-SHAP ran correctly, and file was saved
-shap sucessfully ran
-files saved
-The results as dataframe are:
-   Descriptor Model             Optimization  ...        R2  y_true      y_pred
-0       RDKit   SVR  Random_Search_optimizer  ...  0.966475  285.15  284.585557
-1       RDKit   SVR  Random_Search_optimizer  ...  0.966475  243.75  243.346204
-2       RDKit   SVR  Random_Search_optimizer  ...  0.966475  482.05  475.720531
-3       RDKit   SVR  Random_Search_optimizer  ...  0.966475  364.65  359.359368
-4       RDKit   SVR  Random_Search_optimizer  ...  0.966475  263.55  271.605409
-5       RDKit   SVR  Random_Search_optimizer  ...  0.966475  432.15  425.446084
-6       RDKit   SVR  Random_Search_optimizer  ...  0.966475  304.77  301.433643
-7       RDKit   SVR  Random_Search_optimizer  ...  0.966475  411.15  405.920189
-8       RDKit   SVR  Random_Search_optimizer  ...  0.966475  308.85  294.970675
-9       RDKit   SVR  Random_Search_optimizer  ...  0.966475  316.25  303.161216
-10      RDKit   SVR  Random_Search_optimizer  ...  0.966475  378.05  378.547440
-11      RDKit   SVR  Random_Search_optimizer  ...  0.966475  279.35  277.222838
-12      RDKit   SVR  Random_Search_optimizer  ...  0.966475  225.05  221.289516
-13      RDKit   SVR  Random_Search_optimizer  ...  0.966475  346.95  343.553701
-14      RDKit   SVR  Random_Search_optimizer  ...  0.966475  369.55  365.594995
-15      RDKit   SVR  Random_Search_optimizer  ...  0.966475  309.65  285.241370
-16      RDKit   SVR  Random_Search_optimizer  ...  0.966475  400.65  393.313647
-17      RDKit   SVR  Random_Search_optimizer  ...  0.966475  261.15  258.289329
-18      RDKit   SVR  Random_Search_optimizer  ...  0.966475  366.00  369.191754
-19      RDKit   SVR  Random_Search_optimizer  ...  0.966475  298.75  291.187031
-20      RDKit   SVR  Random_Search_optimizer  ...  0.966475  271.25  275.659662
-21      RDKit   SVR  Random_Search_optimizer  ...  0.966475  259.25  262.323308
-22      RDKit   SVR  Random_Search_optimizer  ...  0.966475  331.08  326.308759
-23      RDKit   SVR  Random_Search_optimizer  ...  0.966475  350.15  345.758373
-24      RDKit   SVR  Random_Search_optimizer  ...  0.966475  261.45  257.897370
-25      RDKit   SVR  Random_Search_optimizer  ...  0.966475  332.75  326.892153
-26      RDKit   SVR  Random_Search_optimizer  ...  0.966475  276.17  280.679381
-27      RDKit   SVR  Random_Search_optimizer  ...  0.966475  336.42  335.934697
-28      RDKit   SVR  Random_Search_optimizer  ...  0.966475  261.55  268.263032
-29      RDKit   SVR  Random_Search_optimizer  ...  0.966475  332.65  316.724976
-30      RDKit   SVR  Random_Search_optimizer  ...  0.966475  303.15  297.733087
-31      RDKit   SVR  Random_Search_optimizer  ...  0.966475  374.85  368.440762
-32      RDKit   SVR  Random_Search_optimizer  ...  0.966475  296.45  289.261691
-33      RDKit   SVR  Random_Search_optimizer  ...  0.966475  419.45  418.160223
-34      RDKit   SVR  Random_Search_optimizer  ...  0.966475  145.15  181.450770
-35      RDKit   SVR  Random_Search_optimizer  ...  0.966475  305.00  349.070008
-36      RDKit   SVR  Random_Search_optimizer  ...  0.966475  318.25  308.248957
-37      RDKit   SVR  Random_Search_optimizer  ...  0.966475  288.25  285.034525
-38      RDKit   SVR  Random_Search_optimizer  ...  0.966475  184.55  204.160561
-
-[39 rows x 7 columns]
-results saved as parquet to ../new_results/boiling_point/parquet_files/R_a_n_d_o_m___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/boiling_point/pickle_files/BEST_best_model_('RDKit',)_('SVR',)_Random_Search_optimizer.pickle"

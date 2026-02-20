@@ -1,0 +1,30 @@
+flashpoint
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.1
+>> svr__C = 545.5594781168514
+Root Mean Squared Error: 27.146929250467
+R-squared: 0.7601568895442478
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[200.62266827 321.04953755 204.11953053 170.44063947 117.21269645
+ 293.88646848 151.08684483 152.67850303 158.92701871  98.16667146
+ 201.56880876 230.34445725 223.15897147 189.42130229 127.21474665
+ 179.96118363 176.1503386  164.09806634 160.40124482 193.91473788]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

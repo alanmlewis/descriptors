@@ -1,0 +1,29 @@
+Viscosity_as_logVis
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__C = 0.37926901907322497
+>> svr__epsilon = 0.21544346900318823
+>> svr__gamma = scale
+>> svr__kernel = rbf
+Root Mean Squared Error: 0.6608506042075661
+R-squared: 0.23524450278955455
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.4685673  1.37147011 1.4685673  1.37147011 1.58752288 1.50868035
+ 1.72852847 2.12080171 1.58752288 1.73860776 1.78041555 1.63913045
+ 2.1239346  1.4685673  1.83945564 1.50868035 1.4445369  1.4685673
+ 2.11132485 1.4685673 ]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/Viscosity_as_logVis/pickle_files/BEST_best_model_('SMILES',)_('SVR',)_Grid_Search_optimizer.pickle"

@@ -1,0 +1,35 @@
+boiling_point
+('RDKit',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.6
+>> gamma = 0
+>> learning_rate = 0.05
+>> max_depth = 2
+>> min_child_weight = 5
+>> n_estimators = 400
+>> n_jobs = 8
+>> random_state = 42
+>> reg_alpha = 1
+>> reg_lambda = 1
+>> subsample = 0.7
+Root Mean Squared Error: 14.35693391947123
+R-squared: 0.9524508005446072
+Train R2: 0.9970023466123283
+best alpha: {'colsample_bytree': 0.6, 'gamma': 0, 'learning_rate': 0.05, 'max_depth': 2, 'min_child_weight': 5, 'n_estimators': 400, 'n_jobs': 8, 'random_state': 42, 'reg_alpha': 1, 'reg_lambda': 1, 'subsample': 0.7}
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[280.77124 248.58829 454.91968 359.76837 275.44885 411.57477 304.312
+ 418.57944 323.7228  302.0121  373.48703 264.60376 216.86253 356.82584
+ 375.92737 296.07465 396.4203  263.34576 361.03632 308.0703 ]
+PICKLE SAVED

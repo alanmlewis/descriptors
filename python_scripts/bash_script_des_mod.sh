@@ -12,13 +12,13 @@ for model in "${models[@]}"; do
 			sed -i "s/^[[:space:]]*descriptor = .*/descriptor = (\"$descriptor\",)/" config.py
 	
 	 		sed -i "s/^[[:space:]]*optimization_algorithm = .*/optimization_algorithm = (\"$optimization_algorithm\")/" config.py
-			log_file="Visco_${optimization_algorithm}_${model}_${descriptor}_andshap.log"
+			log_file="flash_${optimization_algorithm}_${model}_${descriptor}_withpickletot.log"
 			
 			nohup python descriptor_models.py > "$log_file" 2>&1 &
 			
 			wait $!
 			
-			echo "completed all VISCO runs with model $model , $descriptor and $optimization_algorithm . Output saved to $log_file"
+			echo "completed all flash runs with model $model , $descriptor and $optimization_algorithm . Output saved to $log_file"
 		
 		done
 	done

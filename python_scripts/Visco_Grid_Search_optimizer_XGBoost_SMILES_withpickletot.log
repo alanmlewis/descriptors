@@ -1,0 +1,37 @@
+Viscosity_as_logVis
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.7
+>> gamma = 0
+>> learning_rate = 0.05
+>> max_depth = 4
+>> min_child_weight = 5
+>> n_estimators = 400
+>> n_jobs = 8
+>> random_state = 42
+>> reg_alpha = 0
+>> reg_lambda = 1
+>> subsample = 0.7
+Root Mean Squared Error: 0.42278511423349396
+R-squared: 0.2832811649971795
+Train R2: 0.39046795729156525
+best alpha: {'colsample_bytree': 0.7, 'gamma': 0, 'learning_rate': 0.05, 'max_depth': 4, 'min_child_weight': 5, 'n_estimators': 400, 'n_jobs': 8, 'random_state': 42, 'reg_alpha': 0, 'reg_lambda': 1, 'subsample': 0.7}
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.5672249 1.3590001 1.5672249 1.3590001 1.5898192 1.4918752 1.5719283
+ 2.2242033 1.5898192 1.729195  1.8435938 1.6366037 2.59635   1.5672249
+ 1.796219  1.4918752 1.4218963 1.5672249 2.2153451 1.5672249]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

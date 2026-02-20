@@ -1,0 +1,34 @@
+boiling_point
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> colsample_bytree = 0.6
+>> gamma = 0
+>> learning_rate = 0.05
+>> max_depth = 2
+>> min_child_weight = 1
+>> n_estimators = 400
+>> n_jobs = 8
+>> random_state = 42
+>> reg_alpha = 1
+>> reg_lambda = 1
+>> subsample = 0.6
+Root Mean Squared Error: 38.5488164030948
+R-squared: 0.6571991400449982
+Train R2: 0.893479612064147
+best alpha: {'colsample_bytree': 0.6, 'gamma': 0, 'learning_rate': 0.05, 'max_depth': 2, 'min_child_weight': 1, 'n_estimators': 400, 'n_jobs': 8, 'random_state': 42, 'reg_alpha': 1, 'reg_lambda': 1, 'subsample': 0.6}
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[283.7486  253.0064  415.44    355.07617 332.6462  419.44424 260.94083
+ 347.829   321.1708  282.34647 365.82553 285.67514 259.3313  347.4238
+ 338.2559  286.54935 329.76062 304.45193 368.89178 287.87454]
+PICKLE SAVED

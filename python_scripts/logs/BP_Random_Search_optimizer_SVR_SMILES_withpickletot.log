@@ -1,0 +1,27 @@
+boiling_point
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.004641588833612777
+>> svr__C = 162.3776739188721
+Root Mean Squared Error: 35.355075169793864
+R-squared: 0.7116477553585655
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[286.10858374 264.19978924 443.22718746 351.4752683  301.09221399
+ 415.78943698 266.30850183 376.43070489 315.00449108 311.12589758
+ 368.68426582 278.16545834 268.07741737 356.35208835 343.38959477
+ 275.2795469  341.52106106 291.09201171 341.32212445 346.65360248]
+yay, we ran!!
+PICKLE SAVED

@@ -33,10 +33,16 @@ print('All files saved in Folder')
 ## function to extract compound ID and InChI. Match it to BP and compound ID doc. then exclude the InChI correspodning to those ocmpound IDs.
 # make one document with all? mismatch though 
 
+###HERE RUN THIS BIT TMR THEN RUN INCHI TO SMILES AND WE SHOULD BE GOLDEN
 ## Files
-file_a = r"C:\Users\cathe\OneDrive\Documents\MChem_Project\InChI_Id\compounds_Boiling_Point_InChI_Id.txt"
-file_b = r"C:\Users\cathe\OneDrive\Documents\MChem_Project\Just_Properties_with_ID\values_boiling_point"    
-output_InChI_BP = r"C:\Users\cathe\OneDrive\Documents\MChem_Project\InChI_Prop\InChI_BP.tsv"
+#file_a = r"C:\Users\cathe\OneDrive\Documents\MChem_Project\InChI_Id\compounds_Boiling_Point_InChI_Id.txt"
+#file_b = r"C:\Users\cathe\OneDrive\Documents\MChem_Project\Just_Properties_with_ID\values_boiling_point"    
+#output_InChI_BP = r"C:\Users\cathe\OneDrive\Documents\MChem_Project\InChI_Prop\InChI_BP.tsv"
+
+##LINUX VERSION
+file_a = r"../compounds_enthalpy_of_vapourization_InChI_Id.txt"
+file_b = r"../datasets_and_SMILES/values_enthalpy_of_vaporization"
+output_InChI = r"../datasets_and_SMILES/InChI_Vap_Enthalpy.tsv"
 
 ##check the headers
 with open(file_a, "r", encoding="utf-8") as f:
@@ -57,7 +63,7 @@ with open(file_a, "r", encoding="utf-8") as f:
         id_to_inchi[compound_id] = inchi
 
 ## InChI to BP
-with open(file_b, "r", encoding="utf-8") as f_in, open(output_InChI_BP, "w", encoding="utf-8", newline="") as f_out:
+with open(file_b, "r", encoding="utf-8") as f_in, open(output_InChI, "w", encoding="utf-8", newline="") as f_out:
     reader = csv.DictReader(f_in, delimiter="\t")
     writer = csv.writer(f_out, delimiter="\t")
     
@@ -71,5 +77,5 @@ with open(file_b, "r", encoding="utf-8") as f_in, open(output_InChI_BP, "w", enc
         if compound_id in id_to_inchi and bp:  # only if InChI exists and BP is not empty
             writer.writerow([id_to_inchi[compound_id], bp])
 
-print(f'InChI BP file saved to {output_InChI_BP}')
+print(f'InChI BP file saved to {output_InChI}')
         

@@ -1,0 +1,30 @@
+Viscosity_as_logVis
+('RDKit',)
+('Lasso',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Lasso
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feature from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> lasso__alpha = 0.1
+>> selectkbest__k = 2
+Root Mean Squared Error: 0.43889893201841845
+R-squared: 0.22760671409899358
+Train R2: 0.21966661417604805
+best alpha: {'lasso__alpha': np.float64(0.1), 'selectkbest__k': 2}
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.69010896 1.69010896 1.69010896 1.69010896 1.69010896 1.60409126
+ 1.37471072 1.85494519 1.69010896 1.81435675 1.96249834 1.69010896
+ 2.30656915 1.69010896 2.30656915 1.60409126 1.85494519 1.69010896
+ 1.96249834 1.69010896]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

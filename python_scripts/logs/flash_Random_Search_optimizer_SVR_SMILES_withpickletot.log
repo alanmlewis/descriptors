@@ -1,0 +1,27 @@
+flashpoint
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.01
+>> svr__C = 1000.0
+Root Mean Squared Error: 26.366379799800402
+R-squared: 0.7737509142498242
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[198.97479947 321.13432202 201.00287306 170.9448629  129.02732438
+ 294.98846815 150.55953607 152.87979945 158.5520365   87.6302755
+ 205.81523789 231.57030431 227.58350125 182.48689051 128.16154295
+ 192.11646972 176.09580787 163.58642796 156.88977064 197.420945  ]
+yay, we ran!!
+PICKLE SAVED

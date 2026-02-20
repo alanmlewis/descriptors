@@ -1,0 +1,25 @@
+boiling_point
+('SMILES',)
+('Lasso',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Lasso
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feature from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> selectkbest__k = 10
+>> lasso__alpha = 3.393221771895328
+Root Mean Squared Error: 48.45828252102196
+R-squared: 0.458303734146158
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[287.56830315 287.56830315 442.35046205 287.56830315 334.3711554
+ 418.76294869 318.52108425 342.10859762 318.52108425 287.56830315
+ 342.10859762 287.56830315 287.56830315 342.10859762 342.10859762
+ 287.56830315 334.3711554  318.52108425 334.3711554  287.56830315]
+yay, we ran!!
+PICKLE SAVED

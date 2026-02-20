@@ -1,0 +1,26 @@
+boiling_point
+('RDKit',)
+('Lasso',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+(191, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Lasso
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feature from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> selectkbest__k = 8
+>> lasso__alpha = 0.2682695795279726
+Root Mean Squared Error: 27.86292802674476
+R-squared: 0.8209091850139105
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[272.86262995 263.56423786 417.58850859 361.37087769 269.55392891
+ 384.18254239 277.7469504  391.52401775 303.66888155 276.63868833
+ 398.68419878 270.05451479 237.56704972 314.52507992 357.84745281
+ 277.26528395 343.31112026 266.69727606 325.15353537 309.17425237]
+yay, we ran!!
+PICKLE SAVED

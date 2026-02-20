@@ -213,23 +213,18 @@ Best score was using the following parameter set:
 >> randomforestregressor__n_estimators = 500
 >> randomforestregressor__min_samples_split = 5
 >> randomforestregressor__min_samples_leaf = 1
->> randomforestregressor__max_features = log2
+>> randomforestregressor__max_features = sqrt
 >> randomforestregressor__max_depth = 40
-Root Mean Squared Error: 7.11991217324592
-R-squared: 0.40718613507183066
+Root Mean Squared Error: 7.023962627149854
+R-squared: 0.4385015327681051
 [285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
  378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
-[298.20059029 258.64367519 369.53876414 309.54376806 267.63837837
- 369.19820501 282.60797292 318.04315227 316.36466992 275.08013828
- 306.99442432 284.72154245 285.25646861 312.44870479 331.84973416
- 278.37731407 343.03678433 312.01793143 309.44459728 277.54734101]
+[298.41792683 252.63535325 366.97100386 313.66221648 262.94129671
+ 369.903716   279.90733869 323.8719142  317.61189431 273.75527136
+ 302.29792871 275.80454054 278.89243209 311.58913343 336.10596894
+ 275.28208334 343.55623682 312.7097656  312.12374139 277.2839764 ]
 yay, we ran!!
-x_train size: 152
-x_test size: 39
-Descriptor for the SHAP analysis was: ('Bit Morgan',)
 Traceback (most recent call last):
-  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
-    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
-  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 66, in running_shap
-    raise ValueError(f"Unknown Model, check input. Model inputted was {model_name}")
-ValueError: Unknown Model, check input. Model inputted was Random_Forest
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/boiling_point/pickle_files/BEST_best_model_('Bit Morgan',)_('Random_Forest',)_Random_Search_optimizer.pickle"

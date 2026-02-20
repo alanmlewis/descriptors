@@ -30,6 +30,8 @@ import xgboost as xgb
 from xgboost import XGBRegressor
 from sklearn.linear_model import LassoCV as LassoCVmodel
 from sklearn.linear_model import Lasso as LassoModel
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import f_regression
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -274,11 +276,15 @@ def XGBoost(config, pre_processing_function_2, running_descriptor, x_test, x_tra
     ## Initialize XGBoost Regressor
     print("loading feaure from:", running_descriptor)
     pipeline = XGBRegressor()
-    param_distributions = { "n_estimators": [200, 300, 500],        ## number of trees
-        "learning_rate": [0.05, 0.10],      ## shrinkage step size
-        "max_depth": [4, 6, 8],             ##  tree depth
-        "subsample": [0.7, 0.8, 0.9],           ## fraction of data to sample per tree
-        "colsample_bytree": [0.7, 0.8],    ## fraction of features to sample per tree
+    param_distributions = { "n_estimators": [100, 200, 400],        ## number of trees
+        "learning_rate": [0.01, 0.05],      ## shrinkage step size
+        "max_depth": [2, 3, 4],             ##  tree depth
+        "subsample": [0.6, 0.7],           ## fraction of data to sample per tree
+        "colsample_bytree": [0.6, 0.7],## fraction of features to sample per tree
+        "min_child_weight": [1, 5, 10], ## restricts how deep a tree grows
+        "reg_lambda": [1, 5, 10], ##penalizes sum of squared leaf weights
+        "reg_alpha": [0, 0.5, 1], ## penalty, simplfies model 
+        "gamma": [0, 0.1, 0.5],## minimum loss reduction required to make a split on leaf node
         "random_state": [42],
         "n_jobs": [8],  ## number of CPU cores im using
         }
@@ -302,10 +308,13 @@ def Lasso(config, pre_processing_function_2, running_descriptor, x_test, x_train
     pipeline = make_pipeline(
             SimpleImputer(strategy="median"),
             StandardScaler(),
+            SelectKBest(f_regression),
             LassoModel(max_iter=2000)
                         )
+    K_values = [2, 4, 6, 8, 10]
     param_distributions = {
-            "lasso__alpha": np.logspace(-4, 2, 50)
+            "lasso__alpha": np.logspace(-1, 2, 50),
+            "selectkbest__k": K_values
             }
     return pipeline, param_distributions
 
@@ -413,7 +422,7 @@ def Random_Search(config, pipeline, param_distributions, x_test, x_train, y_test
 
     ##############################################################
     ## predict and output r2 and RMSE
-    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
+    rmse = root_mean_squared_error(y_test, y_best_predict)
     r2 = r2_score(y_test, y_best_predict)
     print(f'Root Mean Squared Error: {rmse}')
     print(f'R-squared: {r2}')
@@ -422,7 +431,7 @@ def Random_Search(config, pipeline, param_distributions, x_test, x_train, y_test
     print(y_best_predict[:20])
     print("yay, we ran!!")
     optimizer_object = random_search
-    return rmse, r2, y_best_predict, optimizer_object
+    return  r2, rmse, y_best_predict, optimizer_object
 
 def Grid_Search(config, pipeline, param_distributions, x_test, x_train, y_test, y_train):
     grid_search = GridSearchCV(
@@ -442,11 +451,12 @@ def Grid_Search(config, pipeline, param_distributions, x_test, x_train, y_test, 
     production_pipeline.fit(x_train, y_train)
     y_best_predict = production_pipeline.predict(x_test)
 
-    rmse = np.sqrt(root_mean_squared_error(y_test, y_best_predict))
+    rmse = root_mean_squared_error(y_test, y_best_predict)
     r2 = r2_score(y_test, y_best_predict)
     print(f'Root Mean Squared Error: {rmse}')
     print(f'R-squared: {r2}')
-
+    print("Train R2:", r2_score(y_train, production_pipeline.predict(x_train)))
+    print("best alpha:", grid_search.best_params_)
     print(y_test[:20])
     print(y_best_predict[:20])
     optimizer_object = grid_search
@@ -550,47 +560,76 @@ for desc in config.descriptor:
 
         optimization_function = Optimization_algorithms[config.optimization_algorithm]
     
-        rmse, r2, y_best_predict, optimizer_object = optimization_function(config, pipeline, param_distributions, x_test, x_train, y_test, y_train)
+        r2, rmse, y_best_predict, optimizer_object = optimization_function(config, pipeline, param_distributions, x_test, x_train, y_test, y_train)
+        
         best_model = optimizer_object.best_estimator_
         
-        import shap_analysis
+########################################################################################
+        ### SAVING PICKLE FILES
+        if run_pickle == "yes":
+            import pickle
         
-        shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
-        print("shap sucessfully ran")
-        print("files saved")
-    # store results in a list of dicts -- CHANGED TO BE SEPERATE ROWS FOR PY ARROW TO WORK
-        for yt, yp in zip(y_test, y_best_predict):
-            results.append({
-                "Descriptor": desc,
-                "Model": model_name,
-                "Optimization": config.optimization_algorithm,
-                "RMSE": rmse,
-                "R2": r2,
-                "y_true": yt,
-                "y_pred": yp,
-                **optimizer_object.best_params_ ##idk if this will work
-                })
+            results_dict = {
+                    "x_train": x_train,
+                    "x_test": x_test,
+                    "feature_names": x_train.columns.tolist(),
+                    "model_name": model_name,
+                    "best_model": best_model
+                    }
 
+            with open(f'../new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+                pickle.dump(results_dict, f)
+       
+            print("PICKLE SAVED")
+
+
+        #with open(f'../new_results/{config.property}/pickle_files/best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+         #   pickle.dump(optimizer_object.best_estimator_, f)
+        #with open(f'../new_results/{config.property}/pickle_files/x_train_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f: 
+         #   pickle.dump(x_train, f)
+        #with open(f'../new_results/{config.property}/pickle_files/x_test_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f: 
+         #   pickle.dump(x_test, f)
+       # with open(f'../new_results/{config.property}/pickle_files/model_name_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', "wb") as f:
+        #    pickle.dump(model_name, f)
+        
+            print("pickle files saved YAYYYYY")
+        else: 
+            print("pickle set to no. check config if mistake.")
+        if run_parquets == "yes":
+            best_model = optimizer_object.best_estimator_
+        
+        #import shap_analysis
+        
+        #shap_analysis.running_shap(x_train, x_test, model_name, config)
+        #print("shap sucessfully ran")
+        #print("files saved")
+            results = [] 
+            for yt, yp in zip(y_test, y_best_predict):
+                results.append({
+                    "Descriptor": desc,
+                    "Model": model_name,
+                    "Optimization": config.optimization_algorithm,
+                    "RMSE": rmse,
+                    "R2": r2,
+                    "y_true": yt,
+                    "y_pred": yp,
+                    **optimizer_object.best_params_ ##idk if this will work
+                    })
+        else:
+            print("parquets set to no.")
+if run_parquets == "yes":
 ## convert to dataframe (to see and for later)
-results_df = pd.DataFrame(results)
-print("The results as dataframe are:")
-print(results_df[["Descriptor", "Model", "Optimization", "RMSE", "R2", "y_true", "y_pred"]])
+    results_df = pd.DataFrame(results)
+    print("The results as dataframe are:")
+    print(results_df[["Descriptor", "Model", "Optimization", "RMSE", "R2", "y_true", "y_pred"]])
 ## save dataframe as its own output file
-#import pyarrow as pa
-
-#results_df["y_true"] = results_df["y_true"].apply(lambda x: pa.array(x))
-#results_df["y_pred"] = results_df["y_pred"].apply(lambda x: pa.array(x))
-
-filename = "_".join(map(str, config.optimization_algorithm)) + "_".join(map(str, config.model)) + "_" + "_".join(map(str, config.descriptor))
-results_df.to_parquet(f"../new_results/{config.property}/parquet_files/{filename}.parquet", index=False)
-print(f"results saved as parquet to ../new_results/{config.property}/parquet_files/{filename}.parquet")
 
 
-##SHAP ANALYSIS -- maybe this isnt needed since running in seperate file?
-##import shap_analysis
-##shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
-#print("shap sucessfully ran")
-#print("files saved")
+    filename = "_".join(map(str, config.optimization_algorithm)) + "_".join(map(str, config.model)) + "_" + "_".join(map(str, config.descriptor))
+    results_df.to_parquet(f"../new_results/{config.property}/parquet_files/{filename}.parquet", index=False)
+    print(f"results saved as parquet to ../new_results/{config.property}/parquet_files/{filename}.parquet")
+else: 
+    print("parquet set to no. all done.")
 
 #####################################################
 ##NOTIFICATION EMAIL

@@ -1,0 +1,31 @@
+flashpoint
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = 20
+Root Mean Squared Error: 26.673307598957933
+R-squared: 0.76845277941518
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[172.14846667 306.05630556 194.49669394 162.40677778 133.84848968
+ 282.58271459 156.22081111 154.8010672  165.71771111 104.26665029
+ 155.88824286 215.28118389 221.92169103 209.16565796 143.74986335
+ 177.08917967 167.16432222 171.93019968 162.32975556 182.91316349]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

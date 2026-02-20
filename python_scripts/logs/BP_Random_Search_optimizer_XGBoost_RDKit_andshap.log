@@ -27,24 +27,7 @@ R-squared: 0.9486039293362875
  392.50632 326.9429  292.24423 376.83765 268.44107 227.14586 350.86853
  371.15665 286.3539  384.00565 273.3904  358.82794 300.12454]
 yay, we ran!!
-x_train size: 152
-x_test size: 39
-Descriptor for the SHAP analysis was: ('RDKit',)
 Traceback (most recent call last):
-  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
-    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
-  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 59, in running_shap
-    explainer = shap.Explainer(best_model, background.iloc[:shap_size])
-  File "/home/cat/.local/lib/python3.10/site-packages/shap/explainers/_explainer.py", line 204, in __init__
-    raise TypeError(
-TypeError: The passed model is not callable and cannot be analyzed directly with the given masker! Model: XGBRegressor(base_score=None, booster=None, callbacks=None,
-             colsample_bylevel=None, colsample_bynode=None,
-             colsample_bytree=0.7, device=None, early_stopping_rounds=None,
-             enable_categorical=False, eval_metric=None, feature_types=None,
-             feature_weights=None, gamma=None, grow_policy=None,
-             importance_type=None, interaction_constraints=None,
-             learning_rate=0.05, max_bin=None, max_cat_threshold=None,
-             max_cat_to_onehot=None, max_delta_step=None, max_depth=4,
-             max_leaves=None, min_child_weight=None, missing=nan,
-             monotone_constraints=None, multi_strategy=None, n_estimators=500,
-             n_jobs=8, num_parallel_tree=None, ...)
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/boiling_point/pickle_files/BEST_best_model_('RDKit',)_('XGBoost',)_Random_Search_optimizer.pickle"

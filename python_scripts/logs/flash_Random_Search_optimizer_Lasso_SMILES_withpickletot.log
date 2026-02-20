@@ -1,0 +1,25 @@
+flashpoint
+('SMILES',)
+('Lasso',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Lasso
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feature from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> selectkbest__k = 10
+>> lasso__alpha = 9.102981779915218
+Root Mean Squared Error: 52.29163599088096
+R-squared: 0.11008139936098871
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[165.83600891 208.44558833 208.44558833 165.83600891 165.83600891
+ 165.83600891 165.83600891 165.83600891 165.83600891 165.83600891
+ 235.08861296 210.36079832 210.36079832 210.36079832 165.83600891
+ 165.83600891 165.83600891 165.83600891 165.83600891 208.44558833]
+yay, we ran!!
+PICKLE SAVED

@@ -1,0 +1,37 @@
+Viscosity_as_logVis
+('RDKit',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+(304, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: XGBoost
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+loading feaure from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> subsample = 0.6
+>> reg_lambda = 1
+>> reg_alpha = 0
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 200
+>> min_child_weight = 5
+>> max_depth = 2
+>> learning_rate = 0.05
+>> gamma = 0.5
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 0.3973154696273058
+R-squared: 0.3670339867487403
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.5595744 1.3526993 1.5595744 1.3526993 1.5902883 1.5260816 1.5450099
+ 2.2908492 1.5902883 1.7015768 1.8906314 1.6842482 2.461977  1.5595744
+ 2.4153178 1.5260816 1.5034817 1.5595744 2.1974795 1.5595744]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

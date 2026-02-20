@@ -1,0 +1,30 @@
+flashpoint
+('RDKit',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+(151, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: Random_Forest
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__max_depth = 20
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__n_estimators = 1500
+Root Mean Squared Error: 19.709670638147692
+R-squared: 0.8735716239388616
+Train R2: 0.9739320003028684
+best alpha: {'randomforestregressor__max_depth': 20, 'randomforestregressor__max_features': 'sqrt', 'randomforestregressor__min_samples_leaf': 1, 'randomforestregressor__min_samples_split': 2, 'randomforestregressor__n_estimators': 1500}
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[198.2155     319.42866667 196.21811111 176.7488     212.12988889
+ 300.76       153.817      148.92377778 154.828       94.27466667
+ 137.7030582  156.19982963 239.23244444 178.52111111 127.09742222
+ 165.58072222 137.41620317 164.77733333 157.54577778 192.80734444]
+PICKLE SAVED

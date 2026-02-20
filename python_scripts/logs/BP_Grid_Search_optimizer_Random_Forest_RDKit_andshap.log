@@ -25,12 +25,7 @@ R-squared: 0.8892423198855974
  397.38066667 288.23546    398.33351333 315.20139333 293.97162667
  366.97994667 279.43284667 238.97859333 341.82122    357.39882667
  289.06436667 361.57587333 274.89794    352.55989333 304.14672   ]
-x_train size: 152
-x_test size: 39
-Descriptor for the SHAP analysis was: ('RDKit',)
 Traceback (most recent call last):
-  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 558, in <module>
-    shap_analysis.running_shap(best_model, x_train, x_test, model_name, config)
-  File "/home/cat/descriptors/python_scripts/shap_analysis.py", line 66, in running_shap
-    raise ValueError(f"Unknown Model, check input. Model inputted was {model_name}")
-ValueError: Unknown Model, check input. Model inputted was Random_Forest
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/boiling_point/pickle_files/BEST_best_model_('RDKit',)_('Random_Forest',)_Grid_Search_optimizer.pickle"

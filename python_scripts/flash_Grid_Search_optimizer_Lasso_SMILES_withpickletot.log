@@ -1,0 +1,29 @@
+flashpoint
+('SMILES',)
+('Lasso',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Lasso
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feature from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> lasso__alpha = 10.481131341546853
+>> selectkbest__k = 10
+Root Mean Squared Error: 51.97113220641768
+R-squared: 0.12095687447437298
+Train R2: 0.2533125599233996
+best alpha: {'lasso__alpha': np.float64(10.481131341546853), 'selectkbest__k': 10}
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[166.76624292 204.24369809 204.24369809 166.76624292 166.76624292
+ 166.76624292 166.76624292 166.76624292 166.76624292 166.76624292
+ 225.18690039 206.71267565 206.71267565 206.71267565 166.76624292
+ 166.76624292 166.76624292 166.76624292 166.76624292 204.24369809]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

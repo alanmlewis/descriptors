@@ -1,0 +1,32 @@
+flashpoint
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 200
+>> max_depth = 6
+>> learning_rate = 0.05
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 4.753636022581101
+R-squared: 0.83381587266922
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[183.14958 327.72543 214.40538 162.4262  143.90422 298.42972 156.8703
+ 148.19499 173.40321  90.92475 146.8391  238.54134 274.86694 190.42827
+ 134.01047 210.20679 155.30243 170.02702 162.98534 200.15392]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/flashpoint/pickle_files/BEST_best_model_('SMILES',)_('XGBoost',)_Random_Search_optimizer.pickle"

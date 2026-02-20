@@ -1,0 +1,28 @@
+boiling_point
+('SMILES',)
+('Lasso',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Lasso
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feature from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> selectkbest__k = 10
+>> lasso__alpha = 4.498432668969446
+Root Mean Squared Error: 48.949259269679864
+R-squared: 0.44727124990837575
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[289.36633653 289.36633653 434.42172946 289.36633653 333.72272161
+ 412.44220737 318.17268655 340.15220863 318.17268655 289.36633653
+ 340.15220863 289.36633653 289.36633653 340.15220863 340.15220863
+ 289.36633653 333.72272161 318.17268655 333.72272161 289.36633653]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

@@ -9,37 +9,47 @@ import os
 ##collecting all the foles with the same descriptor 
 from pathlib import Path 
 directory = Path(f"../new_results/{backup_config.property}/parquet_files")
-parquet_files = list(directory.glob("*.parquet"))
+parquets = list(directory.glob("*.parquet"))
 print("current working directory is:", os.getcwd())
 
 ################################################
 def normalise_all_names(y):
     return y.replace(" ","_").lower()
 
-def get_all_descriptor_files(parquet_files, backup_config):
+def get_all_descriptor_files(pickles, backup_config):
     target_descriptor = [normalise_all_names(d) for d in backup_config.descriptor]
+    target_opt = [normalise_all_names(o) for o in backup_config.optimization_algorithm]
+
     ##check im not going totally insane:
     print("All parquet files found are:")
-    for p in parquet_files:
+    for p in parquets:
         print("   ", p.name)
 
         print("The target descriptor:", backup_config.descriptor)
+        print("The target opt:", backup_config.optimization_algorithm)
     return [
-            f for f in parquet_files 
-            if any(normalise_all_names(d) in normalise_all_names(f.stem) for d in target_descriptor)
-                ] ## if file in paruqet files has the desired descriptor name, add to returned list
+            f for f in parquets 
+            if any(
+                d in normalise_all_names(f.stem)
+                for d in target_descriptor) 
+            and any(
+                o in normalise_all_names(f.stem) 
+                for o in target_opt)
+            ] ## if file in paruqet files has the desired descriptor name, add to returned list
         
-same_descriptor_parquets = get_all_descriptor_files(parquet_files, backup_config)
+same_descriptor_parquets = get_all_descriptor_files(parquets, backup_config)
+
+
 
 ##sanity check 2
-print("matched parquet files:")
+print("matched parquets files:")
 for p in same_descriptor_parquets: 
     print("      ", p.name)
 ########################################################
 ##main func for comparing models 
 def compare_models(same_descriptor_parquets, backup_config):
     
-    dataframes = [pd.read_parquet(p) for p in same_descriptor_parquets]
+    dataframes = [pd.read_pickle(p) for p in same_descriptor_parquets]
     dataframe = pd.concat(dataframes, ignore_index = True)
     sns.set(style="whitegrid")
     filename = "_".join(map(str, backup_config.descriptor))
@@ -90,7 +100,7 @@ def compare_models(same_descriptor_parquets, backup_config):
         plt.scatter(y_true, y_pred, alpha=0.6)
         min_val, max_val = min(y_true.min(), y_pred.min()), max(y_true.max(), y_pred.max())
         plt.plot([min_val, max_val], [min_val, max_val], 'r--')
-        wrapped_title = "\n".join(textwrap.wrap(f"{spaceless_model_name}_{spaceless_opt_name}_True_vs_Predicted"))
+        wrapped_title = "\n".join(textwrap.wrap(f"{backup_config.property} {spaceless_model_name} Parity Plot"))
         plt.title(wrapped_title)
         plt.xlabel("True values")
         plt.ylabel("Predicted values")
@@ -103,7 +113,7 @@ def compare_models(same_descriptor_parquets, backup_config):
         plt.figure(figsize=(5, 5))
         plt.scatter(y_pred, residuals, alpha=0.6)
         plt.hlines(0, xmin=y_pred.min(), xmax=y_pred.max(), colors='red', linestyles='--')
-        wrapped_title = "\n".join(textwrap.wrap(f"{backup_config.property}_{spaceless_opt_name}_Residuals_vs_Predictions"))
+        wrapped_title = "\n".join(textwrap.wrap(f"{backup_config.property} Residuals Plot"))
         plt.title(wrapped_title)
         plt.xlabel("Predicted values")
         plt.ylabel("Residual (True values − Predicted values)")

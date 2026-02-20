@@ -1,0 +1,27 @@
+Viscosity_as_logVis
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis.csv
+the property I'm extracting is Viscosity_as_logVis
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_Viscosity_as_logVis_Viscosity_as_logVis_Viscosity_as_logVis.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.0001
+>> svr__epsilon = 0.21544346900318823
+>> svr__C = 2.3357214690901213
+Root Mean Squared Error: 0.4350340845795165
+R-squared: 0.24114987206592764
+[1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
+ 3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
+[1.478075   1.36745089 1.478075   1.36745089 1.58917508 1.56610461
+ 1.72868798 2.03944329 1.58917508 1.76354509 1.78066205 1.67872012
+ 2.00497496 1.478075   1.84715991 1.56610461 1.49001546 1.478075
+ 2.04578047 1.478075  ]
+yay, we ran!!
+PICKLE SAVED

@@ -1,0 +1,28 @@
+boiling_point
+('SMILES',)
+('Random_Forest',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: Random_Forest
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Random forest ran correctly!!
+Best score was using the following parameter set:
+>> randomforestregressor__n_estimators = 1500
+>> randomforestregressor__min_samples_split = 2
+>> randomforestregressor__min_samples_leaf = 1
+>> randomforestregressor__max_features = sqrt
+>> randomforestregressor__max_depth = None
+Root Mean Squared Error: 41.40558673371844
+R-squared: 0.60450800925488
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[283.27248    272.10980667 387.38942    338.68236667 310.22306
+ 366.15865333 288.70033333 352.77256667 315.25035333 296.87821333
+ 348.22452    287.17926    284.04886    324.39411333 336.77414667
+ 277.03192    325.24354667 301.98001333 338.20536    301.84973333]
+yay, we ran!!
+PICKLE SAVED

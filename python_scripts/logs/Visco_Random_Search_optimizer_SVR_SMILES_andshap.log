@@ -12,19 +12,19 @@ It's been split!!
 Loading features from: SMILES_matrices.csv
 Best score was using the following parameter set:
 >> svr__kernel = rbf
->> svr__gamma = 0.21544346900318845
->> svr__epsilon = 0.21544346900318823
->> svr__C = 0.37926901907322497
-Root Mean Squared Error: 0.6770548748579454
-R-squared: 0.15743208060232783
+>> svr__gamma = 0.00035938136638046257
+>> svr__epsilon = 0.01
+>> svr__C = 0.6951927961775606
+Root Mean Squared Error: 0.6704612943749111
+R-squared: 0.18977752417699123
 [1.571 0.954 1.534 1.779 1.19  1.415 1.459 2.992 1.698 1.114 2.167 2.061
  3.205 1.29  2.99  2.19  1.654 1.576 2.017 2.186]
-[1.44587001 1.37116232 1.44587001 1.37116232 1.58756011 1.49460144
- 1.72850828 2.13256011 1.58756011 1.73896968 1.82513903 1.63856804
- 1.8251408  1.44587001 1.82513903 1.49460144 1.44587001 1.44587001
- 2.18097456 1.44587001]
+[1.42883217 1.40511676 1.42883217 1.40511676 1.68906965 1.57816472
+ 1.52310991 2.05795681 1.68906965 1.82593604 1.7502566  1.67698063
+ 1.95974359 1.42883217 1.8433808  1.57816472 1.48586109 1.42883217
+ 2.10389037 1.42883217]
 yay, we ran!!
-x_train size: 243
-x_test size: 61
-Descriptor for the SHAP analysis was: ('SMILES',)
-  0%|          | 0/50 [00:00<?, ?it/s]  2%|▏         | 1/50 [00:10<08:40, 10.62s/it]  4%|▍         | 2/50 [00:21<08:29, 10.61s/it]  6%|▌         | 3/50 [00:31<08:17, 10.59s/it]  8%|▊         | 4/50 [00:43<08:21, 10.91s/it] 10%|█         | 5/50 [00:53<08:05, 10.78s/it] 12%|█▏        | 6/50 [01:05<08:04, 11.01s/it] 14%|█▍        | 7/50 [01:15<07:49, 10.92s/it]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/Viscosity_as_logVis/pickle_files/BEST_best_model_('SMILES',)_('SVR',)_Random_Search_optimizer.pickle"

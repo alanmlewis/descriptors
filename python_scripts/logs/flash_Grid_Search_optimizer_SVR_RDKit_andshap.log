@@ -1,0 +1,30 @@
+flashpoint
+('RDKit',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint.csv
+the property I'm extracting is flashpoint
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_flashpoint_flashpoint_flashpoint.csv
+(151, 217)
+RDKit descriptors ran correctly
+descriptor_function returned: rdkit_descriptors.csv
+Current model running: SVR
+Loading features from: rdkit_descriptors.csv
+It's been split!!
+Loading features from: rdkit_descriptors.csv
+Best score was using the following parameter set:
+>> svr__C = 545.5594781168514
+>> svr__epsilon = 0.46415888336127775
+>> svr__gamma = 0.001291549665014884
+>> svr__kernel = rbf
+Root Mean Squared Error: 4.296819671392534
+R-squared: 0.889063531632804
+[208 350 211 116 182 298 157 149 153  70 147 199 265 149 116 164 129 173
+ 156 190]
+[204.97019625 336.43866856 206.37819829 169.4357413  238.14538105
+ 306.95147919 154.8923076  147.62848865 158.49110387  71.89861668
+ 139.74269848 174.8471717  275.184302   193.18284121 113.87000201
+ 173.84504036 143.36982465 172.91616482 154.08262281 193.86906929]
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/flashpoint/pickle_files/BEST_best_model_('RDKit',)_('SVR',)_Grid_Search_optimizer.pickle"

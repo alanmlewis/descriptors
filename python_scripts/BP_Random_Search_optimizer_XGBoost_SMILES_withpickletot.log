@@ -1,0 +1,36 @@
+boiling_point
+('SMILES',)
+('XGBoost',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: XGBoost
+Loading features from: SMILES_matrices.csv
+It's been split!!
+loading feaure from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> subsample = 0.7
+>> reg_lambda = 1
+>> reg_alpha = 1
+>> random_state = 42
+>> n_jobs = 8
+>> n_estimators = 400
+>> min_child_weight = 1
+>> max_depth = 3
+>> learning_rate = 0.05
+>> gamma = 0.1
+>> colsample_bytree = 0.7
+Root Mean Squared Error: 38.711254688618844
+R-squared: 0.654304041793669
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[279.89117 242.98387 416.91226 364.35757 339.25214 416.63058 268.09818
+ 355.97116 323.44125 286.6383  368.18793 281.26633 259.38184 341.7658
+ 341.5416  291.46823 335.1615  315.3262  369.3995  288.62357]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

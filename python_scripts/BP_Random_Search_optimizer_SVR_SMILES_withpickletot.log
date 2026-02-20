@@ -1,0 +1,30 @@
+boiling_point
+('SMILES',)
+('SVR',)
+Converted file to csv file called: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point.csv
+the property I'm extracting is boiling_point
+Extracted props saved to: /home/cat/descriptors/datasets_and_SMILES/values_boiling_point_boiling_point_boiling_point.csv
+flattened one hot matrices all saved without SMILES lables and seperators added.
+descriptor_function returned: SMILES_matrices.csv
+Current model running: SVR
+Loading features from: SMILES_matrices.csv
+It's been split!!
+Loading features from: SMILES_matrices.csv
+Best score was using the following parameter set:
+>> svr__kernel = rbf
+>> svr__gamma = 0.001291549665014884
+>> svr__epsilon = 0.046415888336127774
+>> svr__C = 545.5594781168514
+Root Mean Squared Error: 33.600280593895
+R-squared: 0.7395612424031706
+[285.15 243.75 482.05 364.65 263.55 432.15 304.77 411.15 308.85 316.25
+ 378.05 279.35 225.05 346.95 369.55 309.65 400.65 261.15 366.   298.75]
+[286.74846317 227.51581572 436.63167053 354.59516025 299.91137631
+ 416.29547886 250.64228828 381.32945474 309.43549861 303.78166809
+ 366.63661717 278.35084991 266.53964799 363.28678084 363.06168834
+ 280.74647304 343.17793055 287.8222156  339.88903314 356.32147614]
+yay, we ran!!
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 569, in <module>
+    if run_pickle == "yes":
+NameError: name 'run_pickle' is not defined

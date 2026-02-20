@@ -24,54 +24,7 @@ R-squared: 0.9666232068622655
  426.54281999 301.02625733 405.71078196 295.80634413 303.63027772
  379.16660745 277.38396638 221.02219016 343.19643902 366.34207941
  285.2664676  394.09492954 257.56136135 368.25855877 290.28580551]
-x_train size: 152
-x_test size: 39
-Descriptor for the SHAP analysis was: ('RDKit',)
-  0%|          | 0/39 [00:00<?, ?it/s]  3%|▎         | 1/39 [00:01<00:51,  1.35s/it]  5%|▌         | 2/39 [00:02<00:51,  1.40s/it]  8%|▊         | 3/39 [00:04<00:50,  1.41s/it] 10%|█         | 4/39 [00:05<00:49,  1.42s/it] 13%|█▎        | 5/39 [00:07<00:48,  1.42s/it] 15%|█▌        | 6/39 [00:08<00:47,  1.42s/it] 18%|█▊        | 7/39 [00:09<00:46,  1.44s/it] 21%|██        | 8/39 [00:11<00:44,  1.44s/it] 23%|██▎       | 9/39 [00:12<00:42,  1.43s/it] 26%|██▌       | 10/39 [00:14<00:41,  1.43s/it] 28%|██▊       | 11/39 [00:15<00:39,  1.42s/it] 31%|███       | 12/39 [00:17<00:38,  1.41s/it] 33%|███▎      | 13/39 [00:18<00:36,  1.42s/it] 36%|███▌      | 14/39 [00:19<00:35,  1.41s/it] 38%|███▊      | 15/39 [00:21<00:33,  1.40s/it] 41%|████      | 16/39 [00:22<00:32,  1.42s/it] 44%|████▎     | 17/39 [00:24<00:31,  1.43s/it] 46%|████▌     | 18/39 [00:25<00:30,  1.44s/it] 49%|████▊     | 19/39 [00:27<00:28,  1.43s/it] 51%|█████▏    | 20/39 [00:28<00:26,  1.42s/it] 54%|█████▍    | 21/39 [00:29<00:25,  1.44s/it] 56%|█████▋    | 22/39 [00:31<00:24,  1.43s/it] 59%|█████▉    | 23/39 [00:32<00:22,  1.42s/it] 62%|██████▏   | 24/39 [00:34<00:21,  1.43s/it] 64%|██████▍   | 25/39 [00:35<00:20,  1.44s/it] 67%|██████▋   | 26/39 [00:37<00:18,  1.43s/it] 69%|██████▉   | 27/39 [00:38<00:17,  1.42s/it] 72%|███████▏  | 28/39 [00:39<00:15,  1.42s/it] 74%|███████▍  | 29/39 [00:41<00:14,  1.44s/it] 77%|███████▋  | 30/39 [00:42<00:12,  1.43s/it] 79%|███████▉  | 31/39 [00:44<00:11,  1.42s/it] 82%|████████▏ | 32/39 [00:45<00:09,  1.40s/it] 85%|████████▍ | 33/39 [00:46<00:08,  1.42s/it] 87%|████████▋ | 34/39 [00:48<00:07,  1.41s/it] 90%|████████▉ | 35/39 [00:49<00:05,  1.41s/it] 92%|█████████▏| 36/39 [00:51<00:04,  1.37s/it] 95%|█████████▍| 37/39 [00:52<00:02,  1.39s/it] 97%|█████████▋| 38/39 [00:53<00:01,  1.39s/it]100%|██████████| 39/39 [00:55<00:00,  1.41s/it]100%|██████████| 39/39 [00:55<00:00,  1.42s/it]
-SHAP ran correctly, and file was saved
-shap sucessfully ran
-files saved
-The results as dataframe are:
-   Descriptor Model           Optimization  ...        R2  y_true      y_pred
-0       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  285.15  283.399499
-1       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  243.75  242.713035
-2       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  482.05  476.403080
-3       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  364.65  358.986775
-4       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  263.55  273.283867
-5       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  432.15  426.542820
-6       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  304.77  301.026257
-7       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  411.15  405.710782
-8       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  308.85  295.806344
-9       RDKit   SVR  Grid_Search_optimizer  ...  3.468217  316.25  303.630278
-10      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  378.05  379.166607
-11      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  279.35  277.383966
-12      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  225.05  221.022190
-13      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  346.95  343.196439
-14      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  369.55  366.342079
-15      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  309.65  285.266468
-16      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  400.65  394.094930
-17      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  261.15  257.561361
-18      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  366.00  368.258559
-19      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  298.75  290.285806
-20      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  271.25  275.756947
-21      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  259.25  263.324800
-22      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  331.08  326.018934
-23      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  350.15  344.511747
-24      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  261.45  257.085032
-25      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  332.75  327.132137
-26      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  276.17  280.400389
-27      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  336.42  335.440056
-28      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  261.55  268.598066
-29      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  332.65  316.677735
-30      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  303.15  296.554437
-31      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  374.85  369.487601
-32      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  296.45  290.530251
-33      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  419.45  417.498386
-34      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  145.15  181.712887
-35      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  305.00  347.670141
-36      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  318.25  308.363579
-37      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  288.25  286.172709
-38      RDKit   SVR  Grid_Search_optimizer  ...  3.468217  184.55  206.073371
-
-[39 rows x 7 columns]
-results saved as parquet to ../new_results/boiling_point/parquet_files/G_r_i_d___S_e_a_r_c_h___o_p_t_i_m_i_z_e_rSVR_RDKit.parquet
+Traceback (most recent call last):
+  File "/home/cat/descriptors/python_scripts/descriptor_models.py", line 567, in <module>
+    with open(f'..new_results/{config.property}/pickle_files/BEST_best_model_{config.descriptor}_{config.model}_{config.optimization_algorithm}.pickle', 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: "..new_results/boiling_point/pickle_files/BEST_best_model_('RDKit',)_('SVR',)_Grid_Search_optimizer.pickle"
