@@ -41,26 +41,28 @@ import shap
 import matplotlib.pyplot as plt
 import os
 import pickle
+from pathlib import Path
 #parquet_path = ("../new_results/{config.property}/parquet_files")
+root_dir = Path(__file__).resolve().parent.parent
+#descriptor_underscored = "_".join(backup_config.descriptor[0].split())
+pickle_file = root_dir / "new_results"/ f"{backup_config.property[0]}"/"pickle_files"/f"best_model_{backup_config.descriptor[0]}_{backup_config.model[0]}_Random_Search_optimizer.pickle"
+RDKit_features_file = root_dir / "python_scripts" / "RDKit_descriptor_features"
 
 
-def running_shap(backup_config):
-    with open(f'../new_results/{backup_config.property}/pickle_files/BEST_best_model_{backup_config.descriptor}_{backup_config.model}_{backup_config.optimization_algorithm}.pickle', 'rb') as f:
+def running_shap(backup_config, pickle_file):
+    with open(pickle_file, 'rb') as f:
         data = pickle.load(f)
+    print(type(data))
+
     
     x_train = data["x_train"]
-    feature_names = data["feature_names"]
+    if backup_config.descriptor[0] == "RDKit":
+        features = pd.read_csv(RDKit_features_file, header=None)[0].tolist()
     x_test = data["x_test"]
+
     best_model = data["best_model"]
     model_name = data["model_name"]
-    
-    print("TYPE X TEST")
-    print(type(x_test))
-    print("Loaded model and data successfully")
-    print("x_train size:", len(x_train))
-    print("x_test size:", len(x_test))
-    
-    print(f"Descriptor for the SHAP analysis was: {backup_config.descriptor}")
+    print(f"Descriptor for the SHAP analysis was: {backup_config.descriptor[0]}")
     background_size = min(50, len(x_train))
     shap_size = min(100, len(x_test))
 
@@ -69,13 +71,13 @@ def running_shap(backup_config):
     print(type(background))
 
     ##exit()    
-    if model_name in ["XGBoost", "Random Forest"]:
-        explainer = shap.Explainer(best_model, background.iloc[:shap_size])
+    if model_name in ["XGBoost", "Random_Forest"]:
+        explainer = shap.Explainer(best_model.predict, background.iloc[:shap_size], max_exals=850)
     elif model_name == "Lasso":
-        explainer = shap.Explainer(best_model.predict, background.iloc[:shap_size])
+        explainer = shap.Explainer(best_model.predict, background.iloc[:shap_size], max_evals=850)
     elif model_name == "SVR":
         background_kernel = background.iloc[:min(30, background_size)]
-        explainer = shap.KernelExplainer(best_model.predict, background_kernel)
+        explainer = shap.KernelExplainer(best_model.predict, background_kernel, max_exals=850)
     else: 
         raise ValueError(f"Unknown Model, check input. Model inputted was {model_name}")
 
@@ -90,35 +92,69 @@ def running_shap(backup_config):
         values = shap_values
         base_values = None
 
-        #order = np.argsort(np.abs(shap_values).max(axis=0))[::-1]
-
-        ##shap.plots.beeswarm(
-           #         shap.Explanation(
-            #                    values=shap_values[:, order],
-             #                   data=X_plot.values[:, order],
-              #                  feature_names=X_plot.columns[order],
-               #                     )
-                #    )
     else:
         X_plot = x_test.iloc[:shap_size]
         values = shap_values.values
         base_values = shap_values.base_values
-
-    shap.plots.beeswarm(
-        shap.Explanation(
-            values=values,
-            base_values=base_values,
-            data=X_plot,
-            feature_names=X_plot.columns.tolist()
+    if backup_config.descriptor[0] == "RDKit":
+        shap.plots.beeswarm(
+            shap.Explanation(
+                values=values,
+                base_values=base_values,
+                data=X_plot,
+                feature_names=features
+                )
             )
-        )
+    else:
+       shap.plots.beeswarm(
+               shap.Explanation(
+                   values=values,
+                   base_values=base_values,
+                   data=X_plot
+                   )
+               )
     plt.tight_layout()
-    plt.title(f"SHAP plot for {backup_config.property} using {backup_config.model} and {backup_config.descriptor}")
-    plt.savefig(f"../new_results/{backup_config.property}/SHAP_pickle/shap_{backup_config.descriptor}_{model_name}_{backup_config.optimization_algorithm}.png")
+    plt.title(f"SHAP plot for {backup_config.property[0]} using {backup_config.model[0]} and {backup_config.descriptor[0]}")
+    plt.savefig(f"../new_results/{backup_config.property[0]}/SHAP/shap_{backup_config.descriptor[0]}_{model_name}_{backup_config.optimization_algorithm}.png")
     plt.close()
     print("SHAP ran correctly, and file was saved")
     return shap_values
 
 
-run_shap = running_shap(backup_config)
+run_shap = running_shap(backup_config, pickle_file)
 
+from rdkit.Chem.Draw import DrawMorganBit
+
+def finding_that_bit(config, bit):
+    ##Read SMILES txt directly (one SMILES per line)
+    smiles_list = pd.read_csv(config.SMILES_file, header=None, names=["SMILES"])
+    smiles_list = smiles_list[['SMILES']]
+
+    # Fingerprint parameter
+    fpgen = AChem.GetMorganGenerator(radius=3, fpSize=4096)  # Larger fpSize = fewer collisions
+
+    ##Generate molecules
+    mol = [Chem.MolFromSmiles(smiles) for smiles in smiles_list['SMILES']]
+    bitinfo_all = []
+    for m in mol:
+        bitInfo = {}
+        if m is not None:
+            fpgen.GetFingerprint(m, bitInfo=bitInfo)
+        
+        bitinfo_all.append(bitInfo)
+         
+    molecules_with_bit = []
+
+    for i, bitinfo in enumerate(bitinfo_all):
+        if bit in bitinfo:
+            molecules_with_bit.append(i)
+    
+    print(molecules_with_bit)
+    for idx in molecules_with_bit[:5]:
+        image = DrawMorganBit(mol[idx], bit, bitinfo_all[idx])
+    
+        display(image) 
+    return
+
+if config.run_bits == "yes":    
+    bit_finder = finding_that_bit(config, ##bit num)
